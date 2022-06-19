@@ -10,16 +10,16 @@ function PodcastDetails({ podcastDetails }) {
   useEffect(() => {
     const date = Date.parse(podcastDetails.releaseDate)
     setReleaseDate(timeSince(date));
-  }, [podcastDetails])
+  }, [podcastDetails.releaseDate])
 
   const handleClick = useCallback(() => {
     setIsReadMore(true);
-  }, [podcastDetails])
+  }, [])
 
   return (
     Object.keys(podcastDetails).length !== 0 &&
     <div className='grid grid-cols-1 gap-y-2 max-w-xs h-64'>
-      <img src={podcastDetails.artworkUrl600} alt="podcast cover image" className='max-w-xs rounded-lg' />
+      <img src={podcastDetails.artworkUrl600} alt="podcast cover" className='max-w-xs rounded-lg' />
       <p className='text-left pl-3'>{releaseDate}</p>
       <hr className="border-1 border-gray-600" />
       <p className='text-left px-3'>

@@ -20,10 +20,10 @@ function HomeSection() {
   }, []);
 
   return (
-    <div>
+    <section>
       <div>Home</div>
       <Podcasts podcasts={podcasts} />
-    </div>
+    </section>
 
   )
 }

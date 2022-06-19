@@ -1,7 +1,7 @@
 import React from 'react'
 import Episode from './Episode'
 
-function Episodes({ episodes }) {
+function Episodes({ episodes, handlePause, handlePlay }) {
   console.log(`episodes:`);
   console.log(episodes);
   return (
@@ -9,7 +9,7 @@ function Episodes({ episodes }) {
     <div>
       {episodes.map(episode => (
         <div key={episode.trackId}>
-          <Episode episode={episode} />
+          <Episode episode={episode} handlePause={handlePause} handlePlay={handlePlay} />
         </div>
       ))}
     </div>

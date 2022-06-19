@@ -1,12 +1,19 @@
-import React from 'react'
-import { useCallback, useState } from 'react'
+import React, { useRef } from 'react'
 
-function Episode({ episode }) {
+import { useCallback, useState } from 'react'
+import { useSelector } from 'react-redux';
+
+import playButton from '../assets/play.svg';
+import pauseButton from '../assets/pause.svg'
+
+
+function Episode({ episode, handlePlay, handlePause }) {
   const [isReadMore, setIsReadMore] = useState(false);
+  const episodePlayer = useSelector((state) => state.episodePlayer);
 
   const toggleReadMore = useCallback(() => {
-    setIsReadMore(!isReadMore);
-  }, [episode, isReadMore])
+    setIsReadMore(prevIsReadMore => !prevIsReadMore);
+  }, [])
 
   return (
     <div className='mb-6 max-w-2xl text-left'>
@@ -16,6 +23,13 @@ function Episode({ episode }) {
       <span className='font-medium underline text-black cursor-pointer' onClick={toggleReadMore}>
         {isReadMore ? <span className='text-right block'>Read Less</span> : <span className='ml-4'>Read More</span>}
       </span>
+      <span>Duration</span>
+      <br />
+      {episodePlayer.isPlaying && episodePlayer.episode.episodeUrl == episode.episodeUrl ?
+        <img src={pauseButton} alt="pausebutton" className='w-6' onClick={handlePause} />
+        :
+        <img src={playButton} alt="playbutton" className="w-6" onClick={() => handlePlay(episode)} />
+      }
     </div>
   )
 }
