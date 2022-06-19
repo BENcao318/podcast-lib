@@ -8,7 +8,6 @@ function HomeSection() {
   const [podcasts, setPodcasts] = useState([]);
 
   const getAPIData = () => {
-    console.log('getting');
     return axios.get(API_URL).then((response) => response.data.results)
   }
 

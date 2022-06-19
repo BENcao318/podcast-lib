@@ -1,23 +1,33 @@
-import axios from 'axios';
 import React from 'react'
-import { useEffect } from 'react';
+import { useCallback } from 'react';
+import { useEffect, useState } from 'react';
+import { timeSince } from '../helpers/helpers'
 
 function PodcastDetails({ podcastDetails }) {
-  const RSS_URL = podcastDetails.feedUrl;
-  // useEffect(() => {
-  //   console.log(RSS_URL);
-  //   axios.get(`http://localhost:3000/api/v1/podcasts/${RSS_URL}`)
-  //     .then(response => {
-  //       console.log(`url::::::${response}`);
-  //     })
-  // }, [podcastDetails])
+  const [releaseDate, setReleaseDate] = useState('');
+  const [isReadMore, setIsReadMore] = useState(false);
+
+  useEffect(() => {
+    const date = Date.parse(podcastDetails.releaseDate)
+    setReleaseDate(timeSince(date));
+  }, [podcastDetails])
+
+  const handleClick = useCallback(() => {
+    setIsReadMore(true);
+  }, [podcastDetails])
 
   return (
-    <div className='max-w-xs'>
-      <img src={podcastDetails.artworkUrl600} alt="podcast cover image" className='max-w-xs rounded-xl' />
-      <h1>{podcastDetails.collectionName}</h1>
-      <p>{podcastDetails.description}</p>
-      <p>Description</p>
+    Object.keys(podcastDetails).length !== 0 &&
+    <div className='grid grid-cols-1 gap-y-2 max-w-xs h-64'>
+      <img src={podcastDetails.artworkUrl600} alt="podcast cover image" className='max-w-xs rounded-lg' />
+      <p className='text-left pl-3'>{releaseDate}</p>
+      <hr className="border-1 border-gray-600" />
+      <p className='text-left px-3'>
+        {isReadMore ? podcastDetails.description : podcastDetails.description.slice(0, 123) + '...'}
+      </p>
+      <span className='underline cursor-pointer text-blue font-bold text-right' onClick={handleClick}>
+        {isReadMore ? '' : <span>read more</span>}
+      </span>
     </div>
   )
 }

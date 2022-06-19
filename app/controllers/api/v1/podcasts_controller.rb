@@ -18,7 +18,7 @@ class Api::V1::PodcastsController < ApplicationController
     rss_feed_url = podcast_detail["results"][0]["feedUrl"]
 
     podcast_detail["results"][0]["description"] = get_podcast_description(rss_feed_url)   #Add description crawled from the rss_url and add it into the hash
-
+    # puts podcast_detail
     render json: podcast_detail
   end
 
@@ -77,6 +77,8 @@ class Api::V1::PodcastsController < ApplicationController
       podcast_rss_xml = RestClient.get(rss_feed_url)
       parsed_data = Nokogiri::XML(podcast_rss_xml)    #Convert the xml file to parsed data
 
-      description = parsed_data.xpath("//description")[0].to_s.slice!(13...-14)   #Find the description tag from XML nodeset and return the content 
+      description = parsed_data.css("description").map(&:text)[0]   #Find the description tag from XML nodeset and return the content 
+
+      description.gsub(/(<([^>]+)>)/, '')   #Using regex to replace the tags
     end
 end

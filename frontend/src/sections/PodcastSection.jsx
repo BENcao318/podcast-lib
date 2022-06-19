@@ -16,14 +16,14 @@ function PodcastSection() {
   useEffect(() => {
     getPodcastDetails(id)
       .then((result) => {
-        console.log(result.data.results);
+        // console.log(result.data.results);
         setPodcastDetails(result.data.results[0]);
         setEpisodes(result.data.results.slice(1));
       })
   }, [])
 
   return (
-    <section>
+    <section className='flex mx-6 justify-center gap-12'>
       <PodcastDetails podcastDetails={podcastDetails} />
       <Episodes episodes={episodes} />
     </section>

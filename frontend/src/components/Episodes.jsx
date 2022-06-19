@@ -1,8 +1,18 @@
 import React from 'react'
+import Episode from './Episode'
 
-function Episodes() {
+function Episodes({ episodes }) {
+  console.log(`episodes:`);
+  console.log(episodes);
   return (
-    <div>Episodes</div>
+    episodes &&
+    <div>
+      {episodes.map(episode => (
+        <div key={episode.trackId}>
+          <Episode episode={episode} />
+        </div>
+      ))}
+    </div>
   )
 }
 
