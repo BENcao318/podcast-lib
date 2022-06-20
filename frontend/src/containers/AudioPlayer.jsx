@@ -6,7 +6,7 @@ import pauseButton from '../assets/pause.svg'
 import { episodePlaying, episodePause } from '../redux/episodePlayer'
 
 
-function AudioPlayer({ handlePause, handlePlay }) {
+function AudioPlayer({ handlePause, handlePlay, audioRef, audioProgress, fastforward, backward }) {
   const episodePlayer = useSelector((state) => state.episodePlayer)
 
 
@@ -18,6 +18,22 @@ function AudioPlayer({ handlePause, handlePlay }) {
           :
           <img src={playButton} alt="playbutton" className="w-12" onClick={() => handlePlay(episodePlayer.episode)} />
         }
+      </div>
+      {audioRef.current &&
+        <div>
+          <div>
+            {Math.ceil(audioProgress)}
+          </div>
+          {audioRef.current.duration}
+        </div>
+      }
+      <div>
+        <button className='border border-2' onClick={backward}>
+          -10s
+        </button>
+        <button className='border border-2' onClick={fastforward}>
+          +10s
+        </button>
       </div>
     </section>
   )
