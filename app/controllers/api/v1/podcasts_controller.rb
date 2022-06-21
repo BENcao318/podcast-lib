@@ -18,7 +18,7 @@ class Api::V1::PodcastsController < ApplicationController
     rss_feed_url = podcast_detail["results"][0]["feedUrl"]
 
     podcast_detail["results"][0]["description"] = get_podcast_description(rss_feed_url)   #Add description crawled from the rss_url and add it into the hash
-    # puts podcast_detail
+
     render json: podcast_detail
   end
 

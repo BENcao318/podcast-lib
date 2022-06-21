@@ -1,4 +1,5 @@
 if Rails.env === 'production' 
-  Rails.application.config.session_store :cookie_store, key: '_podcast-lib', domain: 'podcast-lib-json-api'
+  Rails.application.config.session_store :cookie_store, key: '_podcast-lib', domain: 'https://localhost:3001'
 else
   Rails.application.config.session_store :cookie_store, key: '_podcast-lib'
+end
