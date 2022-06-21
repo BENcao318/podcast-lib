@@ -10,6 +10,8 @@ gem 'rack-cors'
 
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
+# Use bcrypt for user authentication
+gem 'bcrypt'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'rest-client'
