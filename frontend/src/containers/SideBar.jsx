@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function SideBar() {
+
   return (
     <aside className='lg:w-1/6 bg-gray-400 min-h-screen'>
       <div>
@@ -11,6 +12,12 @@ function SideBar() {
         </Link>
         <Link to='/search'>
           Search
+        </Link>
+        <Link to='/subscriptions'>
+          Subscription
+        </Link>
+        <Link to='/login'>
+          Login
         </Link>
         <Link to='/test'>
           Test

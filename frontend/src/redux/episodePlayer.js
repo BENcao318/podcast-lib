@@ -19,12 +19,18 @@ export const episodePlayerSlice = createSlice({
       state.episode = action.payload
       state.loading = true
     },
-    episodePlaying: (state, action) => {
+    episodePlaying: (state) => {
       state.isPlaying = true
-      state.episode = action.payload
+      state.isLoading = false
     },
     episodePause: (state) => {
       state.isPlaying = false
+    },
+    episodeLoading: (state) => {
+      state.isLoading = true
+    },
+    setPlayingEpisode: (state, action) => {
+      state.episode = action.payload
     },
     setAudioDuration: (state, action) => {
       state.duration = action.payload
@@ -32,6 +38,6 @@ export const episodePlayerSlice = createSlice({
   }
 })
 
-export const { episodePlayRequest, episodePlaying, episodePause, setAudioDuration } = episodePlayerSlice.actions
+export const { episodePlayRequest, episodePlaying, episodePause, setAudioDuration, episodeLoading, setPlayingEpisode } = episodePlayerSlice.actions
 
 export default episodePlayerSlice.reducer

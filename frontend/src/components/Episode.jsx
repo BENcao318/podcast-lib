@@ -30,6 +30,7 @@ function Episode({ episode, handlePlay, handlePause }) {
         :
         <img src={playButton} alt="playbutton" className="w-6" onClick={() => handlePlay(episode)} />
       }
+      <hr className='mt-6 border-b-1 border-gray-600'></hr>
     </div>
   )
 }

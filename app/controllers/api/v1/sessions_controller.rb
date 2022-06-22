@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::V1::SessionsController < ApplicationController
   def create    #login
     @user = User.find_by(username: session_params[:username])
 
@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
       }
     else
       render json: {
-        logged_in: false
+        logged_in: false,
         message: 'no such user'
       }
     end

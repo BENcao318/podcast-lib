@@ -4,6 +4,7 @@ import Episode from './Episode'
 function Episodes({ episodes, handlePause, handlePlay }) {
   console.log(`episodes:`);
   console.log(episodes);
+
   return (
     episodes &&
     <div>
