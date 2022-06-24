@@ -10,7 +10,7 @@ import Main from './containers/Main';
 import AudioPlayer from './containers/AudioPlayer';
 import axios from 'axios';
 
-const serverAPIUrl = 'http://localhost:3000/api/v1'
+const serverURL = 'http://localhost:3000/api/v1'
 
 function App() {
   // const [duration, setDuration] = useState()
@@ -84,8 +84,9 @@ function App() {
   }
 
   function userLoginStatus() {
-    axios.get('http://localhost:3000/api/v1/logged_in')  //{ withCredentials: true }
+    axios.get(`${serverURL}/logged_in`, { withCredentials: true })  //{ withCredentials: true }
       .then((response) => {
+        console.log(response.data)
         if (response.data.logged_in) {
           dispatch(userLogin())
         } else {
@@ -100,6 +101,7 @@ function App() {
   }, [audioRef.current])
 
   useEffect(() => {
+    console.log('loging')
     userLoginStatus()
   }, [])
 

@@ -1,12 +1,23 @@
+import axios from 'axios'
 import React from 'react'
+import { userLogin } from '../redux/user'
+
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+
+const serverURL = 'http://localhost:3000/api/v1'
 
 function LoginSection() {
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
   const [accountInfo, setAccountInfo] = useState({
     email: '',
     password: ''
   })
+
+  const [error, setError] = useState()
 
   function handleInput(e) {
     const value = e.target.value
@@ -16,8 +27,24 @@ function LoginSection() {
     })
   }
 
-  function handleSubmit() {
-    console.log('submit');
+  function handleSubmit(e) {
+    e.preventDefault()
+
+    const user = {
+      email: accountInfo.email,
+      password: accountInfo.password
+    }
+
+    axios.post(`${serverURL}/login`, { user }, { withCredentials: true })
+      .then((response) => {
+        if (response.data.logged_in) {
+          dispatch(userLogin(response.data.user))
+          navigate('/')
+        } else {
+          setError(response.data.error)
+        }
+      })
+      .catch((error) => console.log(error))
   }
 
   return (
@@ -74,6 +101,8 @@ function LoginSection() {
                     </label>
                     <input
                       type="email"
+                      autoComplete="email"
+                      id="current-email"
                       className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                       placeholder="Email"
                       onChange={handleInput}
@@ -89,6 +118,8 @@ function LoginSection() {
                     </label>
                     <input
                       type="password"
+                      autoComplete="current-password"
+                      id="current-password"
                       className="border-0 px-3 py-3 placeholder-gray-400 text-gray-700 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full"
                       placeholder="Password"
                       onChange={handleInput}
@@ -114,6 +145,15 @@ function LoginSection() {
                       onClick={handleSubmit}
                     >
                       Sign In
+                    </button>
+                  </div>
+                  <div className="text-center mt-6">
+                    <button
+                      className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
+                      type="button"
+                      onClick={() => navigate('/signup')}
+                    >
+                      Signup
                     </button>
                   </div>
                 </form>

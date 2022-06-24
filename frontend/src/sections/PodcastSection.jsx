@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import PodcastDetails from '../components/PodcastDetails'
+import loadingB from '../assets/loadingB.svg'
 import axios from 'axios';
 import Episodes from '../components/Episodes';
 
 function PodcastSection({ handlePause, handlePlay }) {
   const [podcastDetails, setPodcastDetails] = useState({})
   const [episodes, setEpisodes] = useState([])
+  const [loadingContent, setLoadingContent] = useState(false)
   const { id } = useParams();
 
   const getPodcastDetails = (collectionId) => {
+    setLoadingContent(true)
     return axios.get(`http://localhost:3000/api/v1/podcasts/${collectionId}`)
   }
 
@@ -18,16 +21,24 @@ function PodcastSection({ handlePause, handlePlay }) {
     getPodcastDetails(id)
       .then((result) => {
         // console.log(result.data.results);
-        setPodcastDetails(result.data.results[0]);
-        setEpisodes(result.data.results.slice(1));
+        setLoadingContent(false)
+        setPodcastDetails(result.data.results[0])
+        setEpisodes(result.data.results.slice(1))
       })
   }, [id])
 
   return (
-    <section className='flex mx-6 justify-center gap-12'>
-      <PodcastDetails podcastDetails={podcastDetails} />
-      <Episodes episodes={episodes} handlePause={handlePause} handlePlay={handlePlay} />
-    </section>
+    <>
+      {
+        loadingContent ?
+          <img src={loadingB} alt="loading animation" className='mx-auto mt-64' />
+          :
+          <section className='flex mx-6 justify-center gap-12'>
+            < PodcastDetails podcastDetails={podcastDetails} />
+            <Episodes episodes={episodes} handlePause={handlePause} handlePlay={handlePlay} />
+          </section >
+      }
+    </>
   )
 }
 

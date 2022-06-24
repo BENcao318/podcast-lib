@@ -6,8 +6,11 @@ class User < ApplicationRecord
 
   validates :username, presence: true
   validates :username, uniqueness: true
+  validates :password, length: {minimum: 3}
+  validates :password_confirmation, presence: true
   # validates :username, length: { minimum: 4 }
 
+  has_many :subscriptions
 
   private
   def strip_whitespace
