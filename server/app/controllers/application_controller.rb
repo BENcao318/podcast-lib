@@ -5,10 +5,16 @@ class ApplicationController < ActionController::Base
 
   def login!
     session[:user_id] = @user.id
+    puts 'session'
+    puts session
   end
 
   def logged_in?
-    !!session[:user_id]
+    if session[:user_id]
+      true
+    else
+      false
+    end
   end
   
   def current_user
@@ -20,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def logout!
-    session.clear
+    reset_session
   end
 
   def set_user

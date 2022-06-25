@@ -23,9 +23,9 @@ class Api::V1::PodcastsController < ApplicationController
   end
 
   # GET /podcasts/1/rss_feed_url
-  def description
-    puts 'get request++++++++++++++++++++++'
-  end
+  # def description
+  #   puts 'get request++++++++++++++++++++++'
+  # end
 
   # POST /podcasts
   def create
