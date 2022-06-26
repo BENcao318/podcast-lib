@@ -42,6 +42,7 @@ function LoginSection() {
           navigate('/')
         } else {
           setError(response.data.error)
+          console.log(error);
         }
       })
       .catch((error) => console.log(error))

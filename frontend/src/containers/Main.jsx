@@ -7,14 +7,12 @@ import PodcastSection from '../sections/PodcastSection';
 import SearchSection from '../sections/SearchSection';
 import SignupSection from '../sections/SignupSection';
 import SubscriptionSection from '../sections/SubscriptionSection';
-import Test from './Test';
 
 function Main({ handlePause, handlePlay }) {
   const userStatus = useSelector((state) => state.user)
 
   return (
-    <main className='lg:w-5/6 text-center'>
-      Main
+    <main className='w-7/12 text-center mt-16'>
       <Routes>
         <Route path='/' element={<HomeSection />}></Route>
         <Route path='/search' element={<SearchSection />}></Route>
@@ -25,7 +23,7 @@ function Main({ handlePause, handlePlay }) {
         }
         <Route path='/login' element={<LoginSection />}> </Route>
         <Route path='/signup' element={<SignupSection />}> </Route>
-        <Route path='/test' element={<Test />}></Route>
+        {/* <Route path='/test' element={<Test />}></Route> */}
       </Routes>
     </main>
   )

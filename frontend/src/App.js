@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { episodePlaying, episodePause, episodeLoading, setPlayingEpisode } from './redux/episodePlayer'
+import { episodePlaying, episodePause, episodeLoading, setPlayingEpisode, } from './redux/episodePlayer'
 import { userLogin, userLogout } from './redux/user'
 import './App.css';
 
@@ -9,11 +9,11 @@ import SideBar from './containers/SideBar';
 import Main from './containers/Main';
 import AudioPlayer from './containers/AudioPlayer';
 import axios from 'axios';
+import SearchBar from './containers/SearchBar';
 
 const serverURL = 'http://localhost:3000/api/v1'
 
 function App() {
-  // const [duration, setDuration] = useState()
   const [audioProgress, setAudioProgress] = useState()
 
   const audioRef = useRef()
@@ -30,7 +30,7 @@ function App() {
   }
 
   function fastforward() {
-    const fastforwardTime = 10
+    const fastforwardTime = 30
     clearInterval(intervalRef.current)
 
     if (audioRef.current.currentTime + fastforwardTime < audioRef.current.duration) {
@@ -38,15 +38,17 @@ function App() {
     }
 
     setAudioProgress(audioRef.current.currentTime)
+    startInterval()
   }
 
   function backward() {
-    const backwardTime = 10
+    const backwardTime = 15
 
     clearInterval(intervalRef.current)
 
     audioRef.current.currentTime -= backwardTime
     setAudioProgress(audioRef.current.currentTime)
+    startInterval()
   }
 
   function handlePlay(episode) {
@@ -84,11 +86,11 @@ function App() {
   }
 
   function userLoginStatus() {
-    axios.get(`${serverURL}/logged_in`, { withCredentials: true })  //{ withCredentials: true }
+    axios.get(`${serverURL}/logged_in`, { withCredentials: true })
       .then((response) => {
-        console.log(response.data)
         if (response.data.logged_in) {
           dispatch(userLogin())
+          console.log(response.data.user)
         } else {
           dispatch(userLogout())
         }
@@ -101,18 +103,24 @@ function App() {
   }, [audioRef.current])
 
   useEffect(() => {
-    console.log('loging')
     userLoginStatus()
   }, [])
 
   return (
-    <div className="flex">
+    <>
       <BrowserRouter>
         <SideBar />
-        <Main handlePause={handlePause} handlePlay={handlePlay} />
-        <AudioPlayer handlePause={handlePause} handlePlay={handlePlay} audioRef={audioRef} audioProgress={audioProgress} fastforward={fastforward} backward={backward} />
+        <div className='grid justify-items-center'>
+          <Main handlePause={handlePause} handlePlay={handlePlay} />
+          {
+            Object.keys(episodePlayer.episode).length !== 0
+            &&
+            <AudioPlayer handlePause={handlePause} handlePlay={handlePlay} audioRef={audioRef} audioProgress={audioProgress} fastforward={fastforward} backward={backward} />
+          }
+          <SearchBar />
+        </div>
       </BrowserRouter>
-    </div>
+    </>
   );
 }
 

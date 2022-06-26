@@ -5,7 +5,22 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        wiggle: {
+          '0%, 100%': {
+            transform: 'rotate(-16deg)'
+          },
+          '50%': {
+            transform: 'rotate(16deg)'
+          },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
+        wigglefast: 'wiggle 200ms ease-in-out infinite'
+      }
+    },
     fontFamily: {
       poppins: ['Poppins', 'sans-serif'],
     },
@@ -27,6 +42,7 @@ module.exports = {
       'large': '12px',
       'xl': '26px',
     },
+
   },
   plugins: [],
 }

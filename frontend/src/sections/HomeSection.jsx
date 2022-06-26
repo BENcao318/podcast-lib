@@ -21,7 +21,6 @@ function HomeSection() {
 
   return (
     <section>
-      <div>Home</div>
       <Podcasts podcasts={podcasts} />
     </section>
 
