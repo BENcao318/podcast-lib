@@ -15,7 +15,6 @@ class Api::V1::SubscriptionsController < ApplicationController
 
   def index
     subscriptions = Subscription.where(user_id: session[:user_id])
-    puts subscriptions
     render json: subscriptions
   end
 

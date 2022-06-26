@@ -16,7 +16,7 @@ function AudioPlayer({ handlePause, handlePlay, audioRef, audioProgress, fastfor
 
   const [forwardEffect, setForwardEffect] = useState(false)
   const [backwardEffect, setBackwardEffect] = useState(false)
-  const [volume, setVolume] = useState(60)
+  const [volume, setVolume] = useState(0.6)
 
   useEffect(() => {
     audioRef.current.volume = volume
@@ -78,7 +78,7 @@ function AudioPlayer({ handlePause, handlePlay, audioRef, audioProgress, fastfor
           max={1}
           step={0.02}
           value={volume}
-          class="w-28 h-1 accent-green-800 cursor-pointer"
+          className="w-28 h-1 accent-green-800 cursor-pointer"
           onChange={event => {
             setVolume(event.target.valueAsNumber)
           }}

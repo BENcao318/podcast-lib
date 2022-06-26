@@ -12,7 +12,7 @@ function Main({ handlePause, handlePlay }) {
   const userStatus = useSelector((state) => state.user)
 
   return (
-    <main className='w-7/12 text-center mt-16'>
+    <main className='w-full text-center mt-16 grid'>
       <Routes>
         <Route path='/' element={<HomeSection />}></Route>
         <Route path='/search' element={<SearchSection />}></Route>

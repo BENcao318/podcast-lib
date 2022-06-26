@@ -20,7 +20,7 @@ function HomeSection() {
   }, []);
 
   return (
-    <section>
+    <section className='justify-self-center gap-12 w-8/12'>
       <Podcasts podcasts={podcasts} />
     </section>
 

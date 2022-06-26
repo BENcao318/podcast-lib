@@ -8,14 +8,19 @@ import { timeSince } from '../helpers/helpers'
 import { useDispatch, useSelector } from 'react-redux';
 import { addSubscription, removeSubscription, getSubscriptions } from '../redux/subscription'
 import axios from 'axios';
+import { useRef } from 'react';
 
 const serverURL = 'http://localhost:3000/api/v1'
 
 function PodcastDetails({ podcastDetails }) {
   const [releaseDate, setReleaseDate] = useState('')
   const [isReadMore, setIsReadMore] = useState(false)
+  const [warning, setWarning] = useState(false)
+  const timeoutRef = useRef()
+
   const dispatch = useDispatch()
   const subscriptions = useSelector((state) => state.subscription.subscriptions)
+  const userStatus = useSelector((state) => state.user)
 
   useEffect(() => {
     const date = Date.parse(podcastDetails.releaseDate)
@@ -26,8 +31,9 @@ function PodcastDetails({ podcastDetails }) {
     setIsReadMore(true);
   }, [])
 
-  const subscribe = useCallback((e) => {
-    if (subscriptions.length === 0 || !subscriptions.includes(podcastDetails.collectionName)) {
+  const subscribe = useCallback(() => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current)
+    if (userStatus.logged_in) {
       const podcast_to_subscribe = {
         name: podcastDetails.collectionName,
         description: podcastDetails.description,
@@ -42,27 +48,34 @@ function PodcastDetails({ podcastDetails }) {
         .then((response) => {
           console.log(response.data);
         })
+    } else {
+      setWarning(true)
+      timeoutRef.current = setTimeout(() => {
+        setWarning(false)
+      }, 2000)
     }
-  })
+  }, [podcastDetails, dispatch, userStatus.logged_in])
 
-  const unSubscribe = useCallback((e) => {
+  const unSubscribe = useCallback(() => {
     const podcast_to_unsubscribe = podcastDetails.collectionName
     dispatch(removeSubscription(podcastDetails.collectionName))
     axios.post(`${serverURL}/unsubscribe`, { podcast_to_unsubscribe }, { withCredentials: true })
       .then((response) => {
         console.log(response.data);
       })
-  })
+  }, [podcastDetails, dispatch])
 
   useEffect(() => {
-    axios.get(`${serverURL}/subscriptions`, { withCredentials: true })
-      .then((response) => {
-        if (response.data) dispatch(getSubscriptions(response.data));
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-  }, [])
+    if (userStatus.logged_in) {
+      axios.get(`${serverURL}/subscriptions`, { withCredentials: true })
+        .then((response) => {
+          if (response.data) dispatch(getSubscriptions(response.data));
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }
+  }, [dispatch, userStatus.logged_in])
 
   return (
     Object.keys(podcastDetails).length !== 0 &&
@@ -70,19 +83,25 @@ function PodcastDetails({ podcastDetails }) {
       <img src={podcastDetails.artworkUrl600} alt="podcast cover" className='max-w-xs rounded-lg' />
       <p className='text-left pl-3'>{releaseDate}</p>
       <div className='flex justify-center gap-4'>
-        {subscriptions.some((subscription) => subscription.name === podcastDetails.collectionName) ?
-          <div className='border border-sky-600 rounded-xl bg-sky-600 cursor-pointer text-white hover:bg-sky-200' onClick={unSubscribe}>
-            <span className='flex items-center px-2 py-0.5 mx-2 font-semibold'><img src={checkedLogo} alt="subscribed button" className='w-6 mr-1' />Subscribed</span>
-          </div>
-          :
-          <div className='border border-sky-600 rounded-xl cursor-pointer hover:bg-sky-200' onClick={subscribe}>
-            <span className='flex items-center px-2 py-0.5 mx-2 font-semibold'><img src={plus} alt="subscribe button" className='w-6 mr-1' />Subscribe</span>
-          </div>
+        {
+          subscriptions.some((subscription) => subscription.name === podcastDetails.collectionName) ?
+            <div className='border border-sky-600 rounded-xl bg-sky-600 cursor-pointer text-white hover:bg-sky-200' onClick={unSubscribe}>
+              <span className='flex items-center px-2 py-0.5 mx-2 font-semibold'><img src={checkedLogo} alt="subscribed button" className='w-6 mr-1' />Subscribed</span>
+            </div>
+            :
+            <div className='border border-sky-600 rounded-xl cursor-pointer hover:bg-sky-200' onClick={subscribe}>
+              <span className='flex items-center px-2 py-0.5 mx-2 font-semibold'><img src={plus} alt="subscribe button" className='w-6 mr-1' />Subscribe</span>
+            </div>
         }
         <div className='border border-sky-600 rounded-xl cursor-pointer hover:bg-sky-200'>
-          <a className='flex items-center px-2 py-0.5 mx-2 font-semibold' href={podcastDetails.feedUrl} target="_blank"><img src={link} alt="internet button" className='w-6 mr-1' />Visit website</a>
+          <a className='flex items-center px-2 py-0.5 mx-2 font-semibold' href={podcastDetails.feedUrl}><img src={link} alt="internet button" className='w-6 mr-1' />Visit website</a>
         </div>
       </div>
+      {warning &&
+        <div className='bg-sky-600 font-base rounded-xl text-neutral-200 text-lg py-2'>
+          Please log in before subscribe
+        </div>
+      }
       <hr className="border-1 border-gray-600" />
       <p className='text-left px-3'>
         {isReadMore ? podcastDetails.description : podcastDetails.description.slice(0, 123) + '...'}

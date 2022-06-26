@@ -25,8 +25,8 @@ function SubscriptionSection() {
 
   return (
     <section>
-      <div>
-        SubscriptionSection
+      <div className='font-semibold text-2xl my-6 text-neutral-600'>
+        Your Subscriptions:
       </div>
       <Subscriptions subscriptions={subscriptions} />
     </section>

@@ -49,7 +49,7 @@ function LoginSection() {
   }
 
   return (
-    <section className="absolute w-full h-full">
+    <section className="w-full h-full">
       <div>
         LoginSection
         <Link to='/signup'>
@@ -59,7 +59,7 @@ function LoginSection() {
 
       </div>
       <div
-        className="absolute top-0 w-full h-full bg-gray-900"
+        className="absolute top-0 w-full h-full bg-sky-800"
       ></div>
       <div className="container mx-auto px-4 h-full">
         <div className="flex content-center items-center justify-center h-full">
@@ -126,7 +126,7 @@ function LoginSection() {
                       onChange={handleInput}
                     />
                   </div>
-                  <div>
+                  {/* <div>
                     <label className="inline-flex items-center cursor-pointer">
                       <input
                         id="customCheckLogin"
@@ -137,7 +137,7 @@ function LoginSection() {
                         Remember me
                       </span>
                     </label>
-                  </div>
+                  </div> */}
 
                   <div className="text-center mt-6">
                     <button

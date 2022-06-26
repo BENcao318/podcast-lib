@@ -89,7 +89,7 @@ function App() {
     axios.get(`${serverURL}/logged_in`, { withCredentials: true })
       .then((response) => {
         if (response.data.logged_in) {
-          dispatch(userLogin())
+          dispatch(userLogin(response.data.user))
           console.log(response.data.user)
         } else {
           dispatch(userLogout())
