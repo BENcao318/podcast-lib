@@ -10,16 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_24_031808) do
+ActiveRecord::Schema.define(version: 2022_06_27_001641) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "episode_queues", force: :cascade do |t|
+    t.string "episode_name"
+    t.string "artwork_url_600"
+    t.string "genres", default: [], array: true
+    t.bigint "track_id"
+    t.bigint "track_time_millis"
+    t.string "episode_url"
+    t.string "collection_name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.string "release_date"
+    t.index ["user_id"], name: "index_episode_queues_on_user_id"
+  end
 
   create_table "podcasts", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "queues", force: :cascade do |t|
+    t.string "name"
+    t.string "artwork_url_600"
+    t.string "genres", default: [], array: true
+    t.integer "track_id"
+    t.integer "track_time_millisec"
+    t.string "episode_url"
+    t.string "collection_name"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_queues_on_user_id"
   end
 
   create_table "subscriptions", force: :cascade do |t|

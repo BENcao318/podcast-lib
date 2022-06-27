@@ -15,6 +15,10 @@ Rails.application.routes.draw do
       post '/subscribe', to: 'subscriptions#create'
       post '/unsubscribe', to: 'subscriptions#destroy'
       get '/subscriptions', to: 'subscriptions#index'
+
+      post '/queue', to: 'episode_queues#create'
+      post '/unqueue', to: 'episode_queues#destroy'
+      get '/queues', to: 'episode_queues#index'
     end
   end
 

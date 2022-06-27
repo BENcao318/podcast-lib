@@ -11,6 +11,7 @@ class User < ApplicationRecord
   # validates :username, length: { minimum: 4 }
 
   has_many :subscriptions
+  has_many :episode_queues
 
   private
   def strip_whitespace

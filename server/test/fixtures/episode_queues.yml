@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  episode_name: MyString
+  artwork_url_600: MyString
+  genres: MyString
+  track_id: 1
+  track_time_millis: 1
+  episode_url: MyString
+  collection_name: MyString
+  description: MyString
+
+two:
+  episode_name: MyString
+  artwork_url_600: MyString
+  genres: MyString
+  track_id: 1
+  track_time_millis: 1
+  episode_url: MyString
+  collection_name: MyString
+  description: MyString
