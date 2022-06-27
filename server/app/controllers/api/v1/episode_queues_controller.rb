@@ -3,10 +3,8 @@ class Api::V1::EpisodeQueuesController < ApplicationController
 
   def create  #add episode queue
     user_queue = EpisodeQueue.where(episode_name: params[:episode_to_queue][:episode_name], user_id: session[:user_id])
-    puts 'user_queue!!'
-    puts user_queue
     if user_queue.length == 0
-      EpisodeQueue.create!(episode_name: params[:episode_to_queue][:episode_name], description: params[:episode_to_queue][:description], artwork_url_600: params[:episode_to_queue][:artwork_url_600], genres: params[:episode_to_queue][:genres], track_id: params[:episode_to_queue][:track_id], track_time_millis: params[:episode_to_queue][:track_time_millis], episode_url: params[:episode_to_queue][:episode_url], collection_name: params[:episode_to_queue][:collection_name], user_id: session[:user_id], release_date: params[:episode_to_queue][:release_date])
+      EpisodeQueue.create!(episode_name: params[:episode_to_queue][:episode_name], description: params[:episode_to_queue][:description], artwork_url_600: params[:episode_to_queue][:artwork_url_600], genres: params[:episode_to_queue][:genres], track_id: params[:episode_to_queue][:track_id], track_time_millis: params[:episode_to_queue][:track_time_millis], episode_url: params[:episode_to_queue][:episode_url], collection_name: params[:episode_to_queue][:collection_name], user_id: session[:user_id], release_date: params[:episode_to_queue][:release_date], collection_id: params[:episode_to_queue][:collection_id])
     end
   end
 
