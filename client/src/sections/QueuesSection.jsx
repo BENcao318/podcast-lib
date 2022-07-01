@@ -22,7 +22,7 @@ function QueuesSection({ handlePlay, handlePause }) {
 
   return (
     <section className='justify-self-center gap-12 w-8/12'>
-      <div className='font-semibold text-2xl my-6 text-neutral-600'>
+      <div className='font-bold text-3xl my-8'>
         Your Queues:
       </div>
       <Queues queues={queues} handlePlay={handlePlay} handlePause={handlePause} />

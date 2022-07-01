@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { episodePlaying, episodePause, episodeLoading, setPlayingEpisode } from './redux/episodePlayer'
 import { userLogin, userLogout } from './redux/user'
 import './App.css';
 
@@ -16,7 +15,7 @@ import usePlayerApplications from './hooks/usePlayerApplications';
 const serverURL = 'http://localhost:3000/api/v1'
 
 function App() {
-  const { audioProgress, audioRef, fastforward, backward, handlePlay, handlePause } = usePlayerApplications()
+  const { audioRef, handlePlay, handlePause } = usePlayerApplications()
   const episodePlayer = useSelector((state) => state.episodePlayer)
   const dispatch = useDispatch()
 
@@ -45,7 +44,7 @@ function App() {
           {
             Object.keys(episodePlayer.episode).length !== 0
             &&
-            <AudioPlayer handlePause={handlePause} handlePlay={handlePlay} audioRef={audioRef} audioProgress={audioProgress} fastforward={fastforward} backward={backward} />
+            <AudioPlayer handlePause={handlePause} handlePlay={handlePlay} audioRef={audioRef} />
           }
           <SearchBar />
         </div>

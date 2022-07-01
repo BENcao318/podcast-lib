@@ -8,6 +8,7 @@ import { ReactComponent as ListLogo } from '../assets/list.svg'
 import { ReactComponent as QueuesLogo } from '../assets/queues.svg'
 import { ReactComponent as GridLogo } from '../assets/grid.svg'
 import { ReactComponent as PodcastLogo } from '../assets/noun-podcast-26.svg'
+import GenresPopover from '../components/GenresPopover'
 
 const serverURL = 'http://localhost:3000/api/v1'
 
@@ -31,21 +32,23 @@ function SideBar() {
       })
   }
 
+  // console.log('sidebar!');
+
   return (
     <aside className='lg:w-60 fixed min-h-screen flex-col z-20 bg-white'>
       <div className='flex items-center cursor-pointer mt-4' onClick={() => navigate('/')}>
-        <PodcastLogo className='w-16 h-16 fill-sky-600' />
-        <span className='font-semibold text-2xl text-neutral-600'> Podcast Library</span>
+        <PodcastLogo className='w-16 h-16 fill-sky-600 ml-4' />
+        <span className='font-semibold text-2xl text-neutral-600 ml-4'> Podcast Library</span>
       </div>
       <hr className='mt-4 mb-6 border-b-0 border-gray-400' />
-      <ul className='w-full font-semibold text-lg text-neutral-600 grid grid-rows-4 place-items-center'>
+      <ul className='w-full font-semibold text-lg text-neutral-600 grid grid-rows-4 place-items-center ml-4'>
         <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6'>
           <HomeLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
-          <Link to='/' className='ml-3 group-hover:text-sky-600'>Home</Link>
+          <Link to='/' className='ml-4 group-hover:text-sky-600'>Home</Link>
         </li>
         <li className='group min-w-full py-3 flex items-center cursor-pointer ml-7'>
           <ListLogo className='w-5 h-5 inline-block group-hover:fill-sky-600' />
-          <Link to='/subscriptions' className='ml-3 group-hover:text-sky-600'>Subscriptions</Link>
+          <Link to='/subscriptions' className='ml-4 group-hover:text-sky-600'>Subscriptions</Link>
         </li>
         <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6'>
           <QueuesLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
@@ -53,7 +56,8 @@ function SideBar() {
         </li>
         <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6'>
           <GridLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
-          <Link to='/' className='ml-3 group-hover:text-sky-600'>Browse By Genre</Link>
+          <GenresPopover className='group-hover:text-sky-600' />
+          {/* <Link to='/genres' className='ml-3 group-hover:text-sky-600'>Browse By Genres</Link> */}
         </li>
       </ul>
       <hr className='mt-6 mb-6 border-b-0 border-gray-400' />

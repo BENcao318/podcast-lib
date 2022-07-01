@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 
 import { convertSecToHrMinSec } from '../helpers/helpers'
@@ -10,12 +10,50 @@ import { ReactComponent as PauseButton } from '../assets/pause-button.svg'
 import { ReactComponent as SoundImg } from '../assets/sound.svg'
 
 
-function AudioPlayer({ handlePause, handlePlay, audioRef, audioProgress, fastforward, backward }) {
+function AudioPlayer({ handlePause, handlePlay, audioRef }) {
   const episodePlayer = useSelector((state) => state.episodePlayer)
 
-  const [forwardEffect, setForwardEffect] = useState(false)
-  const [backwardEffect, setBackwardEffect] = useState(false)
+  const [forwardEffect, setForwardEffect] = useState(false)   // For fastforward animation
+  const [backwardEffect, setBackwardEffect] = useState(false) // For backward animation
   const [volume, setVolume] = useState(0.8)
+  const [audioProgress, setAudioProgress] = useState('123')
+
+  const intervalRef = useRef()
+
+  const startInterval = () => {
+    clearInterval(intervalRef.current)
+
+    intervalRef.current = setInterval(() => {
+      setAudioProgress(audioRef.current.currentTime)
+    }, [1000])
+  }
+
+  const fastforward = () => {
+    const fastforwardTime = 30
+
+    if (audioRef.current.currentTime + fastforwardTime < audioRef.current.duration) {
+      audioRef.current.currentTime += fastforwardTime
+    }
+
+    setAudioProgress(audioRef.current.currentTime)
+    startInterval()
+  }
+
+  const backward = () => {
+    const backwardTime = 15
+
+    audioRef.current.currentTime -= backwardTime
+    setAudioProgress(audioRef.current.currentTime)
+    startInterval()
+  }
+
+  useEffect(() => {
+    if (episodePlayer.isPlaying) {
+      startInterval()
+    } else {
+      clearInterval(intervalRef.current)
+    }
+  }, [episodePlayer])
 
   useEffect(() => {
     audioRef.current.volume = volume

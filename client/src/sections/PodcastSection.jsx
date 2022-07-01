@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
 import PodcastDetails from '../components/PodcastDetails'
 import loadingB from '../assets/loadingB.svg'
-import axios from 'axios';
 import Episodes from '../components/Episodes';
 
 const serverURL = 'http://localhost:3000/api/v1'
@@ -17,6 +18,8 @@ function PodcastSection({ handlePause, handlePlay }) {
     setLoadingContent(true)
     return axios.get(`${serverURL}/podcasts/${collectionId}`)
   }
+
+  // console.log('podcast section!!');
 
   // Get podcast details and episodes from the url by calling the backend api
   useEffect(() => {

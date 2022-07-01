@@ -21,6 +21,8 @@ Rails.application.routes.draw do
       get '/queues', to: 'episode_queues#index'
 
       post '/search', to: 'searches#create'
+
+      get '/genres/:id', to: 'genres#create'
     end
   end
 

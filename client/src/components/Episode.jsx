@@ -10,39 +10,29 @@ import PlayButton from './PlayButton'
 import { ReactComponent as ToAddQueue } from '../assets/to-add-queues.svg'
 import { addQueue, removeQueue } from '../redux/queue'
 import { ReactComponent as Queued } from '../assets/queue-checked.svg'
+import { convertQueueDataNaming } from '../helpers/helpers';
 
 const serverURL = 'http://localhost:3000/api/v1'
 
 function Episode({ episode, handlePlay, handlePause }) {
-  const [isReadMore, setIsReadMore] = useState(false);
+  const [isReadMore, setIsReadMore] = useState(false)
   const [warning, setWarning] = useState(false)
 
   const timeoutRef = useRef()
 
-  const episodePlayer = useSelector((state) => state.episodePlayer);
+  const episodePlayer = useSelector((state) => state.episodePlayer)
   const queues = useSelector((state) => state.queue.queues)
   const dispatch = useDispatch()
   const userStatus = useSelector((state) => state.user)
 
   const toggleReadMore = useCallback(() => {
-    setIsReadMore(prevIsReadMore => !prevIsReadMore);
+    setIsReadMore(prevIsReadMore => !prevIsReadMore)
   }, [])
 
   const handleQueue = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
     if (userStatus.logged_in) {
-      const episode_to_queue = {
-        episode_name: episode.trackName,
-        description: episode.description,
-        artwork_url_600: episode.artworkUrl600,
-        genres: episode.genres,
-        track_id: episode.trackId,
-        track_time_millis: episode.trackTimeMillis,
-        episode_url: episode.episodeUrl,
-        collection_name: episode.collectionName,
-        release_date: episode.releaseDate,
-        collection_id: episode.collectionId
-      }
+      const episode_to_queue = convertQueueDataNaming(episode)
       axios.post(`${serverURL}/queue`, { episode_to_queue }, { withCredentials: true })
         .then((response) => {
           dispatch(addQueue(episode_to_queue))

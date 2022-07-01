@@ -1,11 +1,11 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Episodes from '../components/Episodes'
-import Podcast from '../components/Podcast'
+import Podcasts from '../components/Podcasts'
 import axios from 'axios'
 import { useState } from 'react'
 import PodcastDetails from '../components/PodcastDetails'
+import EpisodeWithPodcastInfo from '../components/EpisodeWithPodcastInfo'
 
 const serverURL = 'http://localhost:3000/api/v1'
 
@@ -15,9 +15,6 @@ function SearchSection({ handlePlay, handlePause }) {
 
   const [podcastDetails, setPodcastDetails] = useState({})
   const [loadingContent, setLoadingContent] = useState(false)
-
-  // console.log(`searchPodcastReuslt: ${searchPodcastResult}`);
-  // console.log('result');
 
   const getPodcastDetails = (collectionId) => {
     setLoadingContent(true)
@@ -33,9 +30,9 @@ function SearchSection({ handlePlay, handlePause }) {
         })
     }
   }, [searchPodcastResult])
-  // console.log(searchEpisodeResult);
+
   return (
-    <div className='grid mt-8'>
+    <div className='place-self-center grid gap-12 w-8/12 mt-8'>
       <div className='place-self-center flex gap-12'>
         <div>
           <p className='font-semibold text-3xl text-left ml-4 mb-4'>Top Podcast Result: </p>
@@ -52,11 +49,34 @@ function SearchSection({ handlePlay, handlePause }) {
         </div>
         <div>
           <p className='font-semibold text-3xl text-left mb-4'>Top Episode Result: </p>
-          {searchEpisodeResult.length !== 0 && <Episodes episodes={searchEpisodeResult.slice(0, 4)} handlePlay={handlePlay} handlePause={handlePause} />}
+          {searchEpisodeResult.length !== 0 && (
+            <div>
+              {searchEpisodeResult.slice(0, 4).map(episode => (
+                <div key={episode.trackId}>
+                  <EpisodeWithPodcastInfo episode={episode} handlePause={handlePause} handlePlay={handlePlay} />
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+      <hr className='border-2' />
+      <h1 className='font-semibold text-3xl text-left mb-4'>Other Related Results: </h1>
+      <div className='place-self-center w-full'>
+        <div>
+          {
+            loadingContent ?
+              <span></span>
+              :
+              <section className='flex mx-6 justify-center gap-12'>
+                <Podcasts podcasts={searchPodcastResult.slice(1)} />
+              </section >
+          }
         </div>
       </div>
     </div>
   )
 }
 
+{/* <Episodes episodes={searchEpisodeResult.slice(0, 4)} handlePlay={handlePlay} handlePause={handlePause} /> */ }
 export default SearchSection

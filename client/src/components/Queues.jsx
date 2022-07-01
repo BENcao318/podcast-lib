@@ -2,7 +2,8 @@ import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getQueues } from '../redux/queue'
-import Queue from './Queue'
+import EpisodeWithPodcastInfo from './EpisodeWithPodcastInfo'
+import { convertEpisodeDataNaming } from '../helpers/helpers'
 
 const serverURL = 'http://localhost:3000/api/v1'
 
@@ -26,11 +27,15 @@ function Queues({ queues, handlePlay, handlePause }) {
   return (
     <div>
       <div className='flex flex-wrap justify-center'>
-        {queues.map(queue => (
-          <div key={queue.track_id}>
-            <Queue queue={queue} handlePlay={handlePlay} handlePause={handlePause} />
-          </div>
-        ))}
+        {queues.map(queue => {
+          const episode = convertEpisodeDataNaming(queue)
+          return (
+            <div key={queue.track_id}>
+              <EpisodeWithPodcastInfo episode={episode} handlePlay={handlePlay} handlePause={handlePause} />
+            </div>
+          )
+        }
+        )}
       </div>
     </div>
   )

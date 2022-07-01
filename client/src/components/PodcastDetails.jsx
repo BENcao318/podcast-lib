@@ -16,7 +16,7 @@ function PodcastDetails({ podcastDetails }) {
   const [releaseDate, setReleaseDate] = useState('')
   const [isReadMore, setIsReadMore] = useState(false)
   const [warning, setWarning] = useState(false)
-  const timeoutRef = useRef()
+  const timeoutRef = useRef()   // For creating a subscription warning when the user is not logged in
 
   const dispatch = useDispatch()
   const subscriptions = useSelector((state) => state.subscription.subscriptions)
@@ -31,7 +31,7 @@ function PodcastDetails({ podcastDetails }) {
     setIsReadMore(true);
   }, [])
 
-  console.log(podcastDetails);
+  // console.log(podcastDetails);
 
   const subscribe = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)

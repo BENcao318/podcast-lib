@@ -23,7 +23,7 @@ function SubscriptionSection() {
 
   return (
     <section className='justify-self-center gap-12 w-8/12'>
-      <div className='font-semibold text-2xl my-6 text-neutral-600'>
+      <div className='font-bold text-3xl mt-8 mb-12'>
         Your Subscriptions:
       </div >
       <Subscriptions subscriptions={subscriptions} />

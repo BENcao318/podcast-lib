@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { ReactComponent as SearchIcon } from '../assets/search-icon.svg'
 import { useLocation, useNavigate } from 'react-router-dom'
 
-import { useSelector, useDispatch } from 'react-redux';
-import { setSearchText, setSearchPodcastResult, setSearchEpisodeResult } from '../redux/search';
+import { useDispatch } from 'react-redux';
+import { setSearchPodcastResult, setSearchEpisodeResult } from '../redux/search';
 
 const serverURL = 'http://localhost:3000/api/v1'
 

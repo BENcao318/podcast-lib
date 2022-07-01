@@ -96,9 +96,43 @@ function convertSecToHrMinSec(sec) {
   return ((hours !== 0) ? hours + ':' : '') + (minutes + ':') + (seconds || (minutes !== 0) > 0 ? seconds : '')
 }
 
+function convertEpisodeDataNaming(queue) {
+  const episode = {
+    episodeUrl: queue.episode_url,
+    artworkUrl160: queue.artwork_url_600,
+    trackName: queue.episode_name,
+    description: queue.description,
+    genres: queue.genres,
+    trackId: queue.track_id,
+    trackTimeMillis: queue.track_time_millis,
+    collectionName: queue.collection_name,
+    collectionId: queue.collection_id,
+    releaseDate: queue.release_date
+  }
+  return episode
+}
+
+function convertQueueDataNaming(episode) {
+  const queue = {
+    episode_name: episode.trackName,
+    description: episode.description,
+    artwork_url_600: episode.artworkUrl600,
+    genres: episode.genres,
+    track_id: episode.trackId,
+    track_time_millis: episode.trackTimeMillis,
+    episode_url: episode.episodeUrl,
+    collection_name: episode.collectionName,
+    release_date: episode.releaseDate,
+    collection_id: episode.collectionId
+  }
+  return queue
+}
+
 export {
   timeSince,
   convertDateFormat,
   convertMillisecToHrMin,
-  convertSecToHrMinSec
+  convertSecToHrMinSec,
+  convertEpisodeDataNaming,
+  convertQueueDataNaming
 };

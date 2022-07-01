@@ -23,6 +23,7 @@ function Episodes({ episodes, handlePause, handlePlay }) {
     }
   }, [dispatch, userStatus.logged_in])
 
+  // console.log('episodes');
   return (
     episodes &&
     <div>

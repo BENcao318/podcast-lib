@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
+import GenresSection from '../sections/GenresSection';
 import HomeSection from '../sections/HomeSection';
 import LoginSection from '../sections/LoginSection';
 import PodcastSection from '../sections/PodcastSection';
@@ -11,6 +12,8 @@ import SubscriptionSection from '../sections/SubscriptionSection';
 
 function Main({ handlePause, handlePlay }) {
   const userStatus = useSelector((state) => state.user)
+
+  // console.log('main!!');
 
   return (
     <main className='w-full text-center mt-16 grid'>
@@ -28,7 +31,7 @@ function Main({ handlePause, handlePlay }) {
         }
         <Route path='/login' element={<LoginSection />}> </Route>
         <Route path='/signup' element={<SignupSection />}> </Route>
-        {/* <Route path='/test' element={<Test />}></Route> */}
+        <Route path='/genres/:name/:id' element={<GenresSection />}></Route>
       </Routes>
     </main>
   )
