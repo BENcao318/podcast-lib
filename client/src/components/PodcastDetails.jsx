@@ -1,23 +1,19 @@
-import React from 'react'
-import plus from '../assets/plus.svg'
-import link from '../assets/link.svg'
-import checkedLogo from '../assets/checkedLogo.svg'
-import { useCallback } from 'react';
-import { useEffect, useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { timeSince } from '../helpers/helpers'
 import { useDispatch, useSelector } from 'react-redux';
 import { addSubscription, removeSubscription, getSubscriptions } from '../redux/subscription'
-import axios from 'axios';
-import { useRef } from 'react';
 
-const serverURL = 'http://localhost:3000/api/v1'
+import plus from '../assets/plus.svg'
+import link from '../assets/link.svg'
+import checkedLogo from '../assets/checkedLogo.svg'
+import GenreBox from './GenreBox';
 
 function PodcastDetails({ podcastDetails }) {
   const [releaseDate, setReleaseDate] = useState('')
   const [isReadMore, setIsReadMore] = useState(false)
   const [warning, setWarning] = useState(false)
   const timeoutRef = useRef()   // For creating a subscription warning when the user is not logged in
-
   const dispatch = useDispatch()
   const subscriptions = useSelector((state) => state.subscription.subscriptions)
   const userStatus = useSelector((state) => state.user)
@@ -27,11 +23,9 @@ function PodcastDetails({ podcastDetails }) {
     setReleaseDate(timeSince(date))
   }, [podcastDetails.releaseDate])
 
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     setIsReadMore(true);
-  }, [])
-
-  // console.log(podcastDetails);
+  }
 
   const subscribe = useCallback(() => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
@@ -46,7 +40,7 @@ function PodcastDetails({ podcastDetails }) {
         track_id: podcastDetails.trackId
       }
       dispatch(addSubscription(podcast_to_subscribe))
-      axios.post(`${serverURL}/subscribe`, { podcast_to_subscribe }, { withCredentials: true })
+      axios.post(`${process.env.REACT_APP_SERVER_URL}/subscribe`, { podcast_to_subscribe }, { withCredentials: true })
         .then((response) => {
           console.log(response.data);
         })
@@ -61,7 +55,7 @@ function PodcastDetails({ podcastDetails }) {
   const unSubscribe = useCallback(() => {
     const podcast_to_unsubscribe = podcastDetails.collectionName
     dispatch(removeSubscription(podcastDetails.collectionName))
-    axios.post(`${serverURL}/unsubscribe`, { podcast_to_unsubscribe }, { withCredentials: true })
+    axios.post(`${process.env.REACT_APP_SERVER_URL}/unsubscribe`, { podcast_to_unsubscribe }, { withCredentials: true })
       .then((response) => {
         console.log(response.data);
       })
@@ -69,7 +63,7 @@ function PodcastDetails({ podcastDetails }) {
 
   useEffect(() => {
     if (userStatus.logged_in) {
-      axios.get(`${serverURL}/subscriptions`, { withCredentials: true })
+      axios.get(`${process.env.REACT_APP_SERVER_URL}/subscriptions`, { withCredentials: true })
         .then((response) => {
           if (response.data) dispatch(getSubscriptions(response.data));
         })
@@ -83,7 +77,6 @@ function PodcastDetails({ podcastDetails }) {
     Object.keys(podcastDetails).length !== 0 &&
     <div className='grid grid-cols-1 gap-y-2 max-w-xs h-full'>
       <img src={podcastDetails.artworkUrl600} alt="podcast cover" className='max-w-xs rounded-lg' />
-      <p>genres</p>
       <p className='text-left pl-3'>{releaseDate}</p>
       <div className='flex justify-center gap-4'>
         {
@@ -106,6 +99,9 @@ function PodcastDetails({ podcastDetails }) {
         </div>
       }
       <hr className="border-1 border-gray-600" />
+      <div className='flex justify-start my-2'>
+        <GenreBox podcastGenres={podcastDetails.genres} />
+      </div>
       <p className='text-left px-3'>
         {isReadMore ? podcastDetails.description : podcastDetails.description.slice(0, 123) + '...'}
       </p>

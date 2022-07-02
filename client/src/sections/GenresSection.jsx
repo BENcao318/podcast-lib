@@ -1,18 +1,17 @@
 import axios from 'axios'
 import React from 'react'
-import { useState } from 'react'
-import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import Podcasts from '../components/Podcasts'
 
-const serverURL = 'http://localhost:3000/api/v1'
+import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
+import Podcasts from '../components/Podcasts'
 
 function GenresSection() {
   const [podcasts, setPodcasts] = useState([])
   const { name, id } = useParams()
 
   useEffect(() => {
-    axios.get(`${serverURL}/genres/${id}`)
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/genres/${id}`)
       .then((response) => {
         if (response.data.success) {
           const topPodcasts = JSON.parse(response.data.podcasts).results
@@ -23,8 +22,6 @@ function GenresSection() {
         console.log(error);
       })
   }, [id])
-
-  console.log(podcasts);
 
   return (
     <section className='justify-self-center gap-12 w-8/12'>

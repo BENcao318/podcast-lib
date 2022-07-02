@@ -12,7 +12,7 @@ export const genres = [
     id: 1303
   },
   {
-    name: 'Crime',
+    name: 'True Crime',
     id: 1488
   },
   {

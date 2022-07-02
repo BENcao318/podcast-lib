@@ -1,13 +1,11 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import Podcasts from '../components/Podcasts'
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import axios from 'axios'
-import { useState } from 'react'
+
+import Podcasts from '../components/Podcasts'
 import PodcastDetails from '../components/PodcastDetails'
 import EpisodeWithPodcastInfo from '../components/EpisodeWithPodcastInfo'
-
-const serverURL = 'http://localhost:3000/api/v1'
 
 function SearchSection({ handlePlay, handlePause }) {
   const searchPodcastResult = useSelector((state) => state.search.searchPodcastResult)
@@ -18,7 +16,7 @@ function SearchSection({ handlePlay, handlePause }) {
 
   const getPodcastDetails = (collectionId) => {
     setLoadingContent(true)
-    return axios.get(`${serverURL}/podcasts/${collectionId}`)
+    return axios.get(`${process.env.REACT_APP_SERVER_URL}/podcasts/${collectionId}`)
   }
 
   useEffect(() => {
@@ -78,5 +76,4 @@ function SearchSection({ handlePlay, handlePause }) {
   )
 }
 
-{/* <Episodes episodes={searchEpisodeResult.slice(0, 4)} handlePlay={handlePlay} handlePause={handlePause} /> */ }
 export default SearchSection

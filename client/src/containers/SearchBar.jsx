@@ -1,13 +1,12 @@
-import React from 'react'
-import axios from 'axios'
-import { useState } from 'react';
-import { ReactComponent as SearchIcon } from '../assets/search-icon.svg'
-import { useLocation, useNavigate } from 'react-router-dom'
-
+import React, { useCallback } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux';
+import { useLocation, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+
 import { setSearchPodcastResult, setSearchEpisodeResult } from '../redux/search';
 
-const serverURL = 'http://localhost:3000/api/v1'
+import { ReactComponent as SearchIcon } from '../assets/search-icon.svg'
 
 function SearchBar() {
   const [searchInput, setSearchInput] = useState('')
@@ -20,11 +19,10 @@ function SearchBar() {
     setSearchInput(e.target.value)
   }
 
-  const getPodcasts = (searchInput) => {
+  const getPodcasts = useCallback((searchInput) => {
     const search_text = searchInput
     if (search_text) {
-      console.log(`search_text: ${search_text}`);
-      axios.post(`${serverURL}/search`, { search_text })
+      axios.post(`${process.env.REACT_APP_SERVER_URL}/search`, { search_text })
         .then((response) => {
           dispatch(setSearchPodcastResult(JSON.parse(response.data.podcasts).results))
           dispatch(setSearchEpisodeResult(JSON.parse(response.data.episodes).results))
@@ -33,13 +31,12 @@ function SearchBar() {
           }
         })
     }
-  }
+  }, [dispatch, navigate, location.pathname])
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault()
-
     getPodcasts(searchInput)
-  }
+  }, [getPodcasts, searchInput])
 
   return (
     <div className='fixed z-30 top-0 place-self-center w-1/2'>

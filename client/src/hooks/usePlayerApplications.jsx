@@ -9,7 +9,6 @@ function usePlayerApplications() {
   const episodePlayer = useSelector((state) => state.episodePlayer)
 
   const handlePlay = (episode) => {
-    console.log('playing!')
     if (!episodePlayer.episode.episodeUrl) {
       dispatch(episodeLoading())
       audioRef.current = new Audio(episode.episodeUrl)
@@ -33,10 +32,6 @@ function usePlayerApplications() {
     audioRef.current.pause()
     dispatch(episodePause())
   }
-
-  // useEffect(() => {
-  //   audioRef.current && dispatch(episodePlaying())
-  // }, [dispatch])
 
   return {
     audioRef,

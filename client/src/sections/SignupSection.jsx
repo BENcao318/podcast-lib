@@ -1,11 +1,9 @@
 import axios from 'axios'
-import React from 'react'
+import React, { useState, useCallback } from 'react'
+
 import { userLogin } from '../redux/user'
-import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-
-const serverURL = 'http://localhost:3000/api/v1/users'
 
 function SignupSection() {
   const dispatch = useDispatch()
@@ -18,16 +16,16 @@ function SignupSection() {
     passwordConfirmation: ''
   })
 
-  function handleInput(e) {
+  const handleInput = useCallback((e) => {
     const value = e.target.value
 
     setAccountInfo({
       ...accountInfo,
       [e.target.name]: value
     })
-  }
+  }, [accountInfo])
 
-  function handleSubmit(e) {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault()
 
     const user = {
@@ -37,17 +35,20 @@ function SignupSection() {
       password_confirmation: accountInfo.passwordConfirmation
     }
 
-    axios.post(serverURL, { user }, { withCredentials: true })
+    axios.post(`${process.env.REACT_APP_SERVER_URL}/users`, { user }, { withCredentials: true })
       .then((response) => {
         if (response.data.user) {
           dispatch(userLogin(response.data.user))
           navigate('/')
         } else {
           setError(response.data.errors)
+          setTimeout(() => {
+            setError('')
+          }, 2000)
         }
       })
       .catch((error) => console.log(error))
-  }
+  }, [accountInfo, dispatch, navigate])
 
   return (
     <section className="absolute w-full h-full">
@@ -62,30 +63,12 @@ function SignupSection() {
               <div className="rounded-t mb-0 px-6 py-6">
                 <div className="text-center mb-3">
                   <h6 className="text-gray-600 text-sm font-bold">
-                    Signup with
+                    Signup with credentials
                   </h6>
-                </div>
-                <div className="btn-wrapper text-center">
-                  <button
-                    className="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
-                    type="button"
-                  >
-
-                    Github
-                  </button>
-                  <button
-                    className="bg-white active:bg-gray-100 text-gray-800 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs"
-                    type="button"
-                  >
-                    Google
-                  </button>
                 </div>
                 <hr className="mt-6 border-b-1 border-gray-400" />
               </div>
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
-                <div className="text-gray-500 text-center mb-3 font-bold">
-                  <small>Or signup with credentials</small>
-                </div>
                 <form>
                   <div className="relative w-full mb-3">
                     <label
@@ -168,15 +151,13 @@ function SignupSection() {
                       Submit
                     </button>
                   </div>
-                  <div className="text-center mt-6">
-                    <button
-                      className="bg-gray-900 text-white active:bg-gray-700 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full"
-                      type="button"
-                      onClick={() => navigate('/login')}
-                    >
-                      Sign In
-                    </button>
-                  </div>
+                  {error ?
+                    <div className='mt-2 bg-amber-600 rounded-lg'>
+                      <span>{error}</span>
+                    </div>
+                    :
+                    ''
+                  }
                 </form>
               </div>
             </div>

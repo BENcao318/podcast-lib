@@ -1,6 +1,7 @@
+import { genres } from '../utils/consts'
+
 function timeSince(date) {
   const seconds = Math.floor((new Date() - date) / 1000);
-
   let interval = seconds / 31536000;
 
   if (interval > 1) {
@@ -128,11 +129,62 @@ function convertQueueDataNaming(episode) {
   return queue
 }
 
+function checkGenres(podcastGenres) {
+  const genreArr = []
+  genres.forEach(genre => {
+    if (podcastGenres.includes(genre.name)) {
+      genreArr.push(genre)
+    }
+  })
+  return genreArr
+}
+
+function genreBackgroundColor(genre) {
+  switch (genre) {
+    case 'Kids':
+      return 'bg-green-800';
+    case 'Design':
+      return 'bg-gray-800';
+    case 'Comedy':
+      return 'bg-amber-800';
+    case 'True Crime':
+      return 'bg-red-800';
+    case 'Arts':
+      return 'bg-neutral-800';
+    case 'Business':
+      return 'bg-orange-800';
+    case 'History':
+      return 'bg-yellow-800';
+    case 'Religion':
+      return 'bg-lime-800';
+    case 'Politics':
+      return 'bg-emerald-800';
+    case 'Technology':
+      return 'bg-teal-800';
+    case 'Sports':
+      return 'bg-red-800';
+    case 'Science':
+      return 'bg-cyan-800';
+    case 'Society & Culture':
+      return 'bg-sky-800';
+    case 'News':
+      return 'bg-emerald-800';
+    case 'Philosophy':
+      return 'bg-purple-800';
+    case 'Government':
+      return 'bg-pink-800';
+    default:
+      return 'bg-indigo-800'
+  }
+}
+
 export {
   timeSince,
   convertDateFormat,
   convertMillisecToHrMin,
   convertSecToHrMinSec,
   convertEpisodeDataNaming,
-  convertQueueDataNaming
+  convertQueueDataNaming,
+  checkGenres,
+  genreBackgroundColor
 };

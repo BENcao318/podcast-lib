@@ -1,21 +1,19 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-import Podcasts from '../components/Podcasts';
 
-const API_URL = 'http://localhost:3000/api/v1/podcasts';
+import Podcasts from '../components/Podcasts';
 
 function HomeSection() {
   const [podcasts, setPodcasts] = useState([]);
 
   useEffect(() => {
-    axios.get(API_URL)
+    axios.get(`${process.env.REACT_APP_SERVER_URL}/podcasts`)
       .then((response) => {
         setPodcasts([...response.data.results])
       })
       .catch((error) => {
         console.log(error);
       })
-
   }, []);
 
   return (

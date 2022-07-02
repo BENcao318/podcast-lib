@@ -1,16 +1,15 @@
 import axios from 'axios'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { userLogout } from '../redux/user'
+
 import { ReactComponent as HomeLogo } from '../assets/home.svg'
 import { ReactComponent as ListLogo } from '../assets/list.svg'
 import { ReactComponent as QueuesLogo } from '../assets/queues.svg'
 import { ReactComponent as GridLogo } from '../assets/grid.svg'
 import { ReactComponent as PodcastLogo } from '../assets/noun-podcast-26.svg'
 import GenresPopover from '../components/GenresPopover'
-
-const serverURL = 'http://localhost:3000/api/v1'
 
 function SideBar() {
   const dispatch = useDispatch()
@@ -20,19 +19,16 @@ function SideBar() {
 
   function logout() {
     dispatch(userLogout())
-    axios.delete(`${serverURL}/logout`, { withCredentials: true })
+    axios.delete(`${process.env.REACT_APP_SERVER_URL}/logout`, { withCredentials: true })
       .then((response) => {
         if (response.data.logged_out) {
           console.log(response.data);
         }
-
       })
       .catch((error) => {
         console.log(error);
       })
   }
-
-  // console.log('sidebar!');
 
   return (
     <aside className='lg:w-60 fixed min-h-screen flex-col z-20 bg-white'>
@@ -42,22 +38,21 @@ function SideBar() {
       </div>
       <hr className='mt-4 mb-6 border-b-0 border-gray-400' />
       <ul className='w-full font-semibold text-lg text-neutral-600 grid grid-rows-4 place-items-center ml-4'>
-        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6'>
+        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6' onClick={() => navigate('/')}>
           <HomeLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
-          <Link to='/' className='ml-4 group-hover:text-sky-600'>Home</Link>
+          <span className='ml-4 group-hover:text-sky-600'>Home</span>
         </li>
-        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-7'>
+        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-7' onClick={() => navigate('/subscriptions')}>
           <ListLogo className='w-5 h-5 inline-block group-hover:fill-sky-600' />
-          <Link to='/subscriptions' className='ml-4 group-hover:text-sky-600'>Subscriptions</Link>
+          <span className='ml-4 group-hover:text-sky-600'>Subscriptions</span>
         </li>
-        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6'>
+        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6' onClick={() => navigate('/queues')}>
           <QueuesLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
-          <Link to='/queues' className='ml-3 group-hover:text-sky-600'>Queues</Link>
+          <span className='ml-3 group-hover:text-sky-600'>Queues</span>
         </li>
         <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6'>
           <GridLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
           <GenresPopover className='group-hover:text-sky-600' />
-          {/* <Link to='/genres' className='ml-3 group-hover:text-sky-600'>Browse By Genres</Link> */}
         </li>
       </ul>
       <hr className='mt-6 mb-6 border-b-0 border-gray-400' />
@@ -82,7 +77,6 @@ function SideBar() {
             Log in
           </div>
         }
-        {/* <span className='cursor-pointer' onClick={logout}>Logout</span> */}
       </div>
     </aside>
   )

@@ -1,10 +1,9 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { getQueues } from '../redux/queue'
 import Episode from './Episode'
-
-const serverURL = 'http://localhost:3000/api/v1'
 
 function Episodes({ episodes, handlePause, handlePlay }) {
   const dispatch = useDispatch()
@@ -13,7 +12,7 @@ function Episodes({ episodes, handlePause, handlePlay }) {
 
   useEffect(() => {
     if (userStatus.logged_in) {
-      axios.get(`${serverURL}/queues`, { withCredentials: true })
+      axios.get(`${process.env.REACT_APP_SERVER_URL}/queues`, { withCredentials: true })
         .then((response) => {
           if (response.data) dispatch(getQueues(response.data));
         })
@@ -23,7 +22,6 @@ function Episodes({ episodes, handlePause, handlePlay }) {
     }
   }, [dispatch, userStatus.logged_in])
 
-  // console.log('episodes');
   return (
     episodes &&
     <div>

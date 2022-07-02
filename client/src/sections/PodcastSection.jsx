@@ -6,8 +6,6 @@ import PodcastDetails from '../components/PodcastDetails'
 import loadingB from '../assets/loadingB.svg'
 import Episodes from '../components/Episodes';
 
-const serverURL = 'http://localhost:3000/api/v1'
-
 function PodcastSection({ handlePause, handlePlay }) {
   const [podcastDetails, setPodcastDetails] = useState({})
   const [episodes, setEpisodes] = useState([])
@@ -16,10 +14,8 @@ function PodcastSection({ handlePause, handlePlay }) {
 
   const getPodcastDetails = (collectionId) => {
     setLoadingContent(true)
-    return axios.get(`${serverURL}/podcasts/${collectionId}`)
+    return axios.get(`${process.env.REACT_APP_SERVER_URL}/podcasts/${collectionId}`)
   }
-
-  // console.log('podcast section!!');
 
   // Get podcast details and episodes from the url by calling the backend api
   useEffect(() => {

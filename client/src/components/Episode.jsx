@@ -3,16 +3,14 @@ import axios from 'axios';
 
 import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { addQueue, removeQueue } from '../redux/queue'
 
-import { convertDateFormat, convertMillisecToHrMin } from '../helpers/helpers'
+import { convertDateFormat, convertMillisecToHrMin, convertQueueDataNaming } from '../helpers/helpers'
+
 import PauseButton from './PauseButton'
 import PlayButton from './PlayButton'
 import { ReactComponent as ToAddQueue } from '../assets/to-add-queues.svg'
-import { addQueue, removeQueue } from '../redux/queue'
 import { ReactComponent as Queued } from '../assets/queue-checked.svg'
-import { convertQueueDataNaming } from '../helpers/helpers';
-
-const serverURL = 'http://localhost:3000/api/v1'
 
 function Episode({ episode, handlePlay, handlePause }) {
   const [isReadMore, setIsReadMore] = useState(false)
@@ -33,7 +31,7 @@ function Episode({ episode, handlePlay, handlePause }) {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
     if (userStatus.logged_in) {
       const episode_to_queue = convertQueueDataNaming(episode)
-      axios.post(`${serverURL}/queue`, { episode_to_queue }, { withCredentials: true })
+      axios.post(`${process.env.REACT_APP_SERVER_URL}/queue`, { episode_to_queue }, { withCredentials: true })
         .then((response) => {
           dispatch(addQueue(episode_to_queue))
         })
@@ -46,7 +44,6 @@ function Episode({ episode, handlePlay, handlePause }) {
         setWarning(false)
       }, 2000)
     }
-
   }, [dispatch, episode, userStatus.logged_in])
 
   const handleUnQueue = useCallback(() => {
@@ -54,7 +51,7 @@ function Episode({ episode, handlePlay, handlePause }) {
       track_id: episode.trackId,
       episode_name: episode.trackName
     }
-    axios.post(`${serverURL}/unqueue`, { episode_to_unqueue }, { withCredentials: true })
+    axios.post(`${process.env.REACT_APP_SERVER_URL}/unqueue`, { episode_to_unqueue }, { withCredentials: true })
       .then((response) => {
         dispatch(removeQueue(episode.trackId))
       })
