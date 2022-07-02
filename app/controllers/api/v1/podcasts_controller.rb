@@ -59,7 +59,7 @@ class Api::V1::PodcastsController < ApplicationController
     end
 
     def get_podcasts
-      url = "https://itunes.apple.com/search?term=podcast&limit=40"
+      url = "https://itunes.apple.com/search?term=podcast&limit=180"
       response = RestClient.get(url)
     end
 

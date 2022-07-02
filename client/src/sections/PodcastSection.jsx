@@ -33,7 +33,7 @@ function PodcastSection({ handlePause, handlePlay }) {
         loadingContent ?
           <img src={loadingB} alt="loading animation" className='mx-auto mt-64' />
           :
-          <section className='flex mx-6 justify-center gap-12'>
+          <section className='flex mx-6 justify-center gap-12 mt-8'>
             <PodcastDetails podcastDetails={podcastDetails} />
             <Episodes episodes={episodes} handlePause={handlePause} handlePlay={handlePlay} />
           </section >
