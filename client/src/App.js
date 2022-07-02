@@ -35,6 +35,10 @@ function App() {
     userLoginStatus()
   }, [userLoginStatus])
 
+  useEffect(() => {
+    document.title = 'Podcast Library'
+  }, [])
+
   return (
     <>
       <BrowserRouter>
