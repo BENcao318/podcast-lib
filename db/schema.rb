@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2022_06_27_223446) do
     t.bigint "track_time_millis"
     t.string "episode_url"
     t.string "collection_name"
-    t.string "description"
+    t.string "description" 
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
