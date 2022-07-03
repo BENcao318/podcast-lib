@@ -39,10 +39,10 @@ function PodcastDetails({ podcastDetails }) {
         genres: podcastDetails.genres,
         track_id: podcastDetails.trackId
       }
-      dispatch(addSubscription(podcast_to_subscribe))
+
       axios.post(`${process.env.REACT_APP_SERVER_URL}/subscribe`, { podcast_to_subscribe }, { withCredentials: true })
         .then((response) => {
-          console.log(response.data);
+          dispatch(addSubscription(podcast_to_subscribe))
         })
     } else {
       setWarning(true)
@@ -54,10 +54,10 @@ function PodcastDetails({ podcastDetails }) {
 
   const unSubscribe = useCallback(() => {
     const podcast_to_unsubscribe = podcastDetails.collectionName
-    dispatch(removeSubscription(podcastDetails.collectionName))
+
     axios.post(`${process.env.REACT_APP_SERVER_URL}/unsubscribe`, { podcast_to_unsubscribe }, { withCredentials: true })
       .then((response) => {
-        console.log(response.data);
+        dispatch(removeSubscription(podcastDetails.collectionName))
       })
   }, [podcastDetails, dispatch])
 
