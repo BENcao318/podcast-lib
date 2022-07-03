@@ -42,7 +42,7 @@ class Api::V1::SubscriptionsController < ApplicationController
   private
   
   def subscribe_params
-    params.require(:podcast_to_subscribe).permit(:name, :description, :artist_name, :art_work_url_600, :genre_ids, :genres, :track_id )
+    params.require(:podcast_to_subscribe).permit(:name, :description, :artist_name, :art_work_url_600, :track_id, {genre_ids: []}, {genres: []} )
   end
 
   def is_logged_in?

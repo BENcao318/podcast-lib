@@ -16,8 +16,6 @@ function AudioPlayer({ handlePause, handlePlay, audioRef }) {
   const episodePlayer = useSelector((state) => state.episodePlayer)
   const queues = useSelector((state) => state.queue.queues)
 
-  console.log(`123 ${process.env.REACT_APP_SERVER_URL}`);
-
   const [forwardEffect, setForwardEffect] = useState(false)   // For fastforward animation
   const [backwardEffect, setBackwardEffect] = useState(false) // For backward animation
   const [volume, setVolume] = useState(0.8)
