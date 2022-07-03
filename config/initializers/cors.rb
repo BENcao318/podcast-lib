@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3001', '127.0.0.1:3001'
+    origins 'http://localhost:3001', '127.0.0.1:3001', 'http://localhost:3002', 'https://wondrous-mandazi-28ebe8.netlify.app/'
 
     resource '*',
       headers: :any,
@@ -15,12 +15,4 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       credentials: true
   end
 
-  allow do
-    origins 'http://localhost:3002'
-
-    resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head],
-      credentials: true
-  end
 end
