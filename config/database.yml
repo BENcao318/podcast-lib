@@ -83,8 +83,14 @@ test:
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
 #
+# production:
+#   <<: *default
+#   database: podcast_library_production
+#   username: podcast_library
+#   password: <%= ENV['PODCAST_LIBRARY_DATABASE_PASSWORD'] %>
+
 production:
   <<: *default
-  database: podcast_library_production
-  username: podcast_library
-  password: <%= ENV['PODCAST_LIBRARY_DATABASE_PASSWORD'] %>
+  database: podcast_lib_production
+  username: "labber"
+  password: "labber"
