@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'http://localhost:3001'
+    origins 'http://localhost:3000'
 
     resource '*',
       headers: :any,
@@ -26,15 +26,6 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   
   allow do
     origins 'https://wondrous-mandazi-28ebe8.netlify.app'
-
-    resource '*',
-      headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head],
-      credentials: true
-  end
-  
-  allow do
-    origins 'https://podcast-lib.herokuapp.com'
 
     resource '*',
       headers: :any,
