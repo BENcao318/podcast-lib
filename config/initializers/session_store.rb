@@ -1,5 +1,1 @@
-if Rails.env == 'production' 
-  Rails.application.config.session_store :cookie_store, key: '_authentication_podcast_user', domain: 'https://wondrous-mandazi-28ebe8.netlify.app/'
-else
-  Rails.application.config.session_store :cookie_store, key: '_authentication_podcast_user'
-end
+Rails.application.config.session_store :cookie_store, key: '_authentication_podcast_user', domain: :all, same_site: :none, secure: true, tld_length: 2

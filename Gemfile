@@ -15,6 +15,7 @@ gem 'bcrypt'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 gem 'rest-client'
+gem 'rails_same_site_cookie', '~> 0.1.8'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
