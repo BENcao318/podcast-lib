@@ -3,8 +3,9 @@
 ## Introduction
 
 This full-stack project is a podcast library that can help the users to manage and play their podcasts from itunes. 
-
 User can use his/her account to browse top podcasts, add podcast subscriptions and creating playlist. He/she can also search podcast/episode on the page and use the built in audio player to listen to the episodes. 
+
+ **Click here to check the live demo site** ➡️  https://wondrous-mandazi-28ebe8.netlify.app/
 
 ## Tech Stack
 
