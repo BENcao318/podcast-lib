@@ -1,7 +1,11 @@
 {
+  "homepage": "https://github.com/BENcao318/podcast-lib/blob/main/README.md",
+  "url": "https://github.com/BENcao318/podcast-lib",
+  "email": "bc6016@mun.ca",
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:3001",
   "dependencies": {
     "@headlessui/react": "^1.6.5",
     "@heroicons/react": "^1.0.6",
