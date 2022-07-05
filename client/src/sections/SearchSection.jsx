@@ -1,18 +1,22 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
 import axios from 'axios'
 
 import Podcasts from '../components/Podcasts'
 import PodcastDetails from '../components/PodcastDetails'
 import EpisodeWithPodcastInfo from '../components/EpisodeWithPodcastInfo'
 
-function SearchSection({ handlePlay, handlePause }) {
-  const searchPodcastResult = useSelector((state) => state.search.searchPodcastResult)
-  const searchEpisodeResult = useSelector((state) => state.search.searchEpisodeResult)
+// local state
+// state within context
+// global state with redux etc
+// server state/cache ... swr, react-query etc
 
+function SearchSection({ handlePlay, handlePause, searchResult }) {
   const [podcastDetails, setPodcastDetails] = useState({})
   const [loadingContent, setLoadingContent] = useState(false)
+
+  const topEpisodeSearchResults = searchResult.episodes.slice(0, 4)
+  const otherPodcastResult = searchResult.podcasts.slice(1)
 
   const getPodcastDetails = (collectionId) => {
     setLoadingContent(true)
@@ -20,14 +24,14 @@ function SearchSection({ handlePlay, handlePause }) {
   }
 
   useEffect(() => {
-    if (searchPodcastResult.length !== 0) {
-      getPodcastDetails(searchPodcastResult[0].collectionId)
+    if (searchResult.podcasts.length !== 0) {
+      getPodcastDetails(searchResult.podcasts[0].collectionId)
         .then((response) => {
           setLoadingContent(false)
           setPodcastDetails(response.data.results[0])
         })
     }
-  }, [searchPodcastResult])
+  }, [searchResult.podcasts])
 
   return (
     <div className='place-self-center grid gap-12 w-8/12 mt-8'>
@@ -47,9 +51,9 @@ function SearchSection({ handlePlay, handlePause }) {
         </div>
         <div>
           <p className='font-semibold text-3xl text-left mb-4'>Top Episode Result: </p>
-          {searchEpisodeResult.length !== 0 && (
+          {searchResult.episodes.length !== 0 && (
             <div>
-              {searchEpisodeResult.slice(0, 4).map(episode => (
+              {topEpisodeSearchResults.map(episode => (
                 <div key={episode.trackId}>
                   <EpisodeWithPodcastInfo episode={episode} handlePause={handlePause} handlePlay={handlePlay} />
                 </div>
@@ -67,7 +71,7 @@ function SearchSection({ handlePlay, handlePause }) {
               <span></span>
               :
               <section className='flex mx-6 justify-center gap-12'>
-                <Podcasts podcasts={searchPodcastResult.slice(1)} />
+                <Podcasts podcasts={otherPodcastResult} />
               </section >
           }
         </div>

@@ -1,19 +1,14 @@
 import React, { useCallback } from 'react'
 import { useState } from 'react'
-import { useDispatch } from 'react-redux';
 import { useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-import { setSearchPodcastResult, setSearchEpisodeResult } from '../redux/search';
-
 import { ReactComponent as SearchIcon } from '../assets/search-icon.svg'
 
-function SearchBar() {
+function SearchBar({ searchResult, setSearchResult }) {
   const [searchInput, setSearchInput] = useState('')
   const navigate = useNavigate()
   const location = useLocation()
-
-  const dispatch = useDispatch()
 
   const handleChange = (e) => {
     setSearchInput(e.target.value)
@@ -24,14 +19,13 @@ function SearchBar() {
     if (search_text) {
       axios.post(`${process.env.REACT_APP_SERVER_URL}/search`, { search_text })
         .then((response) => {
-          dispatch(setSearchPodcastResult(JSON.parse(response.data.podcasts).results))
-          dispatch(setSearchEpisodeResult(JSON.parse(response.data.episodes).results))
+          setSearchResult({ ...searchResult, podcasts: JSON.parse(response.data.podcasts).results, episodes: JSON.parse(response.data.episodes).results })
           if (location.pathname !== '/search') {
             navigate('/search')
           }
         })
     }
-  }, [dispatch, navigate, location.pathname])
+  }, [navigate, location.pathname])
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault()

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userLogin, userLogout } from './redux/user'
@@ -12,10 +12,17 @@ import SearchBar from './containers/SearchBar';
 import { useCallback } from 'react';
 import usePlayerApplications from './hooks/usePlayerApplications';
 
+// prop-types
+
 function App() {
   const { audioRef, handlePlay, handlePause } = usePlayerApplications()
   const episodePlayer = useSelector((state) => state.episodePlayer)
+  const [searchResult, setSearchResult] = useState({
+    podcasts: [],
+    episodes: []
+  })
   const dispatch = useDispatch()
+
 
   const userLoginStatus = useCallback(() => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/logged_in`, { withCredentials: true })
@@ -42,13 +49,13 @@ function App() {
       <BrowserRouter>
         <SideBar />
         <div className='grid justify-items-center'>
-          <Main handlePause={handlePause} handlePlay={handlePlay} />
+          <Main handlePause={handlePause} handlePlay={handlePlay} searchResult={searchResult} />
           {
             Object.keys(episodePlayer.episode).length !== 0
             &&
             <AudioPlayer handlePause={handlePause} handlePlay={handlePlay} audioRef={audioRef} />
           }
-          <SearchBar />
+          <SearchBar searchResult={searchResult} setSearchResult={setSearchResult} />
         </div>
       </BrowserRouter>
     </>

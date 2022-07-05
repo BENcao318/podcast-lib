@@ -11,14 +11,14 @@ import SearchSection from '../sections/SearchSection';
 import SignupSection from '../sections/SignupSection';
 import SubscriptionSection from '../sections/SubscriptionSection';
 
-function Main({ handlePause, handlePlay }) {
+function Main({ handlePause, handlePlay, searchResult }) {
   const userStatus = useSelector((state) => state.user)
 
   return (
     <main className='w-full text-center mt-16 grid'>
       <Routes>
         <Route path='/' element={<HomeSection />}></Route>
-        <Route path='/search' element={<SearchSection handlePlay={handlePlay} handlePause={handlePause} />}></Route>
+        <Route path='/search' element={<SearchSection handlePlay={handlePlay} handlePause={handlePause} searchResult={searchResult} />}></Route>
         <Route path='/podcasts/:id' element={<PodcastSection handlePause={handlePause} handlePlay={handlePlay} />}></Route>
         {userStatus.logged_in ?
           <Route path='/subscriptions' element={<SubscriptionSection />}> </Route> :
