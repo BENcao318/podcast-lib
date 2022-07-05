@@ -19,7 +19,7 @@ function AudioPlayer({ handlePause, handlePlay, audioRef }) {
   const [forwardEffect, setForwardEffect] = useState(false)   // For fastforward animation
   const [backwardEffect, setBackwardEffect] = useState(false) // For backward animation
   const [volume, setVolume] = useState(0.8)
-  const [audioProgress, setAudioProgress] = useState('123')
+  const [audioProgress, setAudioProgress] = useState(0)
 
   const dispatch = useDispatch()
 
@@ -82,6 +82,13 @@ function AudioPlayer({ handlePause, handlePlay, audioRef }) {
       handlePlay(convertEpisodeDataNaming(queues[0]))
     }
   }, [audioProgress, audioRef, handlePlay, unQueue, queues])
+
+  useEffect(() => {
+    console.log('cleaning');
+    return () => {
+      clearInterval(intervalRef.current)
+    }
+  }, [intervalRef])
 
   return (
     <section className='fixed left-0 bottom-0 min-w-full z-20 h-28 bg-neutral-100 grid grid-cols-3 place-items-center shadow-inner shadow-sky-200'>

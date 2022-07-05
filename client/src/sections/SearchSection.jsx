@@ -1,7 +1,9 @@
-import React from 'react'
-import { useEffect, useState } from 'react'
-import serverAPI from '../hooks/useAxios'
+import React, { useEffect, useState } from 'react'
 
+import LoadingGridTopPodcast from '../components/LoadingGridTopPodcast'
+import LoadingGridOtherPodcasts from '../components/LoadingGridOtherPodcasts'
+
+import serverAPI from '../hooks/useAxios'
 import Podcasts from '../components/Podcasts'
 import PodcastDetails from '../components/PodcastDetails'
 import EpisodeWithPodcastInfo from '../components/EpisodeWithPodcastInfo'
@@ -41,7 +43,7 @@ function SearchSection({ handlePlay, handlePause, searchResult }) {
           <div>
             {
               loadingContent ?
-                <span></span>
+                <LoadingGridTopPodcast className='mx-6 justify-center' />
                 :
                 <section className='flex mx-6 justify-center gap-12'>
                   <PodcastDetails podcastDetails={podcastDetails} />
@@ -68,7 +70,7 @@ function SearchSection({ handlePlay, handlePause, searchResult }) {
         <div>
           {
             loadingContent ?
-              <span></span>
+              <LoadingGridOtherPodcasts className='mx-6 justify-center' />
               :
               <section className='flex mx-6 justify-center gap-12'>
                 <Podcasts podcasts={otherPodcastResult} />

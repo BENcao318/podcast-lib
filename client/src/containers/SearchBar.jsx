@@ -25,7 +25,7 @@ function SearchBar({ searchResult, setSearchResult }) {
           }
         })
     }
-  }, [navigate, location.pathname])
+  }, [navigate, location.pathname, searchResult, setSearchResult])
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault()
