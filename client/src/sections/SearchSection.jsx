@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 
 import Podcasts from '../components/Podcasts'
 import PodcastDetails from '../components/PodcastDetails'
@@ -20,7 +20,7 @@ function SearchSection({ handlePlay, handlePause, searchResult }) {
 
   const getPodcastDetails = (collectionId) => {
     setLoadingContent(true)
-    return axios.get(`${process.env.REACT_APP_SERVER_URL}/podcasts/${collectionId}`)
+    return serverAPI.get(`/podcasts/${collectionId}`)
   }
 
   useEffect(() => {

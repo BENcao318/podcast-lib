@@ -1,4 +1,4 @@
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 import React from 'react'
 import { userLogin } from '../redux/user'
 
@@ -35,7 +35,7 @@ function LoginSection() {
       password: accountInfo.password
     }
 
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/login`, { user }, { withCredentials: true })
+    serverAPI.post(`/login`, { user })
       .then((response) => {
         if (response.data.logged_in) {
           dispatch(userLogin(response.data.user))

@@ -1,4 +1,4 @@
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -10,7 +10,7 @@ function QueuesSection({ handlePlay, handlePause }) {
   const queues = useSelector((state) => state.queue.queues)
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/queues`, { withCredentials: true })
+    serverAPI.get(`/queues`)
       .then((response) => {
         if (response.data) dispatch(getQueues(response.data));
       })

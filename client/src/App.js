@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
 import { userLogin, userLogout } from './redux/user'
-import './App.css';
+import './App.css'
 
-import SideBar from './containers/SideBar';
-import Main from './containers/Main';
-import AudioPlayer from './containers/AudioPlayer';
-import axios from 'axios';
-import SearchBar from './containers/SearchBar';
-import { useCallback } from 'react';
-import usePlayerApplications from './hooks/usePlayerApplications';
+import SideBar from './containers/SideBar'
+import Main from './containers/Main'
+import AudioPlayer from './containers/AudioPlayer'
+import serverAPI from './hooks/useAxios'
+import SearchBar from './containers/SearchBar'
+import { useCallback } from 'react'
+import usePlayerApplications from './hooks/usePlayerApplications'
 
 // prop-types
 
@@ -25,7 +25,7 @@ function App() {
 
 
   const userLoginStatus = useCallback(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/logged_in`, { withCredentials: true })
+    serverAPI.get(`/logged_in`)
       .then((response) => {
         if (response.data.logged_in) {
           dispatch(userLogin(response.data.user))

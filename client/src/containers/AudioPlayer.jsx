@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState, useCallback } from 'react'
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { removeQueue } from '../redux/queue'
@@ -55,7 +55,7 @@ function AudioPlayer({ handlePause, handlePlay, audioRef }) {
       track_id: episodePlayer.episode.trackId,
       episode_name: episodePlayer.episode.trackName
     }
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/unqueue`, { episode_to_unqueue }, { withCredentials: true })
+    serverAPI.post(`/unqueue`, { episode_to_unqueue })
       .then((response) => {
         dispatch(removeQueue(episodePlayer.episode.trackId))
       })

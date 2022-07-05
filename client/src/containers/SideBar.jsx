@@ -1,4 +1,4 @@
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
@@ -18,15 +18,16 @@ function SideBar() {
   const userStatus = useSelector((state) => state.user)
 
   function logout() {
-    dispatch(userLogout())
-    axios.delete(`${process.env.REACT_APP_SERVER_URL}/logout`, { withCredentials: true })
+    serverAPI.delete(`/logout`)
       .then((response) => {
         if (response.data.logged_out) {
-          console.log(response.data);
+          dispatch(userLogout())
+          navigate('/')
+          console.log(response.data)
         }
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error)
       })
   }
 
@@ -65,7 +66,6 @@ function SideBar() {
               Hi, {userStatus.user.username}
             </div>
             <div className='bg-sky-600 w-1/2 self-center px-8 py-2 rounded-lg justify-self-center text-slate-200 font-semibold text-xl cursor-pointer hover:bg-sky-800' onClick={() => {
-              navigate('/')
               logout()
             }}>
               Logout

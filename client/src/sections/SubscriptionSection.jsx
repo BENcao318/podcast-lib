@@ -1,4 +1,4 @@
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
@@ -10,7 +10,7 @@ function SubscriptionSection() {
   const subscriptions = useSelector((state) => state.subscription.subscriptions)
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/subscriptions`, { withCredentials: true })
+    serverAPI.get(`/subscriptions`)
       .then((response) => {
         if (response.data) dispatch(getSubscriptions(response.data));
       })

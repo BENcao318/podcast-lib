@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import axios from 'axios';
+import serverAPI from '../hooks/useAxios'
 
 import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -31,7 +31,7 @@ function Episode({ episode, handlePlay, handlePause }) {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
     if (userStatus.logged_in) {
       const episode_to_queue = convertQueueDataNaming(episode)
-      axios.post(`${process.env.REACT_APP_SERVER_URL}/queue`, { episode_to_queue }, { withCredentials: true })
+      serverAPI.post(`/queue`, { episode_to_queue })
         .then((response) => {
           dispatch(addQueue(episode_to_queue))
         })
@@ -51,7 +51,7 @@ function Episode({ episode, handlePlay, handlePause }) {
       track_id: episode.trackId,
       episode_name: episode.trackName
     }
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/unqueue`, { episode_to_unqueue }, { withCredentials: true })
+    serverAPI.post(`/unqueue`, { episode_to_unqueue })
       .then((response) => {
         dispatch(removeQueue(episode.trackId))
       })

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react'
 import { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 
 import { ReactComponent as SearchIcon } from '../assets/search-icon.svg'
 
@@ -17,7 +17,7 @@ function SearchBar({ searchResult, setSearchResult }) {
   const getPodcasts = useCallback((searchInput) => {
     const search_text = searchInput
     if (search_text) {
-      axios.post(`${process.env.REACT_APP_SERVER_URL}/search`, { search_text })
+      serverAPI.post(`/search`, { search_text })
         .then((response) => {
           setSearchResult({ ...searchResult, podcasts: JSON.parse(response.data.podcasts).results, episodes: JSON.parse(response.data.episodes).results })
           if (location.pathname !== '/search') {

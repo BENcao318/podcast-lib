@@ -1,4 +1,4 @@
-import axios from 'axios';
+import serverAPI from '../hooks/useAxios'
 import React, { useEffect, useState, useCallback, useRef } from 'react'
 import { timeSince } from '../helpers/helpers'
 import { useDispatch, useSelector } from 'react-redux';
@@ -40,7 +40,7 @@ function PodcastDetails({ podcastDetails }) {
         track_id: podcastDetails.trackId
       }
 
-      axios.post(`${process.env.REACT_APP_SERVER_URL}/subscribe`, { podcast_to_subscribe }, { withCredentials: true })
+      serverAPI.post(`/subscribe`, { podcast_to_subscribe })
         .then((response) => {
           dispatch(addSubscription(podcast_to_subscribe))
         })
@@ -55,7 +55,7 @@ function PodcastDetails({ podcastDetails }) {
   const unSubscribe = useCallback(() => {
     const podcast_to_unsubscribe = podcastDetails.collectionName
 
-    axios.post(`${process.env.REACT_APP_SERVER_URL}/unsubscribe`, { podcast_to_unsubscribe }, { withCredentials: true })
+    serverAPI.post(`/unsubscribe`, { podcast_to_unsubscribe })
       .then((response) => {
         dispatch(removeSubscription(podcastDetails.collectionName))
       })
@@ -63,7 +63,7 @@ function PodcastDetails({ podcastDetails }) {
 
   useEffect(() => {
     if (userStatus.logged_in) {
-      axios.get(`${process.env.REACT_APP_SERVER_URL}/subscriptions`, { withCredentials: true })
+      serverAPI.get(`/subscriptions`)
         .then((response) => {
           if (response.data) dispatch(getSubscriptions(response.data));
         })

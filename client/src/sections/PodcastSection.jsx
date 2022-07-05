@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useParams } from 'react-router-dom'
+import serverAPI from '../hooks/useAxios'
 
 import PodcastDetails from '../components/PodcastDetails'
 import loadingB from '../assets/loadingB.svg'
@@ -14,7 +14,7 @@ function PodcastSection({ handlePause, handlePlay }) {
 
   const getPodcastDetails = (collectionId) => {
     setLoadingContent(true)
-    return axios.get(`${process.env.REACT_APP_SERVER_URL}/podcasts/${collectionId}`)
+    return serverAPI.get(`/podcasts/${collectionId}`)
   }
 
   // Get podcast details and episodes from the url by calling the backend api

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import serverAPI from '../hooks/useAxios'
 import loadingB from '../assets/loadingB.svg'
 
 import Podcasts from '../components/Podcasts'
@@ -8,7 +8,7 @@ function HomeSection() {
   const [podcasts, setPodcasts] = useState([])
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_SERVER_URL}/podcasts`)
+    serverAPI.get(`/podcasts`)
       .then((response) => {
         setPodcasts([...response.data.results])
       })
