@@ -11,7 +11,7 @@ import { ReactComponent as GridLogo } from '../assets/grid.svg'
 import { ReactComponent as PodcastLogo } from '../assets/noun-podcast-26.svg'
 import GenresPopover from '../components/GenresPopover'
 
-function SideBar() {
+const SideBar = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -74,7 +74,7 @@ function SideBar() {
           </div>
           :
           <div className='bg-sky-600 w-1/2 px-6 py-2 rounded-lg justify-self-center text-slate-200 font-semibold text-xl cursor-pointer hover:bg-sky-800' onClick={() => navigate('/login')}>
-            Log in
+            Sign In
           </div>
         }
       </div>

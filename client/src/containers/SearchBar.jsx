@@ -5,7 +5,7 @@ import serverAPI from '../hooks/useAxios'
 
 import { ReactComponent as SearchIcon } from '../assets/search-icon.svg'
 
-function SearchBar({ searchResult, setSearchResult }) {
+const SearchBar = ({ searchResult, setSearchResult }) => {
   const [searchInput, setSearchInput] = useState('')
   const navigate = useNavigate()
   const location = useLocation()

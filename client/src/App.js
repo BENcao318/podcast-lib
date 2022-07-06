@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { ToastContainer } from 'react-toastify'
 import { BrowserRouter } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { userLogin, userLogout } from './redux/user'
@@ -12,9 +13,10 @@ import SearchBar from './containers/SearchBar'
 import { useCallback } from 'react'
 import usePlayerApplications from './hooks/usePlayerApplications'
 
+import 'react-toastify/dist/ReactToastify.css'
 // prop-types
 
-function App() {
+const App = () => {
   const { audioRef, handlePlay, handlePause } = usePlayerApplications()
   const episodePlayer = useSelector((state) => state.episodePlayer)
   const [searchResult, setSearchResult] = useState({
@@ -58,6 +60,12 @@ function App() {
           <SearchBar searchResult={searchResult} setSearchResult={setSearchResult} />
         </div>
       </BrowserRouter>
+      <ToastContainer
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+      />
     </>
   );
 }

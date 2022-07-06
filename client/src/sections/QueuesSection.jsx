@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Queues from '../components/Queues'
 import { getQueues } from '../redux/queue'
 
-function QueuesSection({ handlePlay, handlePause }) {
+const QueuesSection = ({ handlePlay, handlePause }) => {
   const dispatch = useDispatch()
   const queues = useSelector((state) => state.queue.queues)
 

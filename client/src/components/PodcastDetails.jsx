@@ -9,7 +9,7 @@ import link from '../assets/link.svg'
 import checkedLogo from '../assets/checkedLogo.svg'
 import GenreBox from './GenreBox';
 
-function PodcastDetails({ podcastDetails }) {
+const PodcastDetails = ({ podcastDetails }) => {
   const [releaseDate, setReleaseDate] = useState('')
   const [isReadMore, setIsReadMore] = useState(false)
   const [warning, setWarning] = useState(false)

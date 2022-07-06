@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom'
 
 import Podcasts from '../components/Podcasts'
 
-function GenresSection() {
+const GenresSection = () => {
   const [podcasts, setPodcasts] = useState([])
   const { name, id } = useParams()
 

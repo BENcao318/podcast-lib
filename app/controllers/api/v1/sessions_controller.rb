@@ -6,12 +6,13 @@ class Api::V1::SessionsController < ApplicationController
       login!
       render json: {
         logged_in: true,
-        user: @user
+        user: @user, 
+        status: 200
       }
     else
       render json: {
-        status: 401,
-        error: ['no such user, please try again']
+        errors: "Usernmame and password combination is not correct, please try again",
+        status: 401
       }
     end
   end

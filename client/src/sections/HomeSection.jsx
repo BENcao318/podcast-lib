@@ -4,7 +4,7 @@ import loadingB from '../assets/loadingB.svg'
 
 import Podcasts from '../components/Podcasts'
 
-function HomeSection() {
+const HomeSection = () => {
   const [podcasts, setPodcasts] = useState([])
 
   useEffect(() => {

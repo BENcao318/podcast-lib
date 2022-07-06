@@ -6,7 +6,7 @@ import { getQueues } from '../redux/queue'
 import EpisodeWithPodcastInfo from './EpisodeWithPodcastInfo'
 import { convertEpisodeDataNaming } from '../helpers/helpers'
 
-function Queues({ queues, handlePlay, handlePause }) {
+const Queues = ({ queues, handlePlay, handlePause }) => {
   const dispatch = useDispatch()
 
   const userStatus = useSelector((state) => state.user)

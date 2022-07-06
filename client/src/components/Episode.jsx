@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import serverAPI from '../hooks/useAxios'
+import { toast } from 'react-toastify'
 
 import { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -12,7 +13,7 @@ import PlayButton from './PlayButton'
 import { ReactComponent as ToAddQueue } from '../assets/to-add-queues.svg'
 import { ReactComponent as Queued } from '../assets/queue-checked.svg'
 
-function Episode({ episode, handlePlay, handlePause }) {
+const Episode = ({ episode, handlePlay, handlePause }) => {
   const [isReadMore, setIsReadMore] = useState(false)
   const [warning, setWarning] = useState(false)
 
@@ -34,6 +35,14 @@ function Episode({ episode, handlePlay, handlePause }) {
       serverAPI.post(`/queue`, { episode_to_queue })
         .then((response) => {
           dispatch(addQueue(episode_to_queue))
+          toast.success(`Episode: ${episode_to_queue.episode_name} added to your queue.`, {
+            position: "top-right",
+            autoClose: 3600,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          })
         })
         .catch((error) => {
           console.log(error)
@@ -54,6 +63,14 @@ function Episode({ episode, handlePlay, handlePause }) {
     serverAPI.post(`/unqueue`, { episode_to_unqueue })
       .then((response) => {
         dispatch(removeQueue(episode.trackId))
+        toast.info(`Episode: ${episode_to_unqueue.episode_name} removed from your queue.`, {
+          position: "top-right",
+          autoClose: 3600,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        })
       })
       .catch((error) => {
         console.log(error);

@@ -1,6 +1,7 @@
+require 'rest-client'
+require 'nokogiri'
+
 class Api::V1::PodcastsController < ApplicationController
-  require 'rest-client'
-  require 'nokogiri'
 
   before_action :set_podcast, only: [:show, :update, :destroy]
 
@@ -13,7 +14,7 @@ class Api::V1::PodcastsController < ApplicationController
 
   # GET /podcasts/1
   def detail
-    podcast_detail = JSON.parse(get_podcast_detail(params[:id]).body)
+    podcast_detail = JSON.parse(get_podcast_detail(podcast_id_params).body)
     
     rss_feed_url = podcast_detail["results"][0]["feedUrl"]
 
@@ -51,6 +52,10 @@ class Api::V1::PodcastsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_podcast
       @podcast = Podcast.find(params[:id])
+    end
+
+    def podcast_id_params
+      params.require(:id)
     end
 
     # Only allow a list of trusted parameters through.

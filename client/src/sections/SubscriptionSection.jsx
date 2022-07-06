@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Subscriptions from '../components/Subscriptions'
 import { getSubscriptions } from '../redux/subscription'
 
-function SubscriptionSection() {
+const SubscriptionSection = () => {
   const dispatch = useDispatch()
   const subscriptions = useSelector((state) => state.subscription.subscriptions)
 

@@ -6,7 +6,7 @@ import PodcastDetails from '../components/PodcastDetails'
 import loadingB from '../assets/loadingB.svg'
 import Episodes from '../components/Episodes';
 
-function PodcastSection({ handlePause, handlePlay }) {
+const PodcastSection = ({ handlePause, handlePlay }) => {
   const [podcastDetails, setPodcastDetails] = useState({})
   const [episodes, setEpisodes] = useState([])
   const [loadingContent, setLoadingContent] = useState(false)

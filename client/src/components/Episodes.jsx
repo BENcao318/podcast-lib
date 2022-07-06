@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getQueues } from '../redux/queue'
 import Episode from './Episode'
 
-function Episodes({ episodes, handlePause, handlePlay }) {
+const Episodes = ({ episodes, handlePause, handlePlay }) => {
   const dispatch = useDispatch()
 
   const userStatus = useSelector((state) => state.user)

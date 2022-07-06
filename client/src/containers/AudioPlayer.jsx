@@ -12,7 +12,7 @@ import { ReactComponent as PlayButton } from '../assets/play-button.svg'
 import { ReactComponent as PauseButton } from '../assets/pause-button.svg'
 import { ReactComponent as SoundImg } from '../assets/sound.svg'
 
-function AudioPlayer({ handlePause, handlePlay, audioRef }) {
+const AudioPlayer = ({ handlePause, handlePlay, audioRef }) => {
   const episodePlayer = useSelector((state) => state.episodePlayer)
   const queues = useSelector((state) => state.queue.queues)
 

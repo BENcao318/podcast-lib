@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { checkGenres, genreBackgroundColor } from '../helpers/helpers'
 
-function GenreBox({ podcastGenres }) {
+const GenreBox = ({ podcastGenres }) => {
   const genres = checkGenres(podcastGenres)
   const navigate = useNavigate()
 

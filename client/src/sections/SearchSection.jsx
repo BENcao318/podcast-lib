@@ -13,7 +13,7 @@ import EpisodeWithPodcastInfo from '../components/EpisodeWithPodcastInfo'
 // global state with redux etc
 // server state/cache ... swr, react-query etc
 
-function SearchSection({ handlePlay, handlePause, searchResult }) {
+const SearchSection = ({ handlePlay, handlePause, searchResult }) => {
   const [podcastDetails, setPodcastDetails] = useState({})
   const [loadingContent, setLoadingContent] = useState(false)
 

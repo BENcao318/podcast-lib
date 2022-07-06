@@ -2,9 +2,9 @@ class Api::V1::EpisodeQueuesController < ApplicationController
   before_action :is_logged_in?
 
   def create  #add episode queue
-    user_queue = EpisodeQueue.where(episode_name: params[:episode_to_queue][:episode_name], user_id: session[:user_id])
+    user_queue = EpisodeQueue.where(episode_name: queue_params[:episode_name], user_id: session[:user_id])
     if user_queue.length == 0
-      EpisodeQueue.create!(episode_name: params[:episode_to_queue][:episode_name], description: params[:episode_to_queue][:description], artwork_url_600: params[:episode_to_queue][:artwork_url_600], genres: params[:episode_to_queue][:genres], track_id: params[:episode_to_queue][:track_id], track_time_millis: params[:episode_to_queue][:track_time_millis], episode_url: params[:episode_to_queue][:episode_url], collection_name: params[:episode_to_queue][:collection_name], user_id: session[:user_id], release_date: params[:episode_to_queue][:release_date], collection_id: params[:episode_to_queue][:collection_id])
+      EpisodeQueue.create!(episode_name: queue_params[:episode_name], description: queue_params[:description], artwork_url_600: queue_params[:artwork_url_600], genres: queue_params[:genres], track_id: queue_params[:track_id], track_time_millis: queue_params[:track_time_millis], episode_url: queue_params[:episode_url], collection_name: queue_params[:collection_name], release_date: queue_params[:release_date], collection_id: queue_params[:collection_id], user_id: session[:user_id])
       render json: {
         success: true,
         message: "A queue is created in the user's database"
@@ -19,7 +19,7 @@ class Api::V1::EpisodeQueuesController < ApplicationController
   end
 
   def destroy #remove episode queue
-    episode_to_unqueue = EpisodeQueue.find_by(track_id: params[:episode_to_unqueue][:track_id], episode_name: params[:episode_to_unqueue][:episode_name], user_id: session[:user_id])
+    episode_to_unqueue = EpisodeQueue.find_by(track_id: unqueue_params[:track_id], episode_name: unqueue_params[:episode_name], user_id: session[:user_id])
 
     if episode_to_unqueue
       episode_to_unqueue.destroy
@@ -43,7 +43,11 @@ class Api::V1::EpisodeQueuesController < ApplicationController
   private
   
   def queue_params
-    params.require(:episode_to_queue)
+    params.require(:episode_to_queue).permit(:episode_name, :description, :artwork_url_600, {genres: [:name, :id]}, :track_id, :track_time_millis, :episode_url, :collection_name, :release_date, :collection_id)
+  end
+
+  def unqueue_params
+    params.require(:episode_to_unqueue).permit(:track_id, :episode_name)
   end
 
   def is_logged_in?
