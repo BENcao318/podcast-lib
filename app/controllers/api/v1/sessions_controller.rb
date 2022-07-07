@@ -11,7 +11,7 @@ class Api::V1::SessionsController < ApplicationController
       }
     else
       render json: {
-        errors: "Usernmame and password combination is not correct, please try again",
+        errors: "Usernmame or password is not correct, please try again",
         status: 401
       }
     end
