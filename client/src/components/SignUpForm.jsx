@@ -143,7 +143,7 @@ const SignUpForm = ({ handleSubmit }) => {
               className="ml-2 underline cursor-pointer hover:text-blue-600"
               onClick={() => navigate('/login')}
             >
-              Log in
+              Sign in
             </span>
           </div>
         </div>

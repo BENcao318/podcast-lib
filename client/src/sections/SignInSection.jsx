@@ -25,10 +25,10 @@ const SignInSection = () => {
     serverAPI.post(`/login`, { user })
       .then((response) => {
         if (response.data.logged_in) {
-          dispatch(userLogin(response.data.user.username))
+          dispatch(userLogin(response.data.user))
           setSignInErrors('')
           navigate('/')
-          toast.success(`Welcome! ${response.data.user}`, {
+          toast.success(`Welcome! ${response.data.user.username}`, {
             position: "top-right",
             autoClose: 4000,
             hideProgressBar: false,

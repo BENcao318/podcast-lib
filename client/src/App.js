@@ -3,7 +3,9 @@ import { ToastContainer } from 'react-toastify'
 import { BrowserRouter } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { userLogin, userLogout } from './redux/user'
+
 import './App.css'
+import 'react-toastify/dist/ReactToastify.css'
 
 import SideBar from './containers/SideBar'
 import Main from './containers/Main'
@@ -13,7 +15,6 @@ import SearchBar from './containers/SearchBar'
 import { useCallback } from 'react'
 import usePlayerApplications from './hooks/usePlayerApplications'
 
-import 'react-toastify/dist/ReactToastify.css'
 // prop-types
 
 const App = () => {
@@ -59,6 +60,7 @@ const App = () => {
           }
           <SearchBar searchResult={searchResult} setSearchResult={setSearchResult} />
         </div>
+
       </BrowserRouter>
       <ToastContainer
         newestOnTop={false}

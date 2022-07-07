@@ -10,10 +10,13 @@ import { ReactComponent as QueuesLogo } from '../assets/queues.svg'
 import { ReactComponent as GridLogo } from '../assets/grid.svg'
 import { ReactComponent as PodcastLogo } from '../assets/noun-podcast-26.svg'
 import GenresPopover from '../components/GenresPopover'
+import AskToSignInModal from '../components/AskToSignInModal'
+import { useState } from 'react'
 
 const SideBar = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
+  const [showModal, setShowModal] = useState(false)
 
   const userStatus = useSelector((state) => state.user)
 
@@ -43,11 +46,27 @@ const SideBar = () => {
           <HomeLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
           <span className='ml-4 group-hover:text-sky-600'>Home</span>
         </li>
-        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-7' onClick={() => navigate('/subscriptions')}>
+        <li
+          className='group min-w-full py-3 flex items-center cursor-pointer ml-7'
+          onClick={() => {
+            userStatus.logged_in ?
+              navigate('/subscriptions')
+              :
+              setShowModal(true)
+          }}
+        >
           <ListLogo className='w-5 h-5 inline-block group-hover:fill-sky-600' />
           <span className='ml-4 group-hover:text-sky-600'>Subscriptions</span>
         </li>
-        <li className='group min-w-full py-3 flex items-center cursor-pointer ml-6' onClick={() => navigate('/queues')}>
+        <li
+          className='group min-w-full py-3 flex items-center cursor-pointer ml-6'
+          onClick={() => {
+            userStatus.logged_in ?
+              navigate('/queues')
+              :
+              setShowModal(true)
+          }}
+        >
           <QueuesLogo className='w-6 h-6 inline-block group-hover:fill-sky-600' />
           <span className='ml-3 group-hover:text-sky-600'>Queues</span>
         </li>
@@ -74,10 +93,16 @@ const SideBar = () => {
           </div>
           :
           <div className='bg-sky-600 w-1/2 px-6 py-2 rounded-lg justify-self-center text-slate-200 font-semibold text-xl cursor-pointer hover:bg-sky-800' onClick={() => navigate('/login')}>
-            Sign In
+            Sign in
           </div>
         }
       </div>
+      {
+        showModal ?
+          <AskToSignInModal setShowModal={setShowModal} />
+          :
+          null
+      }
     </aside>
   )
 }

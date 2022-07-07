@@ -88,7 +88,7 @@ const SignInForm = ({ handleSubmit, signInErrors }) => {
               type='submit'
               className='bg-sky-600 py-3 w-full rounded-lg text-center text-white font-semibold text-lg hover:bg-sky-800 focus:outline-none mt-6'
             >
-              Sign In
+              Sign in
             </button>
 
 
@@ -99,7 +99,7 @@ const SignInForm = ({ handleSubmit, signInErrors }) => {
               className="ml-2 underline cursor-pointer hover:text-blue-600"
               onClick={() => navigate('/signup')}
             >
-              Sign Up
+              Sign up
             </span>
           </div>
         </div>
