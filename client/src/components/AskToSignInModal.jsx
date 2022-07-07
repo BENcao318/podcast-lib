@@ -34,13 +34,12 @@ const AskToSignInModal = ({ setShowModal }) => {
                 </ul>
               </div>
               <div className='flex items-center justify-end mt-6 border-t border-solid border-neutral-400 '>
-                <a
+                <span
                   className='text-xl text-sky-600 cursor-pointer hover:underline'
-                  type='button'
                   onClick={() => { setShowModal(false) }}
                 >
-                  Not now, thanks
-                </a>
+                  No, thanks
+                </span>
                 <button
                   className='px-6 py-2 bg-sky-600 my-2 mx-6 rounded-lg text-white text-lg font-semibold hover:bg-sky-800 hover:shadow-lg'
                   type='button'

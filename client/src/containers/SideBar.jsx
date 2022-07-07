@@ -9,7 +9,6 @@ import { ReactComponent as ListLogo } from '../assets/list.svg'
 import { ReactComponent as QueuesLogo } from '../assets/queues.svg'
 import { ReactComponent as GridLogo } from '../assets/grid.svg'
 import { ReactComponent as PodcastLogo } from '../assets/noun-podcast-26.svg'
-import { ReactComponent as MoreLogo } from '../assets/more.svg'
 import { ReactComponent as SigninLogo } from '../assets/signin.svg'
 import { ReactComponent as UserLogo } from '../assets/user.svg'
 import GenresPopover from '../components/GenresPopover'
@@ -89,8 +88,8 @@ const SideBar = () => {
               <div className='relative'>
                 <UserLogo className='w-8 h-8 inline-block group-hover:fill-sky-600' />
                 <span className='h-3 w-3'>
-                  <span class="absolute animate-ping -top-2 -right-2 h-3 w-3 bg-sky-400 rounded-full opacity-75"></span>
-                  <span class="absolute -top-2 -right-2 h-3 w-3 bg-sky-500 rounded-full"></span>
+                  <span className="absolute animate-ping -top-2 -right-2 h-3 w-3 bg-sky-400 rounded-full opacity-75"></span>
+                  <span className="absolute -top-2 -right-2 h-3 w-3 bg-sky-500 rounded-full"></span>
                 </span>
               </div>
               <span className='ml-4 font-semibold text-lg text-neutral-600 group-hover:text-sky-600'>Your profile</span>

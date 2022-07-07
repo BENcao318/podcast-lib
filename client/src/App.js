@@ -15,8 +15,6 @@ import SearchBar from './containers/SearchBar'
 import { useCallback } from 'react'
 import usePlayerApplications from './hooks/usePlayerApplications'
 
-// prop-types
-
 const App = () => {
   const { audioRef, handlePlay, handlePause } = usePlayerApplications()
   const episodePlayer = useSelector((state) => state.episodePlayer)
@@ -25,7 +23,6 @@ const App = () => {
     episodes: []
   })
   const dispatch = useDispatch()
-
 
   const userLoginStatus = useCallback(() => {
     serverAPI.get(`/logged_in`)
