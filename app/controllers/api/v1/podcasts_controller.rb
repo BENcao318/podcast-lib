@@ -1,6 +1,3 @@
-require 'rest-client'
-require 'nokogiri'
-
 class Api::V1::PodcastsController < ApplicationController
 
   before_action :set_podcast, only: [:show, :update, :destroy]
@@ -8,19 +5,13 @@ class Api::V1::PodcastsController < ApplicationController
   # GET /podcasts
   def index
     @podcasts = Podcast.all
-    
-    render json: get_podcasts
+    response = ItunesApiService.get_podcasts
+    render json: response
   end
 
   # GET /podcasts/1
   def detail
-    podcast_detail = JSON.parse(get_podcast_detail(podcast_id_params).body)
-    
-    rss_feed_url = podcast_detail["results"][0]["feedUrl"]
-
-    podcast_detail["results"][0]["description"] = get_podcast_description(rss_feed_url)   #Add description crawled from the rss_url and add it into the hash
-
-    render json: podcast_detail
+    render json: ItunesApiService.get_podcast_detail(podcast_id_params)
   end
 
   # POST /podcasts
@@ -61,24 +52,5 @@ class Api::V1::PodcastsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def podcast_params
       params.require(:podcast).permit(:title, :body)
-    end
-
-    def get_podcasts
-      url = "https://itunes.apple.com/search?term=podcast&limit=180"
-      response = RestClient.get(url)
-    end
-
-    def get_podcast_detail(collection_id)
-      url = "https://itunes.apple.com/lookup?id=#{collection_id}&media=podcast&entity=podcastEpisode&limit=400&attribute=descriptionTerm"
-      response = RestClient.get(url)
-    end
-
-    def get_podcast_description(rss_feed_url)
-      podcast_rss_xml = RestClient.get(rss_feed_url)
-      parsed_data = Nokogiri::XML(podcast_rss_xml)    #Convert the xml file to parsed data
-
-      description = parsed_data.css("description").map(&:text)[0]   #Find the description tag from XML nodeset and return the content 
-
-      description.gsub(/(<([^>]+)>)/, '')   #Using regex to replace the tags
     end
 end

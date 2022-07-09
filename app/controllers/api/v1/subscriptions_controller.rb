@@ -2,9 +2,9 @@ class Api::V1::SubscriptionsController < ApplicationController
   before_action :is_logged_in?
 
   def create  #subscribe
-    user_subscription = Subscription.where(name: subscribe_params[:name], user_id: session[:user_id])
+    user_subscription_count = Subscription.where(name: subscribe_params[:name], user_id: session[:user_id]).count
 
-    if user_subscription.length == 0
+    if user_subscription_count.zero?
       Subscription.create!(name: subscribe_params[:name], description: subscribe_params[:description], artist_name: subscribe_params[:artist_name], art_work_url_600: subscribe_params[:art_work_url_600], genre_ids: subscribe_params[:genre_ids], genres: subscribe_params[:genres], track_id: subscribe_params[:track_id], user_id: session[:user_id])
       render json: {
         success: true,
@@ -21,7 +21,7 @@ class Api::V1::SubscriptionsController < ApplicationController
   def destroy #unsubscribe
     subscription = Subscription.find_by(name: params[:podcast_to_unsubscribe], user_id: session[:user_id])
     if subscription
-      subscription.destroy
+      subscription.destroy!
       render json: {
         success: true,
         message: "Successfully deleted the subscription"

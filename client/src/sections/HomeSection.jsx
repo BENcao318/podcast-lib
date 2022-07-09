@@ -4,6 +4,8 @@ import serverAPI from '../hooks/useAxios'
 import Podcasts from '../components/Podcasts'
 
 import loadingB from '../assets/loadingB.svg'
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 
 const fetcher = (url) => {
@@ -11,13 +13,18 @@ const fetcher = (url) => {
 }
 
 const HomeSection = () => {
+  const [loading, setLoading] = useState(false)
   const { data } = useSWR('/podcasts', fetcher)
 
+  useEffect(() => {
+    data ? setLoading(false) : setLoading(true)
+  }, [data])
+
   return (
-    <section className='justify-self-center gap-12 w-8/12'>
-      <h1 className='font-bold text-3xl mb-12 mt-6'>Top Podcasts</h1>
-      {data && data.length === 0 ?
-        <div className='font-bold text-lg mt-28'>
+    <section className='w-8/12 gap-12 justify-self-center'>
+      <h1 className='mt-6 mb-12 text-3xl font-bold'>Top Podcasts</h1>
+      {loading ?
+        <div className='text-lg font-bold mt-28'>
           <img src={loadingB} alt="loading animation" className='mx-auto mt-64' />
           Please allow 15 ~ 20 secconds for Heroku server to start up. If no contents showing after 20 seconds, refresh the page to load them up.
         </div>
