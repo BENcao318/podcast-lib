@@ -38,7 +38,7 @@ const SideBar = ({ showSidebar, setShowModal }) => {
 
   return (
     <aside
-      className={`fixed z-20 flex flex-col min-h-screen bg-white w-64 transition ease-in-out duration-300 ${
+      className={`fixed z-60 flex flex-col min-h-screen bg-white w-72 transition ease-in-out duration-300 ${
         showSidebar
           ? 'translate-x-0'
           : '-translate-x-full xxl:translate-x-0 w-0'
@@ -102,9 +102,14 @@ const SideBar = ({ showSidebar, setShowModal }) => {
                   <span className="absolute w-3 h-3 rounded-full -top-2 -right-2 bg-sky-500"></span>
                 </span> */}
               </div>
-              <span className="ml-4 text-lg font-semibold text-neutral-600 group-hover:text-sky-600">
-                Hi, {userStatus.user.username}
-              </span>
+              <div>
+                <span className="ml-4 text-lg font-semibold text-neutral-600 group-hover:text-sky-600">
+                  Hi,
+                </span>
+                <span className="text-lg font-semibold text-neutral-600 group-hover:text-sky-600">
+                  {userStatus.user.username}
+                </span>
+              </div>
             </div>
             <SignOutPopover logout={logout} />
           </div>
