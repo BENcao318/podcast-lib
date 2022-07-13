@@ -1,0 +1,744 @@
+I, [2022-07-03T19:55:37.253361 #19536]  INFO -- : [73f5382f-f4ba-49ba-8dea-6703b5e33036] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 19:55:37 -0400
+I, [2022-07-03T19:55:37.257463 #19536]  INFO -- : [73f5382f-f4ba-49ba-8dea-6703b5e33036] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T19:55:37.578145 #19536]  INFO -- : [73f5382f-f4ba-49ba-8dea-6703b5e33036] Completed 200 OK in 320ms (Views: 1.4ms | Allocations: 6807)
+I, [2022-07-03T19:55:40.810269 #19536]  INFO -- : [8bf0ca8f-cdd0-4e46-9ae0-a98b9bc70cf0] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 19:55:40 -0400
+I, [2022-07-03T19:55:40.811268 #19536]  INFO -- : [8bf0ca8f-cdd0-4e46-9ae0-a98b9bc70cf0] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T19:55:41.118311 #19536]  INFO -- : [a27a4987-fe05-487b-89e0-302f78abbad4] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 19:55:41 -0400
+I, [2022-07-03T19:55:41.119508 #19536]  INFO -- : [a27a4987-fe05-487b-89e0-302f78abbad4] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T19:55:41.120033 #19536]  INFO -- : [a27a4987-fe05-487b-89e0-302f78abbad4] Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 271)
+I, [2022-07-03T19:55:41.340009 #19536]  INFO -- : [8bf0ca8f-cdd0-4e46-9ae0-a98b9bc70cf0] Completed 200 OK in 529ms (Views: 0.1ms | Allocations: 6449)
+I, [2022-07-03T19:55:43.671141 #19536]  INFO -- : [641d3efe-368d-4ac3-9053-20dfa53fe500] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 19:55:43 -0400
+I, [2022-07-03T19:55:43.672025 #19536]  INFO -- : [641d3efe-368d-4ac3-9053-20dfa53fe500] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T19:55:43.672154 #19536]  INFO -- : [641d3efe-368d-4ac3-9053-20dfa53fe500]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T19:55:44.765056 #19536]  INFO -- : [641d3efe-368d-4ac3-9053-20dfa53fe500] Completed 200 OK in 1093ms (Views: 8.2ms | Allocations: 24800)
+I, [2022-07-03T19:55:51.625723 #19536]  INFO -- : [82c23478-868a-4f63-87a3-d1acb3400ca5] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:55:51 -0400
+I, [2022-07-03T19:55:51.626726 #19536]  INFO -- : [82c23478-868a-4f63-87a3-d1acb3400ca5] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:55:51.626784 #19536]  INFO -- : [82c23478-868a-4f63-87a3-d1acb3400ca5]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:55:51.629141 #19536]  INFO -- : [82c23478-868a-4f63-87a3-d1acb3400ca5] Completed 500 Internal Server Error in 2ms (Allocations: 684)
+F, [2022-07-03T19:55:51.629692 #19536] FATAL -- : [82c23478-868a-4f63-87a3-d1acb3400ca5]   
+[82c23478-868a-4f63-87a3-d1acb3400ca5] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[82c23478-868a-4f63-87a3-d1acb3400ca5]   
+[82c23478-868a-4f63-87a3-d1acb3400ca5] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:55:53.485108 #19536]  INFO -- : [807c23b5-01b2-477d-9dfa-3ce08f64b5ec] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:55:53 -0400
+I, [2022-07-03T19:55:53.485869 #19536]  INFO -- : [807c23b5-01b2-477d-9dfa-3ce08f64b5ec] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:55:53.486055 #19536]  INFO -- : [807c23b5-01b2-477d-9dfa-3ce08f64b5ec]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:55:53.487622 #19536]  INFO -- : [807c23b5-01b2-477d-9dfa-3ce08f64b5ec] Completed 500 Internal Server Error in 1ms (Allocations: 419)
+F, [2022-07-03T19:55:53.488026 #19536] FATAL -- : [807c23b5-01b2-477d-9dfa-3ce08f64b5ec]   
+[807c23b5-01b2-477d-9dfa-3ce08f64b5ec] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[807c23b5-01b2-477d-9dfa-3ce08f64b5ec]   
+[807c23b5-01b2-477d-9dfa-3ce08f64b5ec] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:55:53.956272 #19536]  INFO -- : [549bf2ed-f1cf-47d2-abb4-86bfafb900ac] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:55:53 -0400
+I, [2022-07-03T19:55:53.956931 #19536]  INFO -- : [549bf2ed-f1cf-47d2-abb4-86bfafb900ac] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:55:53.956989 #19536]  INFO -- : [549bf2ed-f1cf-47d2-abb4-86bfafb900ac]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:55:53.958653 #19536]  INFO -- : [549bf2ed-f1cf-47d2-abb4-86bfafb900ac] Completed 500 Internal Server Error in 2ms (Allocations: 409)
+F, [2022-07-03T19:55:53.958972 #19536] FATAL -- : [549bf2ed-f1cf-47d2-abb4-86bfafb900ac]   
+[549bf2ed-f1cf-47d2-abb4-86bfafb900ac] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[549bf2ed-f1cf-47d2-abb4-86bfafb900ac]   
+[549bf2ed-f1cf-47d2-abb4-86bfafb900ac] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:55:54.185448 #19536]  INFO -- : [2805b929-b56f-4341-ad9a-ce1592c0e4e5] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:55:54 -0400
+I, [2022-07-03T19:55:54.186525 #19536]  INFO -- : [2805b929-b56f-4341-ad9a-ce1592c0e4e5] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:55:54.186629 #19536]  INFO -- : [2805b929-b56f-4341-ad9a-ce1592c0e4e5]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:55:54.188886 #19536]  INFO -- : [2805b929-b56f-4341-ad9a-ce1592c0e4e5] Completed 500 Internal Server Error in 2ms (Allocations: 409)
+F, [2022-07-03T19:55:54.189598 #19536] FATAL -- : [2805b929-b56f-4341-ad9a-ce1592c0e4e5]   
+[2805b929-b56f-4341-ad9a-ce1592c0e4e5] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[2805b929-b56f-4341-ad9a-ce1592c0e4e5]   
+[2805b929-b56f-4341-ad9a-ce1592c0e4e5] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:56:00.833909 #19536]  INFO -- : [9ff6f201-6bc3-4756-bdf8-6237e774f209] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:56:00 -0400
+I, [2022-07-03T19:56:00.834873 #19536]  INFO -- : [9ff6f201-6bc3-4756-bdf8-6237e774f209] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:56:00.834937 #19536]  INFO -- : [9ff6f201-6bc3-4756-bdf8-6237e774f209]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:56:00.836484 #19536]  INFO -- : [9ff6f201-6bc3-4756-bdf8-6237e774f209] Completed 500 Internal Server Error in 1ms (Allocations: 417)
+F, [2022-07-03T19:56:00.836945 #19536] FATAL -- : [9ff6f201-6bc3-4756-bdf8-6237e774f209]   
+[9ff6f201-6bc3-4756-bdf8-6237e774f209] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[9ff6f201-6bc3-4756-bdf8-6237e774f209]   
+[9ff6f201-6bc3-4756-bdf8-6237e774f209] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:57:14.426792 #20147]  INFO -- : [17bbee46-3ed7-4574-b512-c7a776bca046] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 19:57:14 -0400
+I, [2022-07-03T19:57:14.436362 #20147]  INFO -- : [17bbee46-3ed7-4574-b512-c7a776bca046] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T19:57:14.436518 #20147]  INFO -- : [17bbee46-3ed7-4574-b512-c7a776bca046]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T19:57:15.138697 #20147]  INFO -- : [17bbee46-3ed7-4574-b512-c7a776bca046] Completed 200 OK in 702ms (Views: 18.9ms | Allocations: 27040)
+I, [2022-07-03T19:57:27.330881 #20147]  INFO -- : [7ca41e31-8ad0-42db-8361-53f20c2925c2] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 19:57:27 -0400
+I, [2022-07-03T19:57:27.331835 #20147]  INFO -- : [7ca41e31-8ad0-42db-8361-53f20c2925c2] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T19:57:27.559826 #20147]  INFO -- : [7ca41e31-8ad0-42db-8361-53f20c2925c2] Completed 200 OK in 228ms (Views: 0.1ms | Allocations: 4531)
+I, [2022-07-03T19:57:31.581006 #20147]  INFO -- : [004f6d2e-aefa-4449-ab77-4c0bb5968cc9] Started GET "/api/v1/podcasts/1043699613" for 127.0.0.1 at 2022-07-03 19:57:31 -0400
+I, [2022-07-03T19:57:31.581877 #20147]  INFO -- : [004f6d2e-aefa-4449-ab77-4c0bb5968cc9] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T19:57:31.581963 #20147]  INFO -- : [004f6d2e-aefa-4449-ab77-4c0bb5968cc9]   Parameters: {"id"=>"1043699613"}
+I, [2022-07-03T19:57:33.576331 #20147]  INFO -- : [004f6d2e-aefa-4449-ab77-4c0bb5968cc9] Completed 200 OK in 1994ms (Views: 34.8ms | Allocations: 71967)
+I, [2022-07-03T19:58:16.151635 #20147]  INFO -- : [b7d28714-4d1a-4ca7-ad88-84af0a7e03e9] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:16 -0400
+I, [2022-07-03T19:58:16.155264 #20147]  INFO -- : [b7d28714-4d1a-4ca7-ad88-84af0a7e03e9] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:16.155382 #20147]  INFO -- : [b7d28714-4d1a-4ca7-ad88-84af0a7e03e9]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:16.157332 #20147]  INFO -- : [b7d28714-4d1a-4ca7-ad88-84af0a7e03e9] Completed 500 Internal Server Error in 2ms (Allocations: 729)
+F, [2022-07-03T19:58:16.157747 #20147] FATAL -- : [b7d28714-4d1a-4ca7-ad88-84af0a7e03e9]   
+[b7d28714-4d1a-4ca7-ad88-84af0a7e03e9] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[b7d28714-4d1a-4ca7-ad88-84af0a7e03e9]   
+[b7d28714-4d1a-4ca7-ad88-84af0a7e03e9] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:58:17.286909 #20147]  INFO -- : [ebd70010-1abe-4409-826c-756c0bd9d9d0] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:17 -0400
+I, [2022-07-03T19:58:17.288118 #20147]  INFO -- : [ebd70010-1abe-4409-826c-756c0bd9d9d0] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:17.288206 #20147]  INFO -- : [ebd70010-1abe-4409-826c-756c0bd9d9d0]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:17.289846 #20147]  INFO -- : [ebd70010-1abe-4409-826c-756c0bd9d9d0] Completed 500 Internal Server Error in 2ms (Allocations: 409)
+F, [2022-07-03T19:58:17.290258 #20147] FATAL -- : [ebd70010-1abe-4409-826c-756c0bd9d9d0]   
+[ebd70010-1abe-4409-826c-756c0bd9d9d0] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[ebd70010-1abe-4409-826c-756c0bd9d9d0]   
+[ebd70010-1abe-4409-826c-756c0bd9d9d0] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:58:17.818610 #20147]  INFO -- : [1adef901-e5b8-4dd0-8948-e39f9a612cf2] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:17 -0400
+I, [2022-07-03T19:58:17.819493 #20147]  INFO -- : [1adef901-e5b8-4dd0-8948-e39f9a612cf2] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:17.819551 #20147]  INFO -- : [1adef901-e5b8-4dd0-8948-e39f9a612cf2]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:17.821230 #20147]  INFO -- : [1adef901-e5b8-4dd0-8948-e39f9a612cf2] Completed 500 Internal Server Error in 2ms (Allocations: 414)
+F, [2022-07-03T19:58:17.821586 #20147] FATAL -- : [1adef901-e5b8-4dd0-8948-e39f9a612cf2]   
+[1adef901-e5b8-4dd0-8948-e39f9a612cf2] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[1adef901-e5b8-4dd0-8948-e39f9a612cf2]   
+[1adef901-e5b8-4dd0-8948-e39f9a612cf2] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:58:23.065610 #20147]  INFO -- : [03897eb2-ceca-4a95-931c-835f5561f118] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:23 -0400
+I, [2022-07-03T19:58:23.067255 #20147]  INFO -- : [03897eb2-ceca-4a95-931c-835f5561f118] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:23.067316 #20147]  INFO -- : [03897eb2-ceca-4a95-931c-835f5561f118]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:23.069011 #20147]  INFO -- : [03897eb2-ceca-4a95-931c-835f5561f118] Completed 500 Internal Server Error in 2ms (Allocations: 417)
+F, [2022-07-03T19:58:23.069650 #20147] FATAL -- : [03897eb2-ceca-4a95-931c-835f5561f118]   
+[03897eb2-ceca-4a95-931c-835f5561f118] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[03897eb2-ceca-4a95-931c-835f5561f118]   
+[03897eb2-ceca-4a95-931c-835f5561f118] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:58:25.975697 #20147]  INFO -- : [c6404011-c884-4e8d-a72d-8e22a7c173a7] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:25 -0400
+I, [2022-07-03T19:58:25.976952 #20147]  INFO -- : [c6404011-c884-4e8d-a72d-8e22a7c173a7] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:25.977044 #20147]  INFO -- : [c6404011-c884-4e8d-a72d-8e22a7c173a7]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:25.979038 #20147]  INFO -- : [c6404011-c884-4e8d-a72d-8e22a7c173a7] Completed 500 Internal Server Error in 2ms (Allocations: 409)
+F, [2022-07-03T19:58:25.979625 #20147] FATAL -- : [c6404011-c884-4e8d-a72d-8e22a7c173a7]   
+[c6404011-c884-4e8d-a72d-8e22a7c173a7] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[c6404011-c884-4e8d-a72d-8e22a7c173a7]   
+[c6404011-c884-4e8d-a72d-8e22a7c173a7] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:58:29.447757 #20147]  INFO -- : [984a1b95-7861-4f0c-a784-aad1d6c24fb3] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:29 -0400
+I, [2022-07-03T19:58:29.448788 #20147]  INFO -- : [984a1b95-7861-4f0c-a784-aad1d6c24fb3] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:29.448851 #20147]  INFO -- : [984a1b95-7861-4f0c-a784-aad1d6c24fb3]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:29.450214 #20147]  INFO -- : [984a1b95-7861-4f0c-a784-aad1d6c24fb3] Completed 500 Internal Server Error in 1ms (Allocations: 414)
+F, [2022-07-03T19:58:29.450721 #20147] FATAL -- : [984a1b95-7861-4f0c-a784-aad1d6c24fb3]   
+[984a1b95-7861-4f0c-a784-aad1d6c24fb3] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[984a1b95-7861-4f0c-a784-aad1d6c24fb3]   
+[984a1b95-7861-4f0c-a784-aad1d6c24fb3] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:58:29.705419 #20147]  INFO -- : [508c6b74-6079-4369-89ea-e86ef7def342] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:29 -0400
+I, [2022-07-03T19:58:29.706686 #20147]  INFO -- : [508c6b74-6079-4369-89ea-e86ef7def342] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:29.706777 #20147]  INFO -- : [508c6b74-6079-4369-89ea-e86ef7def342]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:29.708860 #20147]  INFO -- : [508c6b74-6079-4369-89ea-e86ef7def342] Completed 500 Internal Server Error in 2ms (Allocations: 409)
+F, [2022-07-03T19:58:29.709686 #20147] FATAL -- : [508c6b74-6079-4369-89ea-e86ef7def342]   
+[508c6b74-6079-4369-89ea-e86ef7def342] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[508c6b74-6079-4369-89ea-e86ef7def342]   
+[508c6b74-6079-4369-89ea-e86ef7def342] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T19:58:29.881582 #20147]  INFO -- : [18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 19:58:29 -0400
+I, [2022-07-03T19:58:29.882707 #20147]  INFO -- : [18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T19:58:29.882782 #20147]  INFO -- : [18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T19:58:29.884320 #20147]  INFO -- : [18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2] Completed 500 Internal Server Error in 1ms (Allocations: 409)
+F, [2022-07-03T19:58:29.884858 #20147] FATAL -- : [18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2]   
+[18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2] ActiveRecord::ConnectionNotEstablished (fe_sendauth: no password supplied
+):
+[18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2]   
+[18528bb9-c2ca-4d31-9f3d-b9a6e4d9a2f2] app/controllers/api/v1/sessions_controller.rb:3:in `create'
+I, [2022-07-03T20:15:56.033189 #26988]  INFO -- : Migrating to CreatePodcasts (20220617011055)
+I, [2022-07-03T20:15:56.044189 #26988]  INFO -- : Migrating to CreateUsers (20220621010613)
+I, [2022-07-03T20:15:56.051087 #26988]  INFO -- : Migrating to CreateSubscriptions (20220624025456)
+I, [2022-07-03T20:15:56.058383 #26988]  INFO -- : Migrating to AddPropetiesToSubscriptions (20220624030150)
+I, [2022-07-03T20:15:56.074457 #26988]  INFO -- : Migrating to AddUserIdToSubscriptions (20220624031808)
+I, [2022-07-03T20:15:56.079964 #26988]  INFO -- : Migrating to CreateEpisodeQueues (20220626213941)
+I, [2022-07-03T20:15:56.087601 #26988]  INFO -- : Migrating to AddUserIdToEpisodeQueues (20220626214234)
+I, [2022-07-03T20:15:56.093509 #26988]  INFO -- : Migrating to AddArtistNameToQueues (20220626233653)
+I, [2022-07-03T20:15:56.095973 #26988]  INFO -- : Migrating to ChangeTrackIdToBeBigintInQueues (20220626234350)
+I, [2022-07-03T20:15:56.105015 #26988]  INFO -- : Migrating to ChangeTrackTimeMillisToBeBigintInEpisodeQueues (20220626234438)
+I, [2022-07-03T20:15:56.115744 #26988]  INFO -- : Migrating to RemoveArtistNameFromEpisodeQueues (20220626234958)
+I, [2022-07-03T20:15:56.118264 #26988]  INFO -- : Migrating to AddReleaseDateToEpisodeQueues (20220627001641)
+I, [2022-07-03T20:15:56.120995 #26988]  INFO -- : Migrating to AddCollectionIdToEpisodeQueues (20220627014815)
+I, [2022-07-03T20:15:56.123479 #26988]  INFO -- : Migrating to DropQueuesTableFromEpisodeQueues (20220627223446)
+I, [2022-07-03T20:28:37.937421 #31556]  INFO -- : [8b189f31-69a3-4aef-ab64-ef0b3ad492b1] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 20:28:37 -0400
+I, [2022-07-03T20:28:37.944396 #31556]  INFO -- : [8b189f31-69a3-4aef-ab64-ef0b3ad492b1] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T20:28:37.945623 #31556]  INFO -- : [8b189f31-69a3-4aef-ab64-ef0b3ad492b1] Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 513)
+I, [2022-07-03T20:28:45.620807 #31556]  INFO -- : [f133adb3-abc8-4bc6-92d9-b216ea95eccf] Started POST "/api/v1/users" for 127.0.0.1 at 2022-07-03 20:28:45 -0400
+I, [2022-07-03T20:28:45.621769 #31556]  INFO -- : [f133adb3-abc8-4bc6-92d9-b216ea95eccf] Processing by Api::V1::UsersController#create as HTML
+I, [2022-07-03T20:28:45.621827 #31556]  INFO -- : [f133adb3-abc8-4bc6-92d9-b216ea95eccf]   Parameters: {"user"=>{"username"=>"ben", "email"=>"ben@ben.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+I, [2022-07-03T20:28:45.826993 #31556]  INFO -- : [f133adb3-abc8-4bc6-92d9-b216ea95eccf] Completed 200 OK in 205ms (Views: 0.2ms | ActiveRecord: 8.2ms | Allocations: 10039)
+I, [2022-07-03T20:28:45.854810 #31556]  INFO -- : [56cb5805-8dd7-459a-9139-ca180f53e9da] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:28:45 -0400
+I, [2022-07-03T20:28:45.855749 #31556]  INFO -- : [56cb5805-8dd7-459a-9139-ca180f53e9da] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:28:46.370132 #31556]  INFO -- : [56cb5805-8dd7-459a-9139-ca180f53e9da] Completed 200 OK in 514ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 6497)
+I, [2022-07-03T20:28:48.602920 #31556]  INFO -- : [0990d621-7053-41d9-a6a2-4520ee663b4e] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:28:48 -0400
+I, [2022-07-03T20:28:48.604970 #31556]  INFO -- : [0990d621-7053-41d9-a6a2-4520ee663b4e] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:28:48.603890 #31556]  INFO -- : [942d54ab-a3c4-49bb-9f25-fbfd942009f8] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:28:48 -0400
+I, [2022-07-03T20:28:48.607349 #31556]  INFO -- : [942d54ab-a3c4-49bb-9f25-fbfd942009f8] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:28:48.606341 #31556]  INFO -- : [dde2a959-0a64-45cd-be28-3d2372cb1a0a] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 20:28:48 -0400
+I, [2022-07-03T20:28:48.609979 #31556]  INFO -- : [dde2a959-0a64-45cd-be28-3d2372cb1a0a] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T20:28:48.610539 #31556]  INFO -- : [dde2a959-0a64-45cd-be28-3d2372cb1a0a]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T20:28:48.617594 #31556]  INFO -- : [0990d621-7053-41d9-a6a2-4520ee663b4e] Completed 200 OK in 12ms (Views: 1.0ms | ActiveRecord: 5.1ms | Allocations: 5046)
+I, [2022-07-03T20:28:48.627687 #31556]  INFO -- : [942d54ab-a3c4-49bb-9f25-fbfd942009f8] Completed 200 OK in 20ms (Views: 1.1ms | ActiveRecord: 8.3ms | Allocations: 7706)
+I, [2022-07-03T20:28:49.460756 #31556]  INFO -- : [dde2a959-0a64-45cd-be28-3d2372cb1a0a] Completed 200 OK in 850ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 30773)
+I, [2022-07-03T20:28:49.548978 #31556]  INFO -- : [1196885c-3bc3-4b79-b8a6-15c509d9cb7e] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:28:49 -0400
+I, [2022-07-03T20:28:49.549783 #31556]  INFO -- : [1196885c-3bc3-4b79-b8a6-15c509d9cb7e] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:28:49.552793 #31556]  INFO -- : [1196885c-3bc3-4b79-b8a6-15c509d9cb7e] Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 0.7ms | Allocations: 410)
+I, [2022-07-03T20:28:49.554483 #31556]  INFO -- : [860ab9b5-ec2e-469c-b053-3dcbdfa1b43f] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:28:49 -0400
+I, [2022-07-03T20:28:49.555488 #31556]  INFO -- : [860ab9b5-ec2e-469c-b053-3dcbdfa1b43f] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:28:49.558441 #31556]  INFO -- : [860ab9b5-ec2e-469c-b053-3dcbdfa1b43f] Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 403)
+I, [2022-07-03T20:28:51.124058 #31556]  INFO -- : [871e7fc9-9dce-47e7-a59d-24f2d927e6b7] Started POST "/api/v1/subscribe" for 127.0.0.1 at 2022-07-03 20:28:51 -0400
+I, [2022-07-03T20:28:51.125703 #31556]  INFO -- : [871e7fc9-9dce-47e7-a59d-24f2d927e6b7] Processing by Api::V1::SubscriptionsController#create as HTML
+I, [2022-07-03T20:28:51.125794 #31556]  INFO -- : [871e7fc9-9dce-47e7-a59d-24f2d927e6b7]   Parameters: {"podcast_to_subscribe"=>{"name"=>"Serial", "description"=>"Serial is a podcast from Serial Productions, a New York Times company, hosted by Sarah Koenig. Serial unfolds one story - a true story - over the course of a whole season. The show follows the plot and characters wherever they lead, through many surprising twists and turns. Sarah won't know what happens at the end of the story until she gets there, not long before you get there with her. Each week she'll bring you the latest chapter, so it's important to listen in, starting with Episode 1. New episodes are released on Thursday mornings. ", "artist_name"=>"Serial Productions", "art_work_url_600"=>"https://is3-ssl.mzstatic.com/image/thumb/Podcasts125/v4/a0/59/6f/a0596f0b-a6ed-2d99-9612-f87336dcc425/mza_6358232385104550948.jpeg/600x600bb.jpg", "genre_ids"=>["1489", "26", "1488"], "genres"=>["News", "Podcasts", "True Crime"], "track_id"=>917918570}, "subscription"=>{}}
+I, [2022-07-03T20:28:51.138656 #31556]  INFO -- : [871e7fc9-9dce-47e7-a59d-24f2d927e6b7] Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 4.0ms | Allocations: 7336)
+I, [2022-07-03T20:28:52.317813 #31556]  INFO -- : [d389725e-392d-47a6-bf81-cf5f58fbf767] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:28:52 -0400
+I, [2022-07-03T20:28:52.318678 #31556]  INFO -- : [d389725e-392d-47a6-bf81-cf5f58fbf767] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:28:52.322108 #31556]  INFO -- : [d389725e-392d-47a6-bf81-cf5f58fbf767] Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.8ms | Allocations: 631)
+I, [2022-07-03T20:28:55.586184 #31556]  INFO -- : [6660ab96-7834-418e-a3a5-2bebe0905ce8] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:28:55 -0400
+I, [2022-07-03T20:28:55.587282 #31556]  INFO -- : [6660ab96-7834-418e-a3a5-2bebe0905ce8] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:28:55.588687 #31556]  INFO -- : [811768a4-3ca0-4826-9a4a-e72e01f0de4b] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 20:28:55 -0400
+I, [2022-07-03T20:28:55.589718 #31556]  INFO -- : [811768a4-3ca0-4826-9a4a-e72e01f0de4b] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T20:28:55.587846 #31556]  INFO -- : [9dec5052-6ac2-4d77-9fa7-a9e595220a9a] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:28:55 -0400
+I, [2022-07-03T20:28:55.591041 #31556]  INFO -- : [9dec5052-6ac2-4d77-9fa7-a9e595220a9a] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:28:55.591192 #31556]  INFO -- : [811768a4-3ca0-4826-9a4a-e72e01f0de4b]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T20:28:55.596364 #31556]  INFO -- : [6660ab96-7834-418e-a3a5-2bebe0905ce8] Completed 200 OK in 8ms (Views: 1.2ms | ActiveRecord: 2.9ms | Allocations: 3093)
+I, [2022-07-03T20:28:55.599687 #31556]  INFO -- : [9dec5052-6ac2-4d77-9fa7-a9e595220a9a] Completed 200 OK in 8ms (Views: 2.2ms | ActiveRecord: 0.7ms | Allocations: 2571)
+I, [2022-07-03T20:28:56.013409 #31556]  INFO -- : [811768a4-3ca0-4826-9a4a-e72e01f0de4b] Completed 200 OK in 421ms (Views: 14.9ms | ActiveRecord: 0.0ms | Allocations: 26407)
+I, [2022-07-03T20:28:56.082892 #31556]  INFO -- : [b7bb2345-f597-49fc-9005-ee95258008b9] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:28:56 -0400
+I, [2022-07-03T20:28:56.083893 #31556]  INFO -- : [b7bb2345-f597-49fc-9005-ee95258008b9] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:28:56.086430 #31556]  INFO -- : [4a7e1896-0be8-4ecc-a966-1bd9b799cac4] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:28:56 -0400
+I, [2022-07-03T20:28:56.087976 #31556]  INFO -- : [4a7e1896-0be8-4ecc-a966-1bd9b799cac4] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:28:56.087294 #31556]  INFO -- : [b7bb2345-f597-49fc-9005-ee95258008b9] Completed 200 OK in 3ms (Views: 0.9ms | ActiveRecord: 1.1ms | Allocations: 794)
+I, [2022-07-03T20:28:56.091542 #31556]  INFO -- : [4a7e1896-0be8-4ecc-a966-1bd9b799cac4] Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 907)
+I, [2022-07-03T20:28:57.625847 #31556]  INFO -- : [dc35a244-5b77-40b5-8542-ea778690561b] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:28:57 -0400
+I, [2022-07-03T20:28:57.626687 #31556]  INFO -- : [dc35a244-5b77-40b5-8542-ea778690561b] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:28:57.822509 #31556]  INFO -- : [dc35a244-5b77-40b5-8542-ea778690561b] Completed 200 OK in 195ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 4341)
+I, [2022-07-03T20:28:59.063676 #31556]  INFO -- : [1ba4e6c4-4cbd-4a84-b6ac-6f607f45cc22] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:28:59 -0400
+I, [2022-07-03T20:28:59.065032 #31556]  INFO -- : [1ba4e6c4-4cbd-4a84-b6ac-6f607f45cc22] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:28:59.065670 #31556]  INFO -- : [2655977c-e3ff-4702-9d5d-288c55c0611d] Started GET "/api/v1/podcasts/173001861" for 127.0.0.1 at 2022-07-03 20:28:59 -0400
+I, [2022-07-03T20:28:59.066818 #31556]  INFO -- : [2655977c-e3ff-4702-9d5d-288c55c0611d] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T20:28:59.066952 #31556]  INFO -- : [2655977c-e3ff-4702-9d5d-288c55c0611d]   Parameters: {"id"=>"173001861"}
+I, [2022-07-03T20:28:59.067382 #31556]  INFO -- : [31fd0a70-f389-4fb3-8779-70c22fced9ce] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:28:59 -0400
+I, [2022-07-03T20:28:59.069584 #31556]  INFO -- : [31fd0a70-f389-4fb3-8779-70c22fced9ce] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:28:59.071844 #31556]  INFO -- : [1ba4e6c4-4cbd-4a84-b6ac-6f607f45cc22] Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 3031)
+I, [2022-07-03T20:28:59.073643 #31556]  INFO -- : [31fd0a70-f389-4fb3-8779-70c22fced9ce] Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1471)
+I, [2022-07-03T20:28:59.354229 #31556]  INFO -- : [2655977c-e3ff-4702-9d5d-288c55c0611d] Completed 200 OK in 286ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 12724)
+I, [2022-07-03T20:28:59.382751 #31556]  INFO -- : [b7b0e561-1624-4731-a484-1a6234fb9367] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:28:59 -0400
+I, [2022-07-03T20:28:59.384234 #31556]  INFO -- : [b7b0e561-1624-4731-a484-1a6234fb9367] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:28:59.384718 #31556]  INFO -- : [e54d893f-d873-4647-bc48-31f5f531261d] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:28:59 -0400
+I, [2022-07-03T20:28:59.385839 #31556]  INFO -- : [e54d893f-d873-4647-bc48-31f5f531261d] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:28:59.388222 #31556]  INFO -- : [b7b0e561-1624-4731-a484-1a6234fb9367] Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 1269)
+I, [2022-07-03T20:28:59.390476 #31556]  INFO -- : [e54d893f-d873-4647-bc48-31f5f531261d] Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.9ms | Allocations: 1440)
+I, [2022-07-03T20:29:00.035267 #31556]  INFO -- : [5be2b0b7-3b35-4752-9c50-99c7057c99fa] Started POST "/api/v1/subscribe" for 127.0.0.1 at 2022-07-03 20:29:00 -0400
+I, [2022-07-03T20:29:00.036284 #31556]  INFO -- : [5be2b0b7-3b35-4752-9c50-99c7057c99fa] Processing by Api::V1::SubscriptionsController#create as HTML
+I, [2022-07-03T20:29:00.036374 #31556]  INFO -- : [5be2b0b7-3b35-4752-9c50-99c7057c99fa]   Parameters: {"podcast_to_subscribe"=>{"name"=>"Dan Carlin's Hardcore History", "description"=>"In \"Hardcore History\" journalist and broadcaster Dan Carlin takes his \"Martian\", unorthodox way of thinking and applies it to the past. Was Alexander the Great as bad a person as Adolf Hitler? What would Apaches with modern weapons be like? Will our modern civilization ever fall like civilizations from past eras? This isn't academic history (and Carlin isn't a historian) but the podcast's unique blend of high drama, masterful narration and Twilight Zone-style twists has entertained millions of listeners.", "artist_name"=>"Dan Carlin", "art_work_url_600"=>"https://is3-ssl.mzstatic.com/image/thumb/Podcasts115/v4/49/b7/eb/49b7eb32-8f08-6fac-aadb-2f002131fe5f/mza_15196161972010256532.jpg/600x600bb.jpg", "genre_ids"=>["1487", "26"], "genres"=>["History", "Podcasts"], "track_id"=>173001861}, "subscription"=>{}}
+I, [2022-07-03T20:29:00.042758 #31556]  INFO -- : [5be2b0b7-3b35-4752-9c50-99c7057c99fa] Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 1847)
+I, [2022-07-03T20:29:01.074933 #31556]  INFO -- : [3878492b-5d43-405a-a16a-64f78a1049af] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:29:01 -0400
+I, [2022-07-03T20:29:01.075880 #31556]  INFO -- : [3878492b-5d43-405a-a16a-64f78a1049af] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:29:01.078942 #31556]  INFO -- : [3878492b-5d43-405a-a16a-64f78a1049af] Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 745)
+I, [2022-07-03T20:29:01.665280 #31556]  INFO -- : [dd1b1e72-5bfd-413a-b1af-e5a70f7be82c] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:29:01 -0400
+I, [2022-07-03T20:29:01.666229 #31556]  INFO -- : [dd1b1e72-5bfd-413a-b1af-e5a70f7be82c] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:29:01.668884 #31556]  INFO -- : [dd1b1e72-5bfd-413a-b1af-e5a70f7be82c] Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.6ms | Allocations: 394)
+I, [2022-07-03T20:29:01.671269 #31556]  INFO -- : [47a73054-4844-4b81-8ead-2465692128d1] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:29:01 -0400
+I, [2022-07-03T20:29:01.672188 #31556]  INFO -- : [47a73054-4844-4b81-8ead-2465692128d1] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:29:01.674199 #31556]  INFO -- : [47a73054-4844-4b81-8ead-2465692128d1] Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 394)
+I, [2022-07-03T20:29:02.856686 #31556]  INFO -- : [0d760eeb-1560-45f4-8ac7-04e22685f9a1] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:29:02 -0400
+I, [2022-07-03T20:29:02.857481 #31556]  INFO -- : [0d760eeb-1560-45f4-8ac7-04e22685f9a1] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:29:02.860088 #31556]  INFO -- : [0d760eeb-1560-45f4-8ac7-04e22685f9a1] Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 745)
+I, [2022-07-03T20:29:03.445866 #31556]  INFO -- : [2f3d8ac2-90b0-459d-8233-c3a9d0f97a86] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:29:03 -0400
+I, [2022-07-03T20:29:03.447530 #31556]  INFO -- : [2f3d8ac2-90b0-459d-8233-c3a9d0f97a86] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:29:03.448108 #31556]  INFO -- : [976da1e7-e9ec-41bc-b44c-08ee09311541] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 20:29:03 -0400
+I, [2022-07-03T20:29:03.449255 #31556]  INFO -- : [976da1e7-e9ec-41bc-b44c-08ee09311541] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T20:29:03.446377 #31556]  INFO -- : [0c6bcce3-3771-40be-ac73-ce6f560be2c1] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:29:03 -0400
+I, [2022-07-03T20:29:03.450453 #31556]  INFO -- : [0c6bcce3-3771-40be-ac73-ce6f560be2c1] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:29:03.449371 #31556]  INFO -- : [976da1e7-e9ec-41bc-b44c-08ee09311541]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T20:29:03.453671 #31556]  INFO -- : [2f3d8ac2-90b0-459d-8233-c3a9d0f97a86] Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 2634)
+I, [2022-07-03T20:29:03.456507 #31556]  INFO -- : [0c6bcce3-3771-40be-ac73-ce6f560be2c1] Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 2756)
+I, [2022-07-03T20:29:03.789929 #31556]  INFO -- : [976da1e7-e9ec-41bc-b44c-08ee09311541] Completed 200 OK in 339ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 26640)
+I, [2022-07-03T20:29:03.862171 #31556]  INFO -- : [6b9ab9af-46bf-4360-9818-40b43040c2a6] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:29:03 -0400
+I, [2022-07-03T20:29:03.863007 #31556]  INFO -- : [6b9ab9af-46bf-4360-9818-40b43040c2a6] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:29:03.865312 #31556]  INFO -- : [9a67e4ae-0936-4d3b-b89b-c717a6e693dc] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:29:03 -0400
+I, [2022-07-03T20:29:03.866151 #31556]  INFO -- : [9a67e4ae-0936-4d3b-b89b-c717a6e693dc] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:29:03.867962 #31556]  INFO -- : [6b9ab9af-46bf-4360-9818-40b43040c2a6] Completed 200 OK in 5ms (Views: 1.3ms | ActiveRecord: 2.2ms | Allocations: 1634)
+I, [2022-07-03T20:29:03.870704 #31556]  INFO -- : [9a67e4ae-0936-4d3b-b89b-c717a6e693dc] Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1423)
+I, [2022-07-03T20:29:04.895451 #31556]  INFO -- : [7e5315c3-861e-47c8-8e9e-80f3fb24a3cf] Started POST "/api/v1/queue" for 127.0.0.1 at 2022-07-03 20:29:04 -0400
+I, [2022-07-03T20:29:04.897466 #31556]  INFO -- : [7e5315c3-861e-47c8-8e9e-80f3fb24a3cf] Processing by Api::V1::EpisodeQueuesController#create as HTML
+I, [2022-07-03T20:29:04.897586 #31556]  INFO -- : [7e5315c3-861e-47c8-8e9e-80f3fb24a3cf]   Parameters: {"episode_to_queue"=>{"episode_name"=>"The Trojan Horse Affair - Part 3", "description"=>"In a state of surprise, Hamza and Brian leave a meeting with the man the Trojan Horse letter was first sent to. And they learn about an internal investigation report that local officials have kept hidden, but which they think could contain a bombshell.", "artwork_url_600"=>"https://is3-ssl.mzstatic.com/image/thumb/Podcasts116/v4/0d/c4/66/0dc46620-a648-7414-f164-3046c2cd7595/mza_1142597152555635783.jpg/600x600bb.jpg", "genres"=>[{"name"=>"News", "id"=>"1489"}], "track_id"=>1000554460962, "track_time_millis"=>2287000, "episode_url"=>"https://dts.podtrac.com/redirect.mp3/chrt.fm/track/8DB4DB/pdst.fm/e/nyt.simplecastaudio.com/521189a6-a4f6-404d-85cf-455a989a10a4/episodes/82817962-437d-4d93-83b3-f639f2bb3e29/audio/128/default.mp3?aid=rss_feed&awCollectionId=521189a6-a4f6-404d-85cf-455a989a10a4&awEpisodeId=82817962-437d-4d93-83b3-f639f2bb3e29&feed=xl36XBC2", "collection_name"=>"Serial", "release_date"=>"2022-03-18T09:25:00Z", "collection_id"=>917918570}, "episode_queue"=>{}}
+I, [2022-07-03T20:29:04.913305 #31556]  INFO -- : [7e5315c3-861e-47c8-8e9e-80f3fb24a3cf] Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 5.2ms | Allocations: 7202)
+I, [2022-07-03T20:29:06.982598 #31556]  INFO -- : [8cd72003-2106-48aa-b2fc-f55731c65acd] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:29:06 -0400
+I, [2022-07-03T20:29:06.983788 #31556]  INFO -- : [8cd72003-2106-48aa-b2fc-f55731c65acd] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:29:06.986162 #31556]  INFO -- : [8cd72003-2106-48aa-b2fc-f55731c65acd] Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 624)
+I, [2022-07-03T20:29:06.988452 #31556]  INFO -- : [ca94285f-e26f-41ed-b882-fa59e3dc04ab] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:29:06 -0400
+I, [2022-07-03T20:29:06.989271 #31556]  INFO -- : [ca94285f-e26f-41ed-b882-fa59e3dc04ab] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:29:06.991543 #31556]  INFO -- : [ca94285f-e26f-41ed-b882-fa59e3dc04ab] Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 589)
+I, [2022-07-03T20:30:35.478426 #32293]  INFO -- : [c2e1c39f-cba7-4a27-b29b-697adc0ec60f] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 20:30:35 -0400
+I, [2022-07-03T20:30:35.478732 #32293]  INFO -- : [37b2740c-759e-4487-b047-650c90e6d87d] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:30:35 -0400
+I, [2022-07-03T20:30:35.483442 #32293]  INFO -- : [c2e1c39f-cba7-4a27-b29b-697adc0ec60f] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T20:30:35.483711 #32293]  INFO -- : [37b2740c-759e-4487-b047-650c90e6d87d] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:30:35.484410 #32293]  INFO -- : [c2e1c39f-cba7-4a27-b29b-697adc0ec60f] Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 416)
+I, [2022-07-03T20:30:35.976177 #32293]  INFO -- : [37b2740c-759e-4487-b047-650c90e6d87d] Completed 200 OK in 491ms (Views: 0.4ms | Allocations: 7571)
+I, [2022-07-03T20:30:37.477027 #32293]  INFO -- : [b46e9460-3406-4755-a1ea-7be69b54c3f5] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 20:30:37 -0400
+I, [2022-07-03T20:30:37.478082 #32293]  INFO -- : [b46e9460-3406-4755-a1ea-7be69b54c3f5] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T20:30:37.478186 #32293]  INFO -- : [b46e9460-3406-4755-a1ea-7be69b54c3f5]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T20:30:38.242127 #32293]  INFO -- : [b46e9460-3406-4755-a1ea-7be69b54c3f5] Completed 200 OK in 764ms (Views: 8.8ms | Allocations: 24785)
+I, [2022-07-03T20:30:41.795205 #32293]  INFO -- : [cea6d400-5d41-4158-aa9a-76cee6b2adc4] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 20:30:41 -0400
+I, [2022-07-03T20:30:41.796121 #32293]  INFO -- : [cea6d400-5d41-4158-aa9a-76cee6b2adc4] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T20:30:41.796181 #32293]  INFO -- : [cea6d400-5d41-4158-aa9a-76cee6b2adc4]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T20:30:41.998048 #32293]  INFO -- : [cea6d400-5d41-4158-aa9a-76cee6b2adc4] Completed 200 OK in 202ms (Views: 0.6ms | ActiveRecord: 7.3ms | Allocations: 8821)
+I, [2022-07-03T20:30:42.023980 #32293]  INFO -- : [005f15f5-23bb-4d63-9591-8adebd1a31dd] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:30:42 -0400
+I, [2022-07-03T20:30:42.025003 #32293]  INFO -- : [005f15f5-23bb-4d63-9591-8adebd1a31dd] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:30:42.215912 #32293]  INFO -- : [005f15f5-23bb-4d63-9591-8adebd1a31dd] Completed 200 OK in 191ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4441)
+I, [2022-07-03T20:30:43.473582 #32293]  INFO -- : [37d62a11-b5db-4243-bb83-264f856a69e8] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 20:30:43 -0400
+I, [2022-07-03T20:30:43.474462 #32293]  INFO -- : [37d62a11-b5db-4243-bb83-264f856a69e8] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T20:30:43.475845 #32293]  INFO -- : [37d62a11-b5db-4243-bb83-264f856a69e8] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T20:30:43.476880 #32293]  INFO -- : [37d62a11-b5db-4243-bb83-264f856a69e8] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 580)
+I, [2022-07-03T20:30:43.476683 #32293]  INFO -- : [c37b6bf0-53da-4640-8651-8555416da2f2] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 20:30:43 -0400
+I, [2022-07-03T20:30:43.478802 #32293]  INFO -- : [c37b6bf0-53da-4640-8651-8555416da2f2] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T20:30:43.479102 #32293]  INFO -- : [c37b6bf0-53da-4640-8651-8555416da2f2]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T20:30:43.476290 #32293]  INFO -- : [6805a5f6-5162-428a-90b8-a13b45173a91] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 20:30:43 -0400
+I, [2022-07-03T20:30:43.480599 #32293]  INFO -- : [6805a5f6-5162-428a-90b8-a13b45173a91] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T20:30:43.482552 #32293]  INFO -- : [6805a5f6-5162-428a-90b8-a13b45173a91] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T20:30:43.483642 #32293]  INFO -- : [6805a5f6-5162-428a-90b8-a13b45173a91] Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 1239)
+I, [2022-07-03T20:30:44.093472 #32293]  INFO -- : [c37b6bf0-53da-4640-8651-8555416da2f2] Completed 200 OK in 614ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 25720)
+I, [2022-07-03T20:30:53.497777 #32293]  INFO -- : [b11fc34a-f956-475f-83b9-3e7cb20f15ec] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:30:53 -0400
+I, [2022-07-03T20:30:53.498690 #32293]  INFO -- : [b11fc34a-f956-475f-83b9-3e7cb20f15ec] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:30:53.499364 #32293]  INFO -- : [2b4105f3-ea2b-4cb6-9aee-757e566788ca] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 20:30:53 -0400
+I, [2022-07-03T20:30:53.501010 #32293]  INFO -- : [2b4105f3-ea2b-4cb6-9aee-757e566788ca] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T20:30:53.501706 #32293]  INFO -- : [2b4105f3-ea2b-4cb6-9aee-757e566788ca] Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 112)
+I, [2022-07-03T20:30:54.664120 #32293]  INFO -- : [b11fc34a-f956-475f-83b9-3e7cb20f15ec] Completed 200 OK in 1165ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5389)
+I, [2022-07-03T20:30:57.832823 #32293]  INFO -- : [320f9235-677b-4b5b-89b6-a78c0b8b852f] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 20:30:57 -0400
+I, [2022-07-03T20:30:57.833508 #32293]  INFO -- : [320f9235-677b-4b5b-89b6-a78c0b8b852f] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T20:30:57.833575 #32293]  INFO -- : [320f9235-677b-4b5b-89b6-a78c0b8b852f]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T20:30:58.016064 #32293]  INFO -- : [320f9235-677b-4b5b-89b6-a78c0b8b852f] Completed 200 OK in 182ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 379)
+I, [2022-07-03T20:30:58.037285 #32293]  INFO -- : [e3e8a0d0-ccaf-47db-afd7-fca24904ec15] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:30:58 -0400
+I, [2022-07-03T20:30:58.038467 #32293]  INFO -- : [e3e8a0d0-ccaf-47db-afd7-fca24904ec15] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:30:58.267820 #32293]  INFO -- : [e3e8a0d0-ccaf-47db-afd7-fca24904ec15] Completed 200 OK in 229ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4281)
+I, [2022-07-03T20:30:59.436824 #32293]  INFO -- : [6cfc2416-0cdf-4c12-a8dc-370c4568cb06] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:30:59 -0400
+I, [2022-07-03T20:30:59.437792 #32293]  INFO -- : [6cfc2416-0cdf-4c12-a8dc-370c4568cb06] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:30:59.438257 #32293]  INFO -- : [a395e23e-c0d0-43af-9876-de746a6fa185] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 20:30:59 -0400
+I, [2022-07-03T20:30:59.439223 #32293]  INFO -- : [a395e23e-c0d0-43af-9876-de746a6fa185] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T20:30:59.440079 #32293]  INFO -- : [a395e23e-c0d0-43af-9876-de746a6fa185] Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 1137)
+I, [2022-07-03T20:30:59.703345 #32293]  INFO -- : [6cfc2416-0cdf-4c12-a8dc-370c4568cb06] Completed 200 OK in 265ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5350)
+I, [2022-07-03T20:48:48.052245 #6532]  INFO -- : [25ad1e39-a251-474b-ae15-ca060e22f315] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:48:48 -0400
+I, [2022-07-03T20:48:48.056533 #6532]  INFO -- : [25ad1e39-a251-474b-ae15-ca060e22f315] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:48:48.300158 #6532]  INFO -- : [25ad1e39-a251-474b-ae15-ca060e22f315] Completed 200 OK in 243ms (Views: 0.2ms | Allocations: 6668)
+I, [2022-07-03T20:48:51.469155 #6532]  INFO -- : [15075371-605d-49a9-ad24-7ae0ce3e887e] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 20:48:51 -0400
+I, [2022-07-03T20:48:51.470357 #6532]  INFO -- : [15075371-605d-49a9-ad24-7ae0ce3e887e] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T20:48:51.470432 #6532]  INFO -- : [15075371-605d-49a9-ad24-7ae0ce3e887e]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T20:48:51.671253 #6532]  INFO -- : [15075371-605d-49a9-ad24-7ae0ce3e887e] Completed 200 OK in 201ms (Views: 0.4ms | ActiveRecord: 6.8ms | Allocations: 8890)
+I, [2022-07-03T20:48:51.712091 #6532]  INFO -- : [4b0e08f8-a1c2-430e-b81e-676f12a29b1c] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:48:51 -0400
+I, [2022-07-03T20:48:51.713061 #6532]  INFO -- : [4b0e08f8-a1c2-430e-b81e-676f12a29b1c] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:48:51.890665 #6532]  INFO -- : [4b0e08f8-a1c2-430e-b81e-676f12a29b1c] Completed 200 OK in 177ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4439)
+I, [2022-07-03T20:48:53.112988 #6532]  INFO -- : [bfeec4bf-dea0-4f82-9f56-a7612d9d043d] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 20:48:53 -0400
+I, [2022-07-03T20:48:53.113864 #6532]  INFO -- : [bfeec4bf-dea0-4f82-9f56-a7612d9d043d] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T20:48:53.117077 #6532]  INFO -- : [0f6805d7-44f8-42c3-add2-1d083f14fdca] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 20:48:53 -0400
+I, [2022-07-03T20:48:53.117887 #6532]  INFO -- : [0f6805d7-44f8-42c3-add2-1d083f14fdca] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T20:48:53.118193 #6532]  INFO -- : [0f6805d7-44f8-42c3-add2-1d083f14fdca] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 121)
+I, [2022-07-03T20:48:53.327513 #6532]  INFO -- : [bfeec4bf-dea0-4f82-9f56-a7612d9d043d] Completed 200 OK in 213ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5692)
+I, [2022-07-03T21:49:19.745579 #2252]  INFO -- : [3f0bad7b-4c5a-427d-b274-93dbc416b037] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:49:19 -0400
+I, [2022-07-03T21:49:19.745862 #2252]  INFO -- : [1daca735-f24b-4921-9a13-24bd6c0383f8] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 21:49:19 -0400
+I, [2022-07-03T21:49:19.750973 #2252]  INFO -- : [3f0bad7b-4c5a-427d-b274-93dbc416b037] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:49:19.751770 #2252]  INFO -- : [3f0bad7b-4c5a-427d-b274-93dbc416b037] Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 416)
+I, [2022-07-03T21:49:19.751210 #2252]  INFO -- : [1daca735-f24b-4921-9a13-24bd6c0383f8] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T21:49:19.753829 #2252]  INFO -- : [1daca735-f24b-4921-9a13-24bd6c0383f8]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T21:49:20.564891 #2252]  INFO -- : [1daca735-f24b-4921-9a13-24bd6c0383f8] Completed 200 OK in 811ms (Views: 8.6ms | Allocations: 26980)
+I, [2022-07-03T21:49:22.115735 #2252]  INFO -- : [f9cff66d-a2a8-4092-a5f2-2c5dae2574cc] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:49:22 -0400
+I, [2022-07-03T21:49:22.116635 #2252]  INFO -- : [f9cff66d-a2a8-4092-a5f2-2c5dae2574cc] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:49:22.681255 #2252]  INFO -- : [f9cff66d-a2a8-4092-a5f2-2c5dae2574cc] Completed 200 OK in 564ms (Views: 0.1ms | Allocations: 4622)
+I, [2022-07-03T21:49:29.017124 #2252]  INFO -- : [dba3695b-231f-4a60-9813-cfa5a4e0a890] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 21:49:29 -0400
+I, [2022-07-03T21:49:29.018196 #2252]  INFO -- : [dba3695b-231f-4a60-9813-cfa5a4e0a890] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T21:49:29.018265 #2252]  INFO -- : [dba3695b-231f-4a60-9813-cfa5a4e0a890]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T21:49:29.250437 #2252]  INFO -- : [dba3695b-231f-4a60-9813-cfa5a4e0a890] Completed 200 OK in 232ms (Views: 0.4ms | ActiveRecord: 31.2ms | Allocations: 8796)
+I, [2022-07-03T21:49:29.278039 #2252]  INFO -- : [535f88bf-cf9f-4cf4-b612-55ef9e2d7bb0] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:49:29 -0400
+I, [2022-07-03T21:49:29.278839 #2252]  INFO -- : [535f88bf-cf9f-4cf4-b612-55ef9e2d7bb0] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:49:29.649357 #2252]  INFO -- : [535f88bf-cf9f-4cf4-b612-55ef9e2d7bb0] Completed 200 OK in 370ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4481)
+I, [2022-07-03T21:49:31.323644 #2252]  INFO -- : [98dcd8a3-46fe-4f9c-b9e4-8afd65ed43ff] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 21:49:31 -0400
+I, [2022-07-03T21:49:31.324542 #2252]  INFO -- : [98dcd8a3-46fe-4f9c-b9e4-8afd65ed43ff] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T21:49:31.337714 #2252]  INFO -- : [98dcd8a3-46fe-4f9c-b9e4-8afd65ed43ff] Completed 200 OK in 13ms (Views: 5.5ms | ActiveRecord: 5.1ms | Allocations: 6572)
+I, [2022-07-03T21:49:34.814696 #2252]  INFO -- : [ae19a96b-a30f-4b45-86c6-54c5c3ac7fc8] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:49:34 -0400
+I, [2022-07-03T21:49:34.815483 #2252]  INFO -- : [ae19a96b-a30f-4b45-86c6-54c5c3ac7fc8] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:49:34.815935 #2252]  INFO -- : [49e7dd7f-046e-4ad5-8e29-fc73ee16b2c1] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:49:34 -0400
+I, [2022-07-03T21:49:34.817258 #2252]  INFO -- : [49e7dd7f-046e-4ad5-8e29-fc73ee16b2c1] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:49:34.818074 #2252]  INFO -- : [49e7dd7f-046e-4ad5-8e29-fc73ee16b2c1] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 112)
+I, [2022-07-03T21:49:35.250297 #2252]  INFO -- : [ae19a96b-a30f-4b45-86c6-54c5c3ac7fc8] Completed 200 OK in 434ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5519)
+I, [2022-07-03T21:49:37.768982 #2252]  INFO -- : [379d8e4c-7301-4422-9802-d5e447508328] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 21:49:37 -0400
+I, [2022-07-03T21:49:37.769622 #2252]  INFO -- : [379d8e4c-7301-4422-9802-d5e447508328] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T21:49:37.769679 #2252]  INFO -- : [379d8e4c-7301-4422-9802-d5e447508328]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T21:49:37.951640 #2252]  INFO -- : [379d8e4c-7301-4422-9802-d5e447508328] Completed 200 OK in 182ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 368)
+I, [2022-07-03T21:49:37.970619 #2252]  INFO -- : [ad48a516-f4f5-4e42-8728-a6b3a7b8d4f8] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:49:37 -0400
+I, [2022-07-03T21:49:37.971546 #2252]  INFO -- : [ad48a516-f4f5-4e42-8728-a6b3a7b8d4f8] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:49:38.366406 #2252]  INFO -- : [ad48a516-f4f5-4e42-8728-a6b3a7b8d4f8] Completed 200 OK in 395ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4341)
+I, [2022-07-03T21:49:42.185783 #2252]  INFO -- : [cd289c8d-605c-4a82-b6d0-4f4987f3ea1f] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 21:49:42 -0400
+I, [2022-07-03T21:49:42.186631 #2252]  INFO -- : [cd289c8d-605c-4a82-b6d0-4f4987f3ea1f] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T21:49:42.186997 #2252]  INFO -- : [cd289c8d-605c-4a82-b6d0-4f4987f3ea1f] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T21:49:42.187171 #2252]  INFO -- : [cd289c8d-605c-4a82-b6d0-4f4987f3ea1f] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 132)
+I, [2022-07-03T21:49:48.443994 #2252]  INFO -- : [f481b7a9-bb71-44b7-adb9-5c4cfa65a795] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:49:48 -0400
+I, [2022-07-03T21:49:48.444873 #2252]  INFO -- : [f481b7a9-bb71-44b7-adb9-5c4cfa65a795] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:49:48.445302 #2252]  INFO -- : [67d37629-36ba-418d-9cb2-0eaa5babd800] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:49:48 -0400
+I, [2022-07-03T21:49:48.446419 #2252]  INFO -- : [67d37629-36ba-418d-9cb2-0eaa5babd800] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:49:48.447111 #2252]  INFO -- : [67d37629-36ba-418d-9cb2-0eaa5babd800] Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 112)
+I, [2022-07-03T21:49:48.798569 #2252]  INFO -- : [f481b7a9-bb71-44b7-adb9-5c4cfa65a795] Completed 200 OK in 353ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5453)
+I, [2022-07-03T21:51:22.148538 #2252]  INFO -- : [85c0aac5-e23d-4aa6-b016-467584c8edc1] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:51:22 -0400
+I, [2022-07-03T21:51:22.149336 #2252]  INFO -- : [85c0aac5-e23d-4aa6-b016-467584c8edc1] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:51:22.150017 #2252]  INFO -- : [e46892e3-e3a2-47bf-af0e-ed730b5f6da6] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:51:22 -0400
+I, [2022-07-03T21:51:22.150766 #2252]  INFO -- : [e46892e3-e3a2-47bf-af0e-ed730b5f6da6] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:51:22.151338 #2252]  INFO -- : [e46892e3-e3a2-47bf-af0e-ed730b5f6da6] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 112)
+I, [2022-07-03T21:51:22.627672 #2252]  INFO -- : [85c0aac5-e23d-4aa6-b016-467584c8edc1] Completed 200 OK in 478ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5755)
+I, [2022-07-03T21:51:25.756895 #2252]  INFO -- : [e955def5-84ee-4304-81c1-05082983a5f3] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 21:51:25 -0400
+I, [2022-07-03T21:51:25.757597 #2252]  INFO -- : [e955def5-84ee-4304-81c1-05082983a5f3] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T21:51:25.757703 #2252]  INFO -- : [e955def5-84ee-4304-81c1-05082983a5f3]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T21:51:26.570365 #2252]  INFO -- : [e955def5-84ee-4304-81c1-05082983a5f3] Completed 200 OK in 813ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 24499)
+I, [2022-07-03T21:55:58.005216 #2349]  INFO -- : [18bec332-32dc-4dd5-85cb-07375ed3aa78] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:55:58 -0400
+I, [2022-07-03T21:55:58.019077 #2349]  INFO -- : [d89fad5e-0de2-4e61-9dbf-8afadf05a619] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:55:58 -0400
+I, [2022-07-03T21:55:58.020249 #2349]  INFO -- : [18bec332-32dc-4dd5-85cb-07375ed3aa78] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:55:58.020490 #2349]  INFO -- : [d89fad5e-0de2-4e61-9dbf-8afadf05a619] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:55:58.021808 #2349]  INFO -- : [d89fad5e-0de2-4e61-9dbf-8afadf05a619] Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 363)
+I, [2022-07-03T21:55:58.558367 #2349]  INFO -- : [18bec332-32dc-4dd5-85cb-07375ed3aa78] Completed 200 OK in 538ms (Views: 0.2ms | Allocations: 8234)
+I, [2022-07-03T21:56:00.070013 #2349]  INFO -- : [04c466c0-23d0-43dc-a16d-ed345d2a444d] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 21:56:00 -0400
+I, [2022-07-03T21:56:00.070949 #2349]  INFO -- : [04c466c0-23d0-43dc-a16d-ed345d2a444d] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T21:56:00.071020 #2349]  INFO -- : [04c466c0-23d0-43dc-a16d-ed345d2a444d]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T21:56:00.277882 #2349]  INFO -- : [04c466c0-23d0-43dc-a16d-ed345d2a444d] Completed 200 OK in 207ms (Views: 0.6ms | ActiveRecord: 8.3ms | Allocations: 8812)
+I, [2022-07-03T21:56:00.297321 #2349]  INFO -- : [0d429140-ab0b-4b61-b8b7-86d90644f69a] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:56:00 -0400
+I, [2022-07-03T21:56:00.298744 #2349]  INFO -- : [0d429140-ab0b-4b61-b8b7-86d90644f69a] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:56:00.717284 #2349]  INFO -- : [0d429140-ab0b-4b61-b8b7-86d90644f69a] Completed 200 OK in 418ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4515)
+I, [2022-07-03T21:56:01.504197 #2349]  INFO -- : [89a359a3-96df-4781-8270-95caebc037d8] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:56:01 -0400
+I, [2022-07-03T21:56:01.504947 #2349]  INFO -- : [89a359a3-96df-4781-8270-95caebc037d8] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:56:01.505755 #2349]  INFO -- : [48391a35-e834-4e93-a842-cda48d9f7603] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:56:01 -0400
+I, [2022-07-03T21:56:01.506436 #2349]  INFO -- : [48391a35-e834-4e93-a842-cda48d9f7603] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:56:01.507514 #2349]  INFO -- : [48391a35-e834-4e93-a842-cda48d9f7603] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 119)
+I, [2022-07-03T21:56:01.866403 #2349]  INFO -- : [89a359a3-96df-4781-8270-95caebc037d8] Completed 200 OK in 361ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5713)
+I, [2022-07-03T21:59:24.516997 #2437]  INFO -- : [f7237a37-c724-4347-96a1-78c02dd3f616] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:59:24 -0400
+I, [2022-07-03T21:59:24.518537 #2437]  INFO -- : [f7237a37-c724-4347-96a1-78c02dd3f616] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:59:24.540127 #2437]  INFO -- : [f7237a37-c724-4347-96a1-78c02dd3f616] Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 6.7ms | Allocations: 9407)
+I, [2022-07-03T21:59:24.561706 #2437]  INFO -- : [cdaee51d-bfa4-4751-a40b-8d5c5a6bac8c] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 21:59:24 -0400
+I, [2022-07-03T21:59:24.562515 #2437]  INFO -- : [cdaee51d-bfa4-4751-a40b-8d5c5a6bac8c] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T21:59:24.573782 #2437]  INFO -- : [cdaee51d-bfa4-4751-a40b-8d5c5a6bac8c] Completed 200 OK in 11ms (Views: 5.8ms | ActiveRecord: 2.7ms | Allocations: 6675)
+I, [2022-07-03T21:59:25.714542 #2437]  INFO -- : [7852ca5a-3bd2-4750-a5d3-2ffc8461d9f4] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:59:25 -0400
+I, [2022-07-03T21:59:25.715056 #2437]  INFO -- : [7852ca5a-3bd2-4750-a5d3-2ffc8461d9f4] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:59:26.506336 #2437]  INFO -- : [7852ca5a-3bd2-4750-a5d3-2ffc8461d9f4] Completed 200 OK in 791ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 6483)
+I, [2022-07-03T21:59:29.158176 #2437]  INFO -- : [140f92a3-76c4-41f8-869b-6c59f884e16a] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:59:29 -0400
+I, [2022-07-03T21:59:29.158818 #2437]  INFO -- : [140f92a3-76c4-41f8-869b-6c59f884e16a] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:59:29.161560 #2437]  INFO -- : [e9c97aa1-05d4-4886-8406-6d66e3e29e20] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:59:29 -0400
+I, [2022-07-03T21:59:29.162149 #2437]  INFO -- : [e9c97aa1-05d4-4886-8406-6d66e3e29e20] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:59:29.162754 #2437]  INFO -- : [e9c97aa1-05d4-4886-8406-6d66e3e29e20] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 223)
+I, [2022-07-03T21:59:29.466062 #2437]  INFO -- : [140f92a3-76c4-41f8-869b-6c59f884e16a] Completed 200 OK in 307ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 5394)
+I, [2022-07-03T21:59:31.399415 #2437]  INFO -- : [b53a8168-13bc-4df3-a6eb-54b4bb877b60] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 21:59:31 -0400
+I, [2022-07-03T21:59:31.400290 #2437]  INFO -- : [b53a8168-13bc-4df3-a6eb-54b4bb877b60] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T21:59:31.400368 #2437]  INFO -- : [b53a8168-13bc-4df3-a6eb-54b4bb877b60]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T21:59:31.601443 #2437]  INFO -- : [b53a8168-13bc-4df3-a6eb-54b4bb877b60] Completed 200 OK in 201ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 802)
+I, [2022-07-03T21:59:31.635139 #2437]  INFO -- : [3ef0d057-5362-4891-b1f2-3fcde70ff583] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:59:31 -0400
+I, [2022-07-03T21:59:31.635780 #2437]  INFO -- : [3ef0d057-5362-4891-b1f2-3fcde70ff583] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:59:32.011314 #2437]  INFO -- : [3ef0d057-5362-4891-b1f2-3fcde70ff583] Completed 200 OK in 375ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4324)
+I, [2022-07-03T21:59:33.703077 #2437]  INFO -- : [6ceee6cb-a4ae-494f-be3d-8d0b62cb1d5f] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:59:33 -0400
+I, [2022-07-03T21:59:33.703812 #2437]  INFO -- : [6ceee6cb-a4ae-494f-be3d-8d0b62cb1d5f] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:59:33.704417 #2437]  INFO -- : [25051b00-7924-4b6e-85f0-71c1abc548ba] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:59:33 -0400
+I, [2022-07-03T21:59:33.705472 #2437]  INFO -- : [25051b00-7924-4b6e-85f0-71c1abc548ba] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:59:33.706350 #2437]  INFO -- : [25051b00-7924-4b6e-85f0-71c1abc548ba] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 173)
+I, [2022-07-03T21:59:34.086659 #2437]  INFO -- : [6ceee6cb-a4ae-494f-be3d-8d0b62cb1d5f] Completed 200 OK in 382ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5091)
+I, [2022-07-03T21:59:46.609864 #2437]  INFO -- : [81278084-e756-493f-83e1-66b33efe7a52] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 21:59:46 -0400
+I, [2022-07-03T21:59:46.610743 #2437]  INFO -- : [81278084-e756-493f-83e1-66b33efe7a52] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T21:59:46.611242 #2437]  INFO -- : [5f29af6e-eeac-4bfe-b52f-74827abd9da9] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 21:59:46 -0400
+I, [2022-07-03T21:59:46.612478 #2437]  INFO -- : [5f29af6e-eeac-4bfe-b52f-74827abd9da9] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T21:59:46.613484 #2437]  INFO -- : [5f29af6e-eeac-4bfe-b52f-74827abd9da9] Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 173)
+I, [2022-07-03T21:59:46.993275 #2437]  INFO -- : [81278084-e756-493f-83e1-66b33efe7a52] Completed 200 OK in 382ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 5058)
+I, [2022-07-03T22:03:45.758461 #2487]  INFO -- : [8c293682-4ae3-461c-9177-e3534f69c206] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:03:45 -0400
+I, [2022-07-03T22:03:45.760538 #2487]  INFO -- : [8c293682-4ae3-461c-9177-e3534f69c206] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:03:45.761046 #2487]  INFO -- : [2db2f7db-8538-4f68-b98b-7765f8b08caa] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:03:45 -0400
+I, [2022-07-03T22:03:45.762204 #2487]  INFO -- : [2db2f7db-8538-4f68-b98b-7765f8b08caa] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:03:45.765438 #2487]  INFO -- : [2db2f7db-8538-4f68-b98b-7765f8b08caa] Completed 200 OK in 3ms (Views: 0.5ms | Allocations: 536)
+I, [2022-07-03T22:03:46.266031 #2487]  INFO -- : [8c293682-4ae3-461c-9177-e3534f69c206] Completed 200 OK in 505ms (Views: 0.1ms | Allocations: 8169)
+I, [2022-07-03T22:03:49.251714 #2487]  INFO -- : [8553354b-6065-41df-9561-e78694843514] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 22:03:49 -0400
+I, [2022-07-03T22:03:49.252641 #2487]  INFO -- : [8553354b-6065-41df-9561-e78694843514] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T22:03:49.252709 #2487]  INFO -- : [8553354b-6065-41df-9561-e78694843514]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T22:03:49.461466 #2487]  INFO -- : [8553354b-6065-41df-9561-e78694843514] Completed 200 OK in 209ms (Views: 0.4ms | ActiveRecord: 7.9ms | Allocations: 8913)
+I, [2022-07-03T22:03:50.743753 #2487]  INFO -- : [72ba77a5-f11d-4be1-aade-02cd3bb47b5f] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 22:03:50 -0400
+I, [2022-07-03T22:03:50.744429 #2487]  INFO -- : [72ba77a5-f11d-4be1-aade-02cd3bb47b5f] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T22:03:50.744492 #2487]  INFO -- : [72ba77a5-f11d-4be1-aade-02cd3bb47b5f]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T22:03:50.927137 #2487]  INFO -- : [72ba77a5-f11d-4be1-aade-02cd3bb47b5f] Completed 200 OK in 183ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 457)
+I, [2022-07-03T22:04:08.150500 #2507]  INFO -- : [d94bc5ce-91a7-4b91-846a-af119534b633] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:04:08 -0400
+I, [2022-07-03T22:04:08.151906 #2507]  INFO -- : [6fd32394-2f11-4c57-b229-85a18c345604] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:04:08 -0400
+I, [2022-07-03T22:04:08.164551 #2507]  INFO -- : [d94bc5ce-91a7-4b91-846a-af119534b633] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:04:08.165033 #2507]  INFO -- : [6fd32394-2f11-4c57-b229-85a18c345604] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:04:08.169641 #2507]  INFO -- : [6fd32394-2f11-4c57-b229-85a18c345604] Completed 200 OK in 3ms (Views: 0.2ms | Allocations: 540)
+I, [2022-07-03T22:04:08.841638 #2507]  INFO -- : [d94bc5ce-91a7-4b91-846a-af119534b633] Completed 200 OK in 676ms (Views: 0.2ms | Allocations: 7817)
+I, [2022-07-03T22:04:09.769789 #2507]  INFO -- : [7d64fe39-5948-4041-b0bc-e5c5f9d0e84e] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 22:04:09 -0400
+I, [2022-07-03T22:04:09.770555 #2507]  INFO -- : [7d64fe39-5948-4041-b0bc-e5c5f9d0e84e] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T22:04:09.770612 #2507]  INFO -- : [7d64fe39-5948-4041-b0bc-e5c5f9d0e84e]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T22:04:09.976954 #2507]  INFO -- : [7d64fe39-5948-4041-b0bc-e5c5f9d0e84e] Completed 200 OK in 206ms (Views: 0.4ms | ActiveRecord: 7.1ms | Allocations: 8914)
+I, [2022-07-03T22:04:10.000690 #2507]  INFO -- : [baec9ebd-e11e-4d90-b07a-839e4af6f413] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:04:10 -0400
+I, [2022-07-03T22:04:10.001339 #2507]  INFO -- : [baec9ebd-e11e-4d90-b07a-839e4af6f413] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:04:10.450991 #2507]  INFO -- : [baec9ebd-e11e-4d90-b07a-839e4af6f413] Completed 200 OK in 450ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4527)
+I, [2022-07-03T22:04:12.558782 #2507]  INFO -- : [3ed6d6de-1bde-4216-aee1-617587a7b50f] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:04:12 -0400
+I, [2022-07-03T22:04:12.559773 #2507]  INFO -- : [3ed6d6de-1bde-4216-aee1-617587a7b50f] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:04:12.560539 #2507]  INFO -- : [3ed6d6de-1bde-4216-aee1-617587a7b50f] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T22:04:12.560789 #2507]  INFO -- : [3ed6d6de-1bde-4216-aee1-617587a7b50f] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 284)
+I, [2022-07-03T22:04:12.562061 #2507]  INFO -- : [15fe847a-c4cf-48e7-a387-02f88b2d66a9] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 22:04:12 -0400
+I, [2022-07-03T22:04:12.561225 #2507]  INFO -- : [b6385e56-c648-4797-91d7-b9586d86e985] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:04:12 -0400
+I, [2022-07-03T22:04:12.562904 #2507]  INFO -- : [15fe847a-c4cf-48e7-a387-02f88b2d66a9] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T22:04:12.563431 #2507]  INFO -- : [b6385e56-c648-4797-91d7-b9586d86e985] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:04:12.564039 #2507]  INFO -- : [b6385e56-c648-4797-91d7-b9586d86e985] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T22:04:12.564357 #2507]  INFO -- : [b6385e56-c648-4797-91d7-b9586d86e985] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 265)
+I, [2022-07-03T22:04:12.563515 #2507]  INFO -- : [15fe847a-c4cf-48e7-a387-02f88b2d66a9]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T22:04:13.429155 #2507]  INFO -- : [15fe847a-c4cf-48e7-a387-02f88b2d66a9] Completed 200 OK in 864ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 24859)
+I, [2022-07-03T22:04:17.504596 #2507]  INFO -- : [4dd8f101-483f-4370-a6b9-2c6efa27f895] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:04:17 -0400
+I, [2022-07-03T22:04:17.505283 #2507]  INFO -- : [4dd8f101-483f-4370-a6b9-2c6efa27f895] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:04:17.506079 #2507]  INFO -- : [88146240-cce5-4b4c-a8b5-d91e81e7a7a8] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:04:17 -0400
+I, [2022-07-03T22:04:17.506774 #2507]  INFO -- : [88146240-cce5-4b4c-a8b5-d91e81e7a7a8] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:04:17.507498 #2507]  INFO -- : [88146240-cce5-4b4c-a8b5-d91e81e7a7a8] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 173)
+I, [2022-07-03T22:04:17.873280 #2507]  INFO -- : [4dd8f101-483f-4370-a6b9-2c6efa27f895] Completed 200 OK in 368ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5265)
+I, [2022-07-03T22:05:08.634694 #2507]  INFO -- : [afe76b01-ebcc-46e1-8c97-ec2c51e810a5] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:05:08 -0400
+I, [2022-07-03T22:05:08.635395 #2507]  INFO -- : [afe76b01-ebcc-46e1-8c97-ec2c51e810a5] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:05:08.635634 #2507]  INFO -- : [2b970483-d46d-4ba3-8b90-07f043855906] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:05:08 -0400
+I, [2022-07-03T22:05:08.636361 #2507]  INFO -- : [2b970483-d46d-4ba3-8b90-07f043855906] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:05:08.636966 #2507]  INFO -- : [2b970483-d46d-4ba3-8b90-07f043855906] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 173)
+I, [2022-07-03T22:05:09.249828 #2507]  INFO -- : [afe76b01-ebcc-46e1-8c97-ec2c51e810a5] Completed 200 OK in 614ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 5152)
+I, [2022-07-03T22:05:13.428159 #2507]  INFO -- : [e2bc44ab-d720-4e86-b3fc-da2877013785] Started GET "/api/v1/podcasts/1212558767" for 127.0.0.1 at 2022-07-03 22:05:13 -0400
+I, [2022-07-03T22:05:13.428867 #2507]  INFO -- : [e2bc44ab-d720-4e86-b3fc-da2877013785] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T22:05:13.428975 #2507]  INFO -- : [e2bc44ab-d720-4e86-b3fc-da2877013785]   Parameters: {"id"=>"1212558767"}
+I, [2022-07-03T22:05:14.117344 #2507]  INFO -- : [e2bc44ab-d720-4e86-b3fc-da2877013785] Completed 200 OK in 688ms (Views: 1.8ms | ActiveRecord: 0.0ms | Allocations: 8843)
+I, [2022-07-03T22:14:23.809380 #2507]  INFO -- : [fea6e1f4-292b-4a8d-a709-52d5f15dedf6] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:14:23 -0400
+I, [2022-07-03T22:14:23.809968 #2507]  INFO -- : [fea6e1f4-292b-4a8d-a709-52d5f15dedf6] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:14:24.188790 #2507]  INFO -- : [fea6e1f4-292b-4a8d-a709-52d5f15dedf6] Completed 200 OK in 379ms (Views: 0.3ms | Allocations: 4383)
+I, [2022-07-03T22:14:26.993276 #2507]  INFO -- : [669ef381-35b2-48d7-a4b6-c7d7774d3ea2] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 22:14:26 -0400
+I, [2022-07-03T22:14:26.993969 #2507]  INFO -- : [669ef381-35b2-48d7-a4b6-c7d7774d3ea2] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T22:14:26.994071 #2507]  INFO -- : [669ef381-35b2-48d7-a4b6-c7d7774d3ea2]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T22:14:27.186298 #2507]  INFO -- : [669ef381-35b2-48d7-a4b6-c7d7774d3ea2] Completed 200 OK in 192ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 2483)
+I, [2022-07-03T22:14:27.207720 #2507]  INFO -- : [fc7d48c5-384b-403e-beab-a70d414b4aea] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:14:27 -0400
+I, [2022-07-03T22:14:27.208462 #2507]  INFO -- : [fc7d48c5-384b-403e-beab-a70d414b4aea] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:14:27.452959 #2507]  INFO -- : [fc7d48c5-384b-403e-beab-a70d414b4aea] Completed 200 OK in 244ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4355)
+I, [2022-07-03T22:33:59.333702 #2632]  INFO -- : [f6bc64cd-971b-493e-8688-07964e1dd1c2] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:33:59 -0400
+I, [2022-07-03T22:33:59.336741 #2632]  INFO -- : [8addf440-c7fb-4a31-8bb8-a09e22c2d282] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:33:59 -0400
+I, [2022-07-03T22:33:59.338380 #2632]  INFO -- : [f6bc64cd-971b-493e-8688-07964e1dd1c2] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:33:59.338926 #2632]  INFO -- : [8addf440-c7fb-4a31-8bb8-a09e22c2d282] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:33:59.381020 #2632]  INFO -- : [8addf440-c7fb-4a31-8bb8-a09e22c2d282] Completed 200 OK in 41ms (Views: 0.5ms | ActiveRecord: 13.6ms | Allocations: 11727)
+I, [2022-07-03T22:33:59.663163 #2632]  INFO -- : [f6bc64cd-971b-493e-8688-07964e1dd1c2] Completed 200 OK in 324ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 16886)
+I, [2022-07-03T22:34:01.610406 #2632]  INFO -- : [222ea4e3-e421-4913-aaad-30ccb5883494] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:34:01 -0400
+I, [2022-07-03T22:34:01.611547 #2632]  INFO -- : [222ea4e3-e421-4913-aaad-30ccb5883494] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:34:01.613920 #2632]  INFO -- : [19122896-919c-4049-82b2-f11d38e7db1d] Started GET "/api/v1/podcasts/329875043" for 127.0.0.1 at 2022-07-03 22:34:01 -0400
+I, [2022-07-03T22:34:01.614988 #2632]  INFO -- : [19122896-919c-4049-82b2-f11d38e7db1d] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T22:34:01.612355 #2632]  INFO -- : [5f9cd4b3-bd66-4965-9347-1c91413392b6] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:34:01 -0400
+I, [2022-07-03T22:34:01.616156 #2632]  INFO -- : [5f9cd4b3-bd66-4965-9347-1c91413392b6] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:34:01.615321 #2632]  INFO -- : [19122896-919c-4049-82b2-f11d38e7db1d]   Parameters: {"id"=>"329875043"}
+I, [2022-07-03T22:34:01.628607 #2632]  INFO -- : [222ea4e3-e421-4913-aaad-30ccb5883494] Completed 200 OK in 16ms (Views: 6.2ms | ActiveRecord: 5.9ms | Allocations: 9570)
+I, [2022-07-03T22:34:01.648529 #2632]  INFO -- : [5f9cd4b3-bd66-4965-9347-1c91413392b6] Completed 200 OK in 31ms (Views: 6.7ms | ActiveRecord: 17.0ms | Allocations: 17520)
+I, [2022-07-03T22:34:02.381402 #2632]  INFO -- : [19122896-919c-4049-82b2-f11d38e7db1d] Completed 200 OK in 763ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 58157)
+I, [2022-07-03T22:34:02.865633 #2632]  INFO -- : [4ecc9a4a-ae8e-4fb2-97cd-05503b3425e7] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:34:02 -0400
+I, [2022-07-03T22:34:02.866355 #2632]  INFO -- : [4ecc9a4a-ae8e-4fb2-97cd-05503b3425e7] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:34:02.869602 #2632]  INFO -- : [4ecc9a4a-ae8e-4fb2-97cd-05503b3425e7] Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.6ms | Allocations: 940)
+I, [2022-07-03T22:34:02.872750 #2632]  INFO -- : [a4e4c331-4fe4-4bd2-9ea7-782deaf6aaea] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:34:02 -0400
+I, [2022-07-03T22:34:02.873399 #2632]  INFO -- : [a4e4c331-4fe4-4bd2-9ea7-782deaf6aaea] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:34:02.876284 #2632]  INFO -- : [a4e4c331-4fe4-4bd2-9ea7-782deaf6aaea] Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.6ms | Allocations: 741)
+I, [2022-07-03T22:34:04.232513 #2632]  INFO -- : [5660f31d-809f-4825-8d1d-2a0cd06470ff] Started POST "/api/v1/subscribe" for 127.0.0.1 at 2022-07-03 22:34:04 -0400
+I, [2022-07-03T22:34:04.233315 #2632]  INFO -- : [5660f31d-809f-4825-8d1d-2a0cd06470ff] Processing by Api::V1::SubscriptionsController#create as HTML
+I, [2022-07-03T22:34:04.233389 #2632]  INFO -- : [5660f31d-809f-4825-8d1d-2a0cd06470ff]   Parameters: {"podcast_to_subscribe"=>{"name"=>"WTF with Marc Maron Podcast", "description"=>"Marc Maron welcomes comedians, actors, directors, writers, authors, musicians and folks from all walks of life to his home for amazingly revealing conversations. Marc's probing, comprehensive interview style allows guests to express themselves in ways listeners have never heard. See acast.com/privacy for privacy and opt-out information.", "artist_name"=>"Marc Maron", "art_work_url_600"=>"https://is5-ssl.mzstatic.com/image/thumb/Podcasts122/v4/8b/14/d0/8b14d040-414c-92a6-21f8-04fb72d8d926/mza_13560057034834656474.jpeg/600x600bb.jpg", "genre_ids"=>["1303", "26"], "genres"=>["Comedy", "Podcasts"], "track_id"=>329875043}, "subscription"=>{}}
+I, [2022-07-03T22:34:04.244413 #2632]  INFO -- : [5660f31d-809f-4825-8d1d-2a0cd06470ff] Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 5.9ms | Allocations: 3329)
+I, [2022-07-03T22:34:05.494843 #2632]  INFO -- : [c08d2617-4908-4ba6-9e72-650598729a69] Started POST "/api/v1/unsubscribe" for 127.0.0.1 at 2022-07-03 22:34:05 -0400
+I, [2022-07-03T22:34:05.495545 #2632]  INFO -- : [c08d2617-4908-4ba6-9e72-650598729a69] Processing by Api::V1::SubscriptionsController#destroy as HTML
+I, [2022-07-03T22:34:05.495655 #2632]  INFO -- : [c08d2617-4908-4ba6-9e72-650598729a69]   Parameters: {"podcast_to_unsubscribe"=>"WTF with Marc Maron Podcast", "subscription"=>{}}
+I, [2022-07-03T22:34:05.501414 #2632]  INFO -- : [c08d2617-4908-4ba6-9e72-650598729a69] Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 3.3ms | Allocations: 864)
+I, [2022-07-03T22:34:06.752905 #2632]  INFO -- : [32e05564-e21e-438f-ab20-ade04c95b454] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:34:06 -0400
+I, [2022-07-03T22:34:06.753994 #2632]  INFO -- : [32e05564-e21e-438f-ab20-ade04c95b454] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:34:06.757192 #2632]  INFO -- : [32e05564-e21e-438f-ab20-ade04c95b454] Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 897)
+I, [2022-07-03T22:34:10.672012 #2632]  INFO -- : [bd6aeb94-1df3-4911-a0d9-0f8bb7198021] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:34:10 -0400
+I, [2022-07-03T22:34:10.673770 #2632]  INFO -- : [bd6aeb94-1df3-4911-a0d9-0f8bb7198021] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:34:10.674346 #2632]  INFO -- : [1aaa121f-9b6f-4e29-b2bc-8d2c4c7f9d42] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:34:10 -0400
+I, [2022-07-03T22:34:10.676101 #2632]  INFO -- : [1aaa121f-9b6f-4e29-b2bc-8d2c4c7f9d42] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:34:10.677114 #2632]  INFO -- : [1aaa121f-9b6f-4e29-b2bc-8d2c4c7f9d42] Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 176)
+I, [2022-07-03T22:34:11.258950 #2632]  INFO -- : [bd6aeb94-1df3-4911-a0d9-0f8bb7198021] Completed 200 OK in 584ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5088)
+I, [2022-07-03T22:34:13.060232 #2632]  INFO -- : [d7f06964-429d-48cf-96d5-9c25eca55fcd] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 22:34:13 -0400
+I, [2022-07-03T22:34:13.061048 #2632]  INFO -- : [d7f06964-429d-48cf-96d5-9c25eca55fcd] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T22:34:13.061109 #2632]  INFO -- : [d7f06964-429d-48cf-96d5-9c25eca55fcd]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T22:34:13.252090 #2632]  INFO -- : [d7f06964-429d-48cf-96d5-9c25eca55fcd] Completed 200 OK in 191ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 573)
+I, [2022-07-03T22:34:13.299718 #2632]  INFO -- : [bf3e28c7-adfa-4b2f-a068-e0d0d7d466ad] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:34:13 -0400
+I, [2022-07-03T22:34:13.300649 #2632]  INFO -- : [bf3e28c7-adfa-4b2f-a068-e0d0d7d466ad] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:34:13.806213 #2632]  INFO -- : [bf3e28c7-adfa-4b2f-a068-e0d0d7d466ad] Completed 200 OK in 505ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4319)
+I, [2022-07-03T22:34:15.181757 #2632]  INFO -- : [64b4709f-7eac-4a75-97ec-c3ce14f628f2] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:34:15 -0400
+I, [2022-07-03T22:34:15.182716 #2632]  INFO -- : [64b4709f-7eac-4a75-97ec-c3ce14f628f2] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:34:15.183560 #2632]  INFO -- : [6907374f-9edc-417b-87bd-08063aec1bc7] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:34:15 -0400
+I, [2022-07-03T22:34:15.184116 #2632]  INFO -- : [6907374f-9edc-417b-87bd-08063aec1bc7] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:34:15.184763 #2632]  INFO -- : [6907374f-9edc-417b-87bd-08063aec1bc7] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 173)
+I, [2022-07-03T22:34:15.617439 #2632]  INFO -- : [64b4709f-7eac-4a75-97ec-c3ce14f628f2] Completed 200 OK in 434ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5233)
+I, [2022-07-03T22:36:18.557882 #2671]  INFO -- : [15e5b5d5-d2df-4ec6-97c9-5632cc7a4695] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:36:18 -0400
+I, [2022-07-03T22:36:18.559252 #2671]  INFO -- : [15e5b5d5-d2df-4ec6-97c9-5632cc7a4695] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:36:18.593493 #2671]  INFO -- : [15e5b5d5-d2df-4ec6-97c9-5632cc7a4695] Completed 200 OK in 34ms (Views: 0.4ms | ActiveRecord: 7.6ms | Allocations: 9407)
+I, [2022-07-03T22:36:18.612519 #2671]  INFO -- : [f5c8ba5a-ecb2-4581-b92c-2824b2b48f34] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:36:18 -0400
+I, [2022-07-03T22:36:18.613345 #2671]  INFO -- : [f5c8ba5a-ecb2-4581-b92c-2824b2b48f34] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:36:18.624026 #2671]  INFO -- : [f5c8ba5a-ecb2-4581-b92c-2824b2b48f34] Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 2.6ms | Allocations: 6675)
+I, [2022-07-03T22:36:21.509917 #2671]  INFO -- : [63b7fb87-f9f4-4496-a981-bd6bd08fe4bc] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:36:21 -0400
+I, [2022-07-03T22:36:21.510533 #2671]  INFO -- : [63b7fb87-f9f4-4496-a981-bd6bd08fe4bc] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:36:21.511077 #2671]  INFO -- : [63b7fb87-f9f4-4496-a981-bd6bd08fe4bc] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 182)
+I, [2022-07-03T22:36:21.820956 #2671]  INFO -- : [bd390b8f-7648-4b2d-955e-03e9d917748e] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:36:21 -0400
+I, [2022-07-03T22:36:21.821741 #2671]  INFO -- : [bd390b8f-7648-4b2d-955e-03e9d917748e] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:36:22.074712 #2671]  INFO -- : [bd390b8f-7648-4b2d-955e-03e9d917748e] Completed 200 OK in 253ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 6453)
+I, [2022-07-03T22:36:23.760210 #2671]  INFO -- : [be282673-6902-46c0-a04b-972dd70c44d4] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 22:36:23 -0400
+I, [2022-07-03T22:36:23.761320 #2671]  INFO -- : [be282673-6902-46c0-a04b-972dd70c44d4] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T22:36:23.761389 #2671]  INFO -- : [be282673-6902-46c0-a04b-972dd70c44d4]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T22:36:23.951101 #2671]  INFO -- : [be282673-6902-46c0-a04b-972dd70c44d4] Completed 200 OK in 190ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 831)
+I, [2022-07-03T22:36:24.000705 #2671]  INFO -- : [f0d0f055-8cd9-45f3-af15-94eb2acd9b0f] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:36:24 -0400
+I, [2022-07-03T22:36:24.001398 #2671]  INFO -- : [f0d0f055-8cd9-45f3-af15-94eb2acd9b0f] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:36:24.265680 #2671]  INFO -- : [f0d0f055-8cd9-45f3-af15-94eb2acd9b0f] Completed 200 OK in 264ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4322)
+I, [2022-07-03T22:36:26.102068 #2671]  INFO -- : [56ddddb7-3dda-4fc0-a1e8-e9e1e40df365] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:36:26 -0400
+I, [2022-07-03T22:36:26.102800 #2671]  INFO -- : [56ddddb7-3dda-4fc0-a1e8-e9e1e40df365] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:36:26.103344 #2671]  INFO -- : [17424f55-f195-403f-b3db-a4b2df6cbb44] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:36:26 -0400
+I, [2022-07-03T22:36:26.104338 #2671]  INFO -- : [17424f55-f195-403f-b3db-a4b2df6cbb44] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:36:26.105692 #2671]  INFO -- : [17424f55-f195-403f-b3db-a4b2df6cbb44] Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 178)
+I, [2022-07-03T22:36:26.290596 #2671]  INFO -- : [56ddddb7-3dda-4fc0-a1e8-e9e1e40df365] Completed 200 OK in 187ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5048)
+I, [2022-07-03T22:40:29.321570 #2671]  INFO -- : [e1d65d36-51af-46ae-a797-91b3c78b512d] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:40:29 -0400
+I, [2022-07-03T22:40:29.322600 #2671]  INFO -- : [e1d65d36-51af-46ae-a797-91b3c78b512d] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:40:29.523001 #2671]  INFO -- : [e1d65d36-51af-46ae-a797-91b3c78b512d] Completed 200 OK in 200ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 4274)
+I, [2022-07-03T22:40:30.509934 #2671]  INFO -- : [04f15f01-2b78-48c1-b11d-9ed759e2e1fb] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 22:40:30 -0400
+I, [2022-07-03T22:40:30.510509 #2671]  INFO -- : [04f15f01-2b78-48c1-b11d-9ed759e2e1fb] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T22:40:30.510579 #2671]  INFO -- : [04f15f01-2b78-48c1-b11d-9ed759e2e1fb]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T22:40:30.818547 #2671]  INFO -- : [88edc7ff-1800-4f12-b753-e97df9397d8f] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:40:30 -0400
+I, [2022-07-03T22:40:30.820025 #2671]  INFO -- : [88edc7ff-1800-4f12-b753-e97df9397d8f] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:40:30.819166 #2671]  INFO -- : [06b46c02-5c20-4add-8d22-7ac87918ea23] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:40:30 -0400
+I, [2022-07-03T22:40:30.821438 #2671]  INFO -- : [06b46c02-5c20-4add-8d22-7ac87918ea23] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:40:30.826173 #2671]  INFO -- : [88edc7ff-1800-4f12-b753-e97df9397d8f] Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 1.5ms | Allocations: 1854)
+I, [2022-07-03T22:40:30.847674 #2671]  INFO -- : [06b46c02-5c20-4add-8d22-7ac87918ea23] Completed 200 OK in 25ms (Views: 7.1ms | ActiveRecord: 7.6ms | Allocations: 10947)
+I, [2022-07-03T22:40:31.177720 #2671]  INFO -- : [04f15f01-2b78-48c1-b11d-9ed759e2e1fb] Completed 200 OK in 667ms (Views: 16.3ms | ActiveRecord: 0.0ms | Allocations: 37660)
+I, [2022-07-03T22:40:31.234433 #2671]  INFO -- : [15b9e63d-0365-4ef7-b66e-c203d3d5a5db] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:40:31 -0400
+I, [2022-07-03T22:40:31.235133 #2671]  INFO -- : [15b9e63d-0365-4ef7-b66e-c203d3d5a5db] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:40:31.238444 #2671]  INFO -- : [0d8da436-bd2c-4a12-9907-00b6bd37db50] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:40:31 -0400
+I, [2022-07-03T22:40:31.240075 #2671]  INFO -- : [0d8da436-bd2c-4a12-9907-00b6bd37db50] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:40:31.239431 #2671]  INFO -- : [15b9e63d-0365-4ef7-b66e-c203d3d5a5db] Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 1.5ms | Allocations: 1154)
+I, [2022-07-03T22:40:31.244317 #2671]  INFO -- : [0d8da436-bd2c-4a12-9907-00b6bd37db50] Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.7ms | Allocations: 1178)
+I, [2022-07-03T22:41:31.512504 #2671]  INFO -- : [58de8744-fcd6-4a3a-b592-b15b4bc91935] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:41:31 -0400
+I, [2022-07-03T22:41:31.512760 #2671]  INFO -- : [675ca2db-1ea6-4922-87ad-8fc63657d885] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:41:31 -0400
+I, [2022-07-03T22:41:31.513697 #2671]  INFO -- : [58de8744-fcd6-4a3a-b592-b15b4bc91935] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:41:31.514079 #2671]  INFO -- : [675ca2db-1ea6-4922-87ad-8fc63657d885] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:41:31.517333 #2671]  INFO -- : [675ca2db-1ea6-4922-87ad-8fc63657d885] Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1614)
+I, [2022-07-03T22:41:31.716341 #2671]  INFO -- : [58de8744-fcd6-4a3a-b592-b15b4bc91935] Completed 200 OK in 203ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5531)
+I, [2022-07-03T22:42:35.874214 #3335]  INFO -- : [cc5fcf89-4d1e-4d55-bd8c-43ee6f605e50] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:42:35 -0400
+I, [2022-07-03T22:42:35.876508 #3335]  INFO -- : [463a940f-4c7d-4989-a7ac-feb88d363783] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:42:35 -0400
+I, [2022-07-03T22:42:35.890597 #3335]  INFO -- : [cc5fcf89-4d1e-4d55-bd8c-43ee6f605e50] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:42:35.890983 #3335]  INFO -- : [463a940f-4c7d-4989-a7ac-feb88d363783] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:42:35.917138 #3335]  INFO -- : [463a940f-4c7d-4989-a7ac-feb88d363783] Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 7.0ms | Allocations: 11726)
+I, [2022-07-03T22:42:36.074325 #3335]  INFO -- : [cc5fcf89-4d1e-4d55-bd8c-43ee6f605e50] Completed 200 OK in 183ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 16780)
+I, [2022-07-03T22:42:38.443257 #3335]  INFO -- : [e2f7f0b4-0880-40b3-bceb-c97854d7b4f1] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:42:38 -0400
+I, [2022-07-03T22:42:38.444051 #3335]  INFO -- : [e2f7f0b4-0880-40b3-bceb-c97854d7b4f1] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:42:38.445952 #3335]  INFO -- : [2d15c1f9-c03c-40fc-b057-8decb25016f2] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:42:38 -0400
+I, [2022-07-03T22:42:38.446965 #3335]  INFO -- : [2d15c1f9-c03c-40fc-b057-8decb25016f2] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:42:38.448067 #3335]  INFO -- : [9dbe515e-a81e-40be-a75c-34bbff67e328] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 22:42:38 -0400
+I, [2022-07-03T22:42:38.449628 #3335]  INFO -- : [9dbe515e-a81e-40be-a75c-34bbff67e328] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T22:42:38.449841 #3335]  INFO -- : [9dbe515e-a81e-40be-a75c-34bbff67e328]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T22:42:38.461656 #3335]  INFO -- : [e2f7f0b4-0880-40b3-bceb-c97854d7b4f1] Completed 200 OK in 17ms (Views: 7.9ms | ActiveRecord: 6.4ms | Allocations: 9830)
+I, [2022-07-03T22:42:38.481232 #3335]  INFO -- : [2d15c1f9-c03c-40fc-b057-8decb25016f2] Completed 200 OK in 34ms (Views: 9.6ms | ActiveRecord: 14.0ms | Allocations: 18331)
+I, [2022-07-03T22:42:38.750957 #3335]  INFO -- : [9dbe515e-a81e-40be-a75c-34bbff67e328] Completed 200 OK in 301ms (Views: 16.7ms | ActiveRecord: 0.0ms | Allocations: 41061)
+I, [2022-07-03T22:42:38.875584 #3335]  INFO -- : [92f7fc9e-aadb-4bac-982e-8c0a64d9a48e] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:42:38 -0400
+I, [2022-07-03T22:42:38.876410 #3335]  INFO -- : [92f7fc9e-aadb-4bac-982e-8c0a64d9a48e] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:42:38.880920 #3335]  INFO -- : [92f7fc9e-aadb-4bac-982e-8c0a64d9a48e] Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.8ms | Allocations: 940)
+I, [2022-07-03T22:42:38.886755 #3335]  INFO -- : [5d8046b5-b54a-4e85-b664-74163a945604] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:42:38 -0400
+I, [2022-07-03T22:42:38.887438 #3335]  INFO -- : [5d8046b5-b54a-4e85-b664-74163a945604] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:42:38.890547 #3335]  INFO -- : [5d8046b5-b54a-4e85-b664-74163a945604] Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 741)
+I, [2022-07-03T22:42:44.446957 #3335]  INFO -- : [36f519f5-8ceb-4c01-afce-2851fad5964d] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:42:44 -0400
+I, [2022-07-03T22:42:44.447622 #3335]  INFO -- : [36f519f5-8ceb-4c01-afce-2851fad5964d] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:42:44.451592 #3335]  INFO -- : [36f519f5-8ceb-4c01-afce-2851fad5964d] Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 906)
+I, [2022-07-03T22:49:22.934476 #3335]  INFO -- : [b77d75cc-92f7-45b6-9f45-5e6fd3e37375] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:49:22 -0400
+I, [2022-07-03T22:49:22.935897 #3335]  INFO -- : [b77d75cc-92f7-45b6-9f45-5e6fd3e37375] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:49:23.845002 #3335]  INFO -- : [b77d75cc-92f7-45b6-9f45-5e6fd3e37375] Completed 200 OK in 909ms (Views: 0.3ms | Allocations: 4347)
+I, [2022-07-03T22:49:33.347769 #3335]  INFO -- : [546e7840-f120-4b17-b312-cc6132a2e339] Started GET "/api/v1/podcasts/173001861" for 127.0.0.1 at 2022-07-03 22:49:33 -0400
+I, [2022-07-03T22:49:33.350227 #3335]  INFO -- : [546e7840-f120-4b17-b312-cc6132a2e339] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T22:49:33.350337 #3335]  INFO -- : [546e7840-f120-4b17-b312-cc6132a2e339]   Parameters: {"id"=>"173001861"}
+I, [2022-07-03T22:49:33.654180 #3335]  INFO -- : [e5a60010-7b3b-4bc0-9719-03f9e102829c] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:49:33 -0400
+I, [2022-07-03T22:49:33.654951 #3335]  INFO -- : [e5a60010-7b3b-4bc0-9719-03f9e102829c] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:49:33.656984 #3335]  INFO -- : [9b6bac55-aacf-4edc-b95e-7cd20d312123] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:49:33 -0400
+I, [2022-07-03T22:49:33.657774 #3335]  INFO -- : [9b6bac55-aacf-4edc-b95e-7cd20d312123] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:49:33.668928 #3335]  INFO -- : [e5a60010-7b3b-4bc0-9719-03f9e102829c] Completed 200 OK in 14ms (Views: 1.7ms | ActiveRecord: 4.5ms | Allocations: 5895)
+I, [2022-07-03T22:49:33.671584 #3335]  INFO -- : [9b6bac55-aacf-4edc-b95e-7cd20d312123] Completed 200 OK in 13ms (Views: 2.1ms | ActiveRecord: 6.8ms | Allocations: 5614)
+I, [2022-07-03T22:49:33.889617 #3335]  INFO -- : [546e7840-f120-4b17-b312-cc6132a2e339] Completed 200 OK in 539ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 17818)
+I, [2022-07-03T22:49:33.937243 #3335]  INFO -- : [3fd3211e-4c8b-4597-a9ec-5d09001b01c0] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:49:33 -0400
+I, [2022-07-03T22:49:33.938226 #3335]  INFO -- : [3fd3211e-4c8b-4597-a9ec-5d09001b01c0] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:49:33.937551 #3335]  INFO -- : [8134d785-2a16-41b8-8a9b-0e4a796e63aa] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:49:33 -0400
+I, [2022-07-03T22:49:33.939050 #3335]  INFO -- : [8134d785-2a16-41b8-8a9b-0e4a796e63aa] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:49:33.941655 #3335]  INFO -- : [3fd3211e-4c8b-4597-a9ec-5d09001b01c0] Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1738)
+I, [2022-07-03T22:49:33.943636 #3335]  INFO -- : [8134d785-2a16-41b8-8a9b-0e4a796e63aa] Completed 200 OK in 4ms (Views: 0.7ms | ActiveRecord: 2.9ms | Allocations: 1863)
+I, [2022-07-03T22:49:50.704879 #3335]  INFO -- : [418193f2-6f37-40aa-bf27-ceb2b4fe86f1] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:49:50 -0400
+I, [2022-07-03T22:49:50.705680 #3335]  INFO -- : [418193f2-6f37-40aa-bf27-ceb2b4fe86f1] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:49:50.706357 #3335]  INFO -- : [d47e076f-fa52-4b99-9443-b537394c074e] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:49:50 -0400
+I, [2022-07-03T22:49:50.707367 #3335]  INFO -- : [d47e076f-fa52-4b99-9443-b537394c074e] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:49:50.708807 #3335]  INFO -- : [d47e076f-fa52-4b99-9443-b537394c074e] Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 176)
+I, [2022-07-03T22:49:50.993471 #3335]  INFO -- : [418193f2-6f37-40aa-bf27-ceb2b4fe86f1] Completed 200 OK in 287ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5055)
+I, [2022-07-03T22:49:58.201384 #3335]  INFO -- : [e380b91a-c040-49f4-86df-1fbf87fb085b] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 22:49:58 -0400
+I, [2022-07-03T22:49:58.202333 #3335]  INFO -- : [e380b91a-c040-49f4-86df-1fbf87fb085b] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T22:49:58.202418 #3335]  INFO -- : [e380b91a-c040-49f4-86df-1fbf87fb085b]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T22:49:58.404008 #3335]  INFO -- : [e380b91a-c040-49f4-86df-1fbf87fb085b] Completed 200 OK in 202ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 618)
+I, [2022-07-03T22:49:58.441545 #3335]  INFO -- : [3b380adc-35fc-404e-94ef-76efcd5ebc5f] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:49:58 -0400
+I, [2022-07-03T22:49:58.442405 #3335]  INFO -- : [3b380adc-35fc-404e-94ef-76efcd5ebc5f] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:49:58.940227 #3335]  INFO -- : [3b380adc-35fc-404e-94ef-76efcd5ebc5f] Completed 200 OK in 498ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4364)
+I, [2022-07-03T22:50:06.841266 #3335]  INFO -- : [fd1e0265-1a40-4d76-a8b1-a9aa876c8394] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 22:50:06 -0400
+I, [2022-07-03T22:50:06.842148 #3335]  INFO -- : [fd1e0265-1a40-4d76-a8b1-a9aa876c8394] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T22:50:06.843679 #3335]  INFO -- : [fd1e0265-1a40-4d76-a8b1-a9aa876c8394] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T22:50:06.843878 #3335]  INFO -- : [fd1e0265-1a40-4d76-a8b1-a9aa876c8394] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 193)
+I, [2022-07-03T22:50:06.843012 #3335]  INFO -- : [8644530e-5747-4b47-8ae3-4bf90d432953] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 22:50:06 -0400
+I, [2022-07-03T22:50:06.845190 #3335]  INFO -- : [8644530e-5747-4b47-8ae3-4bf90d432953] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T22:50:06.845622 #3335]  INFO -- : [8644530e-5747-4b47-8ae3-4bf90d432953]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T22:50:06.846159 #3335]  INFO -- : [dc42a566-ae92-4b66-91bb-18149187972d] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 22:50:06 -0400
+I, [2022-07-03T22:50:06.847329 #3335]  INFO -- : [dc42a566-ae92-4b66-91bb-18149187972d] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T22:50:06.848496 #3335]  INFO -- : [dc42a566-ae92-4b66-91bb-18149187972d] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T22:50:06.848630 #3335]  INFO -- : [dc42a566-ae92-4b66-91bb-18149187972d] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 188)
+I, [2022-07-03T22:50:07.610484 #3335]  INFO -- : [8644530e-5747-4b47-8ae3-4bf90d432953] Completed 200 OK in 764ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 25447)
+I, [2022-07-03T22:50:11.651637 #3335]  INFO -- : [3facaf09-239d-4b6e-b3e4-f63cf6775334] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 22:50:11 -0400
+I, [2022-07-03T22:50:11.652262 #3335]  INFO -- : [3facaf09-239d-4b6e-b3e4-f63cf6775334] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T22:50:11.657684 #3335]  INFO -- : [982512f7-7fa1-492d-b270-ac67ef91fe82] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 22:50:11 -0400
+I, [2022-07-03T22:50:11.658555 #3335]  INFO -- : [982512f7-7fa1-492d-b270-ac67ef91fe82] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T22:50:11.659249 #3335]  INFO -- : [982512f7-7fa1-492d-b270-ac67ef91fe82] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 173)
+I, [2022-07-03T22:50:11.909970 #3335]  INFO -- : [3facaf09-239d-4b6e-b3e4-f63cf6775334] Completed 200 OK in 258ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5272)
+I, [2022-07-03T23:01:32.470120 #3463]  INFO -- : [a4ff7554-e090-49f4-8a79-6e4c60f06fbe] Started GET "/api/v1/podcasts/173001861" for 127.0.0.1 at 2022-07-03 23:01:32 -0400
+I, [2022-07-03T23:01:32.472012 #3463]  INFO -- : [e6bc5615-0332-4290-bbf9-c448eada3559] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 23:01:32 -0400
+I, [2022-07-03T23:01:32.473427 #3463]  INFO -- : [e6bc5615-0332-4290-bbf9-c448eada3559] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T23:01:32.472599 #3463]  INFO -- : [a4ff7554-e090-49f4-8a79-6e4c60f06fbe] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T23:01:32.477852 #3463]  INFO -- : [a4ff7554-e090-49f4-8a79-6e4c60f06fbe]   Parameters: {"id"=>"173001861"}
+I, [2022-07-03T23:01:32.501660 #3463]  INFO -- : [e6bc5615-0332-4290-bbf9-c448eada3559] Completed 200 OK in 28ms (Views: 0.5ms | ActiveRecord: 8.5ms | Allocations: 12136)
+I, [2022-07-03T23:01:32.790843 #3463]  INFO -- : [a4ff7554-e090-49f4-8a79-6e4c60f06fbe] Completed 200 OK in 313ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 21767)
+I, [2022-07-03T23:01:32.817957 #3463]  INFO -- : [4c3e6f47-3098-4c97-be52-0e7496627eb5] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 23:01:32 -0400
+I, [2022-07-03T23:01:32.818912 #3463]  INFO -- : [4c3e6f47-3098-4c97-be52-0e7496627eb5] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T23:01:32.820099 #3463]  INFO -- : [2636c9b7-ce41-4696-b7d1-553389c54ed2] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 23:01:32 -0400
+I, [2022-07-03T23:01:32.821296 #3463]  INFO -- : [2636c9b7-ce41-4696-b7d1-553389c54ed2] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T23:01:32.831163 #3463]  INFO -- : [4c3e6f47-3098-4c97-be52-0e7496627eb5] Completed 200 OK in 12ms (Views: 5.7ms | ActiveRecord: 3.6ms | Allocations: 7968)
+I, [2022-07-03T23:01:32.847579 #3463]  INFO -- : [2636c9b7-ce41-4696-b7d1-553389c54ed2] Completed 200 OK in 25ms (Views: 7.5ms | ActiveRecord: 10.9ms | Allocations: 16279)
+I, [2022-07-03T23:01:34.207178 #3463]  INFO -- : [d81f726b-a7bb-46ad-8f3e-7d377d1a09fc] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 23:01:34 -0400
+I, [2022-07-03T23:01:34.208488 #3463]  INFO -- : [d81f726b-a7bb-46ad-8f3e-7d377d1a09fc] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T23:01:34.209149 #3463]  INFO -- : [d81f726b-a7bb-46ad-8f3e-7d377d1a09fc] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 180)
+I, [2022-07-03T23:01:34.207650 #3463]  INFO -- : [ddddad85-f162-42ac-8f2b-59f9ae0cfc06] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 23:01:34 -0400
+I, [2022-07-03T23:01:34.210470 #3463]  INFO -- : [ddddad85-f162-42ac-8f2b-59f9ae0cfc06] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T23:01:34.457638 #3463]  INFO -- : [ddddad85-f162-42ac-8f2b-59f9ae0cfc06] Completed 200 OK in 247ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4399)
+I, [2022-07-03T23:01:37.292262 #3463]  INFO -- : [f0bbd9c1-8c8f-48e2-8cbd-319b875c3164] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 23:01:37 -0400
+I, [2022-07-03T23:01:37.293183 #3463]  INFO -- : [f0bbd9c1-8c8f-48e2-8cbd-319b875c3164] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T23:01:37.293254 #3463]  INFO -- : [f0bbd9c1-8c8f-48e2-8cbd-319b875c3164]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T23:01:37.490539 #3463]  INFO -- : [f0bbd9c1-8c8f-48e2-8cbd-319b875c3164] Completed 200 OK in 197ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 632)
+I, [2022-07-03T23:01:37.533521 #3463]  INFO -- : [3a2ca6ad-5c6c-417f-8c36-1dd6d7b2fc4e] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 23:01:37 -0400
+I, [2022-07-03T23:01:37.534363 #3463]  INFO -- : [3a2ca6ad-5c6c-417f-8c36-1dd6d7b2fc4e] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T23:01:37.736143 #3463]  INFO -- : [3a2ca6ad-5c6c-417f-8c36-1dd6d7b2fc4e] Completed 200 OK in 202ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4299)
+I, [2022-07-03T23:01:42.152826 #3463]  INFO -- : [a84fbe7c-9468-47cf-aac0-8636960082e9] Started GET "/api/v1/queues" for 127.0.0.1 at 2022-07-03 23:01:42 -0400
+I, [2022-07-03T23:01:42.154559 #3463]  INFO -- : [a84fbe7c-9468-47cf-aac0-8636960082e9] Processing by Api::V1::EpisodeQueuesController#index as HTML
+I, [2022-07-03T23:01:42.155969 #3463]  INFO -- : [a84fbe7c-9468-47cf-aac0-8636960082e9] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T23:01:42.156208 #3463]  INFO -- : [a84fbe7c-9468-47cf-aac0-8636960082e9] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 193)
+I, [2022-07-03T23:01:42.153348 #3463]  INFO -- : [a62fa569-0945-415a-b741-39cb96cb3caf] Started GET "/api/v1/subscriptions" for 127.0.0.1 at 2022-07-03 23:01:42 -0400
+I, [2022-07-03T23:01:42.157583 #3463]  INFO -- : [a62fa569-0945-415a-b741-39cb96cb3caf] Processing by Api::V1::SubscriptionsController#index as HTML
+I, [2022-07-03T23:01:42.158408 #3463]  INFO -- : [a62fa569-0945-415a-b741-39cb96cb3caf] Filter chain halted as :is_logged_in? rendered or redirected
+I, [2022-07-03T23:01:42.158638 #3463]  INFO -- : [a62fa569-0945-415a-b741-39cb96cb3caf] Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 187)
+I, [2022-07-03T23:01:42.155191 #3463]  INFO -- : [d86df6ff-b377-46ec-8994-e225d7611fcc] Started GET "/api/v1/podcasts/917918570" for 127.0.0.1 at 2022-07-03 23:01:42 -0400
+I, [2022-07-03T23:01:42.160167 #3463]  INFO -- : [d86df6ff-b377-46ec-8994-e225d7611fcc] Processing by Api::V1::PodcastsController#detail as HTML
+I, [2022-07-03T23:01:42.160276 #3463]  INFO -- : [d86df6ff-b377-46ec-8994-e225d7611fcc]   Parameters: {"id"=>"917918570"}
+I, [2022-07-03T23:01:42.613780 #3463]  INFO -- : [d86df6ff-b377-46ec-8994-e225d7611fcc] Completed 200 OK in 453ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 24530)
+I, [2022-07-03T23:01:45.966528 #3463]  INFO -- : [ff90aeb6-9130-41dd-9136-cb6849051c45] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 23:01:45 -0400
+I, [2022-07-03T23:01:45.967215 #3463]  INFO -- : [ff90aeb6-9130-41dd-9136-cb6849051c45] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T23:01:45.968127 #3463]  INFO -- : [5dad2dbc-f800-4070-90da-c230ee1d3024] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 23:01:45 -0400
+I, [2022-07-03T23:01:45.968782 #3463]  INFO -- : [5dad2dbc-f800-4070-90da-c230ee1d3024] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T23:01:45.969555 #3463]  INFO -- : [5dad2dbc-f800-4070-90da-c230ee1d3024] Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 174)
+I, [2022-07-03T23:01:46.240259 #3463]  INFO -- : [ff90aeb6-9130-41dd-9136-cb6849051c45] Completed 200 OK in 273ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 5239)
+I, [2022-07-03T23:01:47.953189 #3463]  INFO -- : [3ad41eb5-1128-407b-97c9-f0a0d8a0bd30] Started POST "/api/v1/login" for 127.0.0.1 at 2022-07-03 23:01:47 -0400
+I, [2022-07-03T23:01:47.953763 #3463]  INFO -- : [3ad41eb5-1128-407b-97c9-f0a0d8a0bd30] Processing by Api::V1::SessionsController#create as HTML
+I, [2022-07-03T23:01:47.953823 #3463]  INFO -- : [3ad41eb5-1128-407b-97c9-f0a0d8a0bd30]   Parameters: {"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}, "session"=>{"user"=>{"email"=>"ben@ben.com", "password"=>"[FILTERED]"}}}
+I, [2022-07-03T23:01:48.141484 #3463]  INFO -- : [3ad41eb5-1128-407b-97c9-f0a0d8a0bd30] Completed 200 OK in 188ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 433)
+I, [2022-07-03T23:01:48.186413 #3463]  INFO -- : [bd2a7ab8-077f-4d23-814b-4810b5b46536] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 23:01:48 -0400
+I, [2022-07-03T23:01:48.187221 #3463]  INFO -- : [bd2a7ab8-077f-4d23-814b-4810b5b46536] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T23:01:48.441514 #3463]  INFO -- : [bd2a7ab8-077f-4d23-814b-4810b5b46536] Completed 200 OK in 254ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 4302)
+I, [2022-07-03T23:01:49.515938 #3463]  INFO -- : [fa633088-53cd-4837-8dfc-8ae45ad158ab] Started DELETE "/api/v1/logout" for 127.0.0.1 at 2022-07-03 23:01:49 -0400
+I, [2022-07-03T23:01:49.516567 #3463]  INFO -- : [fa633088-53cd-4837-8dfc-8ae45ad158ab] Processing by Api::V1::SessionsController#destroy as HTML
+I, [2022-07-03T23:01:49.517091 #3463]  INFO -- : [fa633088-53cd-4837-8dfc-8ae45ad158ab] Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 189)
+I, [2022-07-03T23:01:55.942575 #3463]  INFO -- : [1d204e84-03ea-46d9-8efb-27f15a36fea0] Started POST "/api/v1/users" for 127.0.0.1 at 2022-07-03 23:01:55 -0400
+I, [2022-07-03T23:01:55.943407 #3463]  INFO -- : [1d204e84-03ea-46d9-8efb-27f15a36fea0] Processing by Api::V1::UsersController#create as HTML
+I, [2022-07-03T23:01:55.943469 #3463]  INFO -- : [1d204e84-03ea-46d9-8efb-27f15a36fea0]   Parameters: {"user"=>{"username"=>"test", "email"=>"test@test", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}}
+I, [2022-07-03T23:01:56.135403 #3463]  INFO -- : [1d204e84-03ea-46d9-8efb-27f15a36fea0] Completed 200 OK in 192ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 1849)
+I, [2022-07-03T23:01:56.190975 #3463]  INFO -- : [ee91f834-8b4c-4fdc-a1cc-af2fc9800dc7] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 23:01:56 -0400
+I, [2022-07-03T23:01:56.192156 #3463]  INFO -- : [ee91f834-8b4c-4fdc-a1cc-af2fc9800dc7] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T23:01:56.799983 #3463]  INFO -- : [ee91f834-8b4c-4fdc-a1cc-af2fc9800dc7] Completed 200 OK in 608ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 4416)
+I, [2022-07-03T23:47:31.892762 #3996]  INFO -- : [e39d3456-de00-4c36-a365-2a997a7e061f] Started GET "/api/v1/logged_in" for 127.0.0.1 at 2022-07-03 23:47:31 -0400
+I, [2022-07-03T23:47:31.893299 #3996]  INFO -- : [f9ebd72a-ef8a-46b7-bed3-ce366f98e1ce] Started GET "/api/v1/podcasts" for 127.0.0.1 at 2022-07-03 23:47:31 -0400
+I, [2022-07-03T23:47:31.897067 #3996]  INFO -- : [e39d3456-de00-4c36-a365-2a997a7e061f] Processing by Api::V1::SessionsController#is_logged_in? as HTML
+I, [2022-07-03T23:47:31.897530 #3996]  INFO -- : [f9ebd72a-ef8a-46b7-bed3-ce366f98e1ce] Processing by Api::V1::PodcastsController#index as HTML
+I, [2022-07-03T23:47:31.902768 #3996]  INFO -- : [e39d3456-de00-4c36-a365-2a997a7e061f] Completed 200 OK in 5ms (Views: 0.4ms | Allocations: 593)
+I, [2022-07-03T23:47:32.120518 #3996]  INFO -- : [f9ebd72a-ef8a-46b7-bed3-ce366f98e1ce] Completed 200 OK in 217ms (Views: 0.2ms | Allocations: 7058)
