@@ -33,6 +33,7 @@ User can use his/her account to browse top podcasts, add podcast subscriptions a
 - react-redux@8.0.2 or above
 - axios
 - tailwindcss
+- typescript
 - headlessui
 
 ## Setups
