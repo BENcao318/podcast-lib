@@ -2,10 +2,10 @@
 
 ## Introduction
 
-This full-stack project is a podcast library that can help the users to manage and play their podcasts from itunes. 
-User can use his/her account to browse top podcasts, add podcast subscriptions and creating playlist. He/she can also search podcast/episode on the page and use the built in audio player to listen to the episodes. 
+This full-stack project is a podcast library that can help the users to manage and play their podcasts from itunes.
+User can use his/her account to browse top podcasts, add podcast subscriptions and creating playlist. He/she can also search podcast/episode on the page and use the built in audio player to listen to the episodes.
 
- **Click here to check the live demo site** ➡️  https://wondrous-mandazi-28ebe8.netlify.app/
+**Click here to check the live demo site** ➡️ https://wondrous-mandazi-28ebe8.netlify.app/
 
 ## Tech Stack
 
@@ -17,7 +17,8 @@ User can use his/her account to browse top podcasts, add podcast subscriptions a
 ## Dependencies
 
 #### Backend:
-- ruby 
+
+- ruby
 - rails@6.1.5 or above
 - rack-cors
 - bcrypt
@@ -28,6 +29,7 @@ User can use his/her account to browse top podcasts, add podcast subscriptions a
 - bootsnap
 
 #### Frontend:
+
 - react@18.2.0 or above
 - react-router-dom
 - react-redux@8.0.2 or above
@@ -36,12 +38,14 @@ User can use his/her account to browse top podcasts, add podcast subscriptions a
 - headlessui
 
 ## Setups
+
 ```
 $ git clone git@github.com:BENcao318/podcast-lib.git podcast-lib
 $ gem install
 $ cd client
 $ npm install
 ```
+
 ```
 - Start the server:
 $ rails server
@@ -52,26 +56,27 @@ $ npm start
 ```
 
 ## Screenshots
+
 - Home page
-![Home Page](./screenshots/Home_Page.png)
+  ![Home Page](./screenshots/Home_Page.png)
 
 - Podcast page
-![Podcast Page](./screenshots/Podcast_Page.png)
+  ![Podcast Page](./screenshots/Podcast_Page.png)
 
 - Subscription page
-![Subscription Page](./screenshots/Subscriptions_Page.png)
+  ![Subscription Page](./screenshots/Subscriptions_Page.png)
 
 - Queues page
-![Queues Page](./screenshots/Queues_Page.png)
+  ![Queues Page](./screenshots/Queues_Page.png)
 
 - Playing podcasts
-![Playing Podcasts](./screenshots/Playing_Podcasts.png)
+  ![Playing Podcasts](./screenshots/Playing_Podcasts.png)
 
 - Browsing genres
-![Browsing Genres](./screenshots/Browsing_Genres.png)
+  ![Browsing Genres](./screenshots/Browsing_Genres.png)
 
-- Searching podcast/episode (Radiolab)
-![Searching Podcast/Episode](./screenshots/Searching_Podcast_Or_Episodes(Radiolab).png)
+- Searching podcast/episode (NBA)
+  ![Searching Podcast/Episode](<./screenshots/Searching_Podcast_Or_Episodes(NBA).png>)
 
 - Login page
-![Login Page](./screenshots/Log_In.png)
+  ![Signin Page](./screenshots/Signin.png)
