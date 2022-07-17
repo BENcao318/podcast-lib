@@ -79,9 +79,9 @@ $ npm start
 - Searching podcast/episode (NBA)
   ![Searching Podcast/Episode](<./screenshots/Searching_Podcast_Or_Episodes(NBA).png>)
 
-- Login page
-<<<<<<< HEAD
+- Signin page
   ![Signin Page](./screenshots/Signin.png)
-=======
-![Login Page](./screenshots/Log_In.png)
->>>>>>> a7f94057865dceef7282dc9226c4feffeb71d1bb
+  
+- Signup page
+  ![Signup Page](./screenshots/Signup.png)
+
