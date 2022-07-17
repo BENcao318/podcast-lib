@@ -35,6 +35,7 @@ User can use his/her account to browse top podcasts, add podcast subscriptions a
 - react-redux@8.0.2 or above
 - axios
 - tailwindcss
+- typescript
 - headlessui
 
 ## Setups
@@ -79,4 +80,8 @@ $ npm start
   ![Searching Podcast/Episode](<./screenshots/Searching_Podcast_Or_Episodes(NBA).png>)
 
 - Login page
+<<<<<<< HEAD
   ![Signin Page](./screenshots/Signin.png)
+=======
+![Login Page](./screenshots/Log_In.png)
+>>>>>>> a7f94057865dceef7282dc9226c4feffeb71d1bb
