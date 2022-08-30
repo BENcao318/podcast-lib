@@ -29,8 +29,8 @@ module.exports = {
       poppins: ['Poppins', 'sans-serif'],
     },
     screens: {
-      xxl: { min: '1620px' },
-      xl: { min: '1200px' },
+      xxl: { min: '1600px' },
+      xl: { min: '1300px' },
       lg: { min: '992px' },
       md: { min: '768px' },
       sm: { min: '576px' },
@@ -39,7 +39,6 @@ module.exports = {
     borderRadius: {
       none: '0',
       sm: '0.125rem',
-      DEFAULT: '0.25rem',
       DEFAULT: '4px',
       md: '0.375rem',
       lg: '0.5rem',

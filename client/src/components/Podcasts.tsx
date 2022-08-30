@@ -1,7 +1,7 @@
 import React from 'react'
 import Podcast from './Podcast'
 
-import {PodcastInterface} from '../utils/interfaces'
+import { PodcastInterface } from '../utils/interfaces'
 
 interface Props {
   podcasts: PodcastInterface[]
