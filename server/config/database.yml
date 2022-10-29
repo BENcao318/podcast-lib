@@ -24,8 +24,8 @@ default: &default
 development:
   <<: *default
   database: podcast_lib_development
-  username: "labber"
-  password: "labber"
+  username: 'labber'
+  password: 'labber'
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -60,8 +60,8 @@ development:
 test:
   <<: *default
   database: podcast_lib_test
-  username: "labber"
-  password: "labber"
+  username: 'labber'
+  password: 'labber'
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -89,8 +89,12 @@ test:
 #   username: podcast_library
 #   password: <%= ENV['PODCAST_LIBRARY_DATABASE_PASSWORD'] %>
 
+# production:
+#   <<: *default
+#   database: podcast_lib_production
+#   username: "labber"
+#   password: "labber"
+
 production:
   <<: *default
-  database: podcast_lib_production
-  username: "labber"
-  password: "labber"
+  url: <%= ENV['DATABASE_URL'] %>
