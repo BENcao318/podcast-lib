@@ -22,8 +22,8 @@ Rails.application.routes.draw do
 
       post '/search', to: 'searches#create'
 
-      get '/genres/:id', to: 'genres#create'
-    end
+      get '/genres/:id', to: 'genres#create' 
+    end 
   end
 
   
