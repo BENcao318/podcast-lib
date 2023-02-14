@@ -18,7 +18,7 @@ const EpisodeWithPodcastInfo: React.FC<Props> = ({
   const navigate = useNavigate()
 
   return (
-    <div className="flex items-center h">
+    <div className="flex items-center">
       <div className="min-h-full cursor-pointer min-w-1/4">
         <img
           src={episode.artworkUrl160}
