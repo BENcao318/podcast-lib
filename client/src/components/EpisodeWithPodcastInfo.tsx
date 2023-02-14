@@ -18,12 +18,12 @@ const EpisodeWithPodcastInfo: React.FC<Props> = ({
   const navigate = useNavigate()
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center h">
       <div className="min-h-full cursor-pointer min-w-1/4">
         <img
           src={episode.artworkUrl160}
           alt="cover images"
-          className="rounded-lg"
+          className="rounded-xl max-h-36"
           onClick={() => navigate(`/podcasts/${episode.collectionId}`)}
         />
       </div>
