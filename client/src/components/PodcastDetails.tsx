@@ -23,7 +23,7 @@ interface Props {
 const PodcastDetails: React.FC<Props> = ({ podcastDetails }) => {
   const [releaseDate, setReleaseDate] = useState('')
   const [isReadMore, setIsReadMore] = useState(false)
-  const [warning, setWarning] = useState(false)
+  const [warning, setWarning] = useState(false) //detail
   const timeoutRef: { current: NodeJS.Timeout | null | number } = useRef(null) // For creating a subscription warning when the user is not logged in
   const dispatch = useDispatch()
   const subscriptions = useSelector(
