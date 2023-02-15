@@ -33,7 +33,7 @@ const PodcastDetails: React.FC<Props> = ({ podcastDetails }) => {
 
   useEffect(() => {
     const date = Date.parse(podcastDetails.releaseDate)
-    setReleaseDate(timeSince(date))
+    setReleaseDate(timeSince(date)) //detail
   }, [podcastDetails.releaseDate])
 
   const handleClick = () => {
